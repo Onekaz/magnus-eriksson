@@ -186,7 +186,7 @@
   flex-direction: column;
   padding: var(--mobile-skills-card-padding-y) var(--mobile-skills-card-padding-x);
   border-radius: var(--mobile-skills-card-radius);
-  background: var(--color-secondary-3);
+  background: var(--color-skill-card);
   color: var(--color-primary);
 }
 
@@ -211,8 +211,9 @@
   align-items: center;
   justify-content: center;
   padding: var(--mobile-skills-pill-padding-y) var(--mobile-skills-pill-padding-x);
+  border: 1px solid var(--color-skill-pill-border);
   border-radius: var(--mobile-skills-pill-radius);
-  background: var(--color-secondary-2);
+  background: var(--color-skill-pill);
   color: var(--color-primary);
   font-size: var(--mobile-skills-pill-text-size);
   font-weight: var(--mobile-skills-pill-text-weight);
@@ -416,6 +417,13 @@
 
 .contactSection {
   display: none;
+}
+
+.contactDetails {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .contactRow {

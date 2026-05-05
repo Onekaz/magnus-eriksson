@@ -4,6 +4,7 @@
 
 import { useEffect, useRef, useState, type ComponentType, type CSSProperties } from "react";
 import { Envelope, Graduation, Lightbulb, List, Profile } from "@/components/icons";
+import MobileContactBottomSheet from "@/components/mobile/bottom-sheet/MobileContactBottomSheet";
 import { mobileNavigationItems } from "@/lib/content/navigation";
 import {
   MOBILE_BOTTOM_NAV_HEIGHT_PX,
@@ -66,6 +67,7 @@ function getActiveTargetId() {
 export default function MobileFooterOverlay() {
   const [isTransparent, setIsTransparent] = useState(false);
   const [activeTargetId, setActiveTargetId] = useState("about");
+  const [isContactSheetOpen, setIsContactSheetOpen] = useState(false);
   const lastScrollYRef = useRef(0);
 
   useEffect(() => {
@@ -103,95 +105,110 @@ export default function MobileFooterOverlay() {
   }, []);
 
   return (
-    <footer
-      className="mobile-only"
-      style={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        zIndex: 50,
-        width: "100%",
-        backgroundColor: isTransparent ? "transparent" : "var(--color-canvas)",
-        backdropFilter: isTransparent ? "none" : "blur(8px)",
-        transition: "background-color 220ms ease, backdrop-filter 220ms ease",
-      }}
-    >
-      <nav
-        aria-label="Mobile navigation"
+    <>
+      <footer
+        className="mobile-only"
         style={{
-          display: "flex",
-          height: MOBILE_BOTTOM_NAV_HEIGHT_PX,
-          alignItems: "stretch",
-          justifyContent: "space-between",
-          paddingTop: MOBILE_BOTTOM_NAV_PADDING_TOP_PX,
-          paddingRight: MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
-          paddingBottom: MOBILE_BOTTOM_NAV_PADDING_BOTTOM_PX,
-          paddingLeft: MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          zIndex: 50,
+          width: "100%",
+          backgroundColor: isTransparent ? "transparent" : "var(--color-canvas)",
+          backdropFilter: isTransparent ? "none" : "blur(8px)",
+          transition: "background-color 220ms ease, backdrop-filter 220ms ease",
         }}
       >
-        {mobileNavigationItems.map((item) => {
-          const isSectionLink = "targetId" in item;
-          const isActive = isSectionLink ? activeTargetId === item.targetId : false;
-          const Icon = iconComponents[item.icon];
-          const itemKey = isSectionLink ? item.targetId : item.href;
-          const itemStyle: CSSProperties = {
+        <nav
+          aria-label="Mobile navigation"
+          style={{
             display: "flex",
-            flex: 1,
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: MOBILE_BOTTOM_NAV_ITEM_GAP_PX,
-            color: isActive ? "var(--color-primary)" : "var(--color-muted)",
-          };
-          const itemContent = (
-            <>
-              <span
-                aria-hidden="true"
-                style={{
-                  width: MOBILE_BOTTOM_NAV_OVERLINE_WIDTH_PX,
-                  height: MOBILE_BOTTOM_NAV_OVERLINE_HEIGHT_PX,
-                  borderRadius: 9999,
-                  backgroundColor: isActive ? "var(--color-primary)" : "transparent",
-                }}
-              />
+            height: MOBILE_BOTTOM_NAV_HEIGHT_PX,
+            alignItems: "stretch",
+            justifyContent: "space-between",
+            paddingTop: MOBILE_BOTTOM_NAV_PADDING_TOP_PX,
+            paddingRight: MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
+            paddingBottom: MOBILE_BOTTOM_NAV_PADDING_BOTTOM_PX,
+            paddingLeft: MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
+          }}
+        >
+          {mobileNavigationItems.map((item) => {
+            const isSectionLink = "targetId" in item;
+            const isContactSheetAction = "action" in item && item.action === "contactSheet";
+            const isActive = isSectionLink ? activeTargetId === item.targetId : false;
+            const Icon = iconComponents[item.icon];
+            const itemKey = isSectionLink ? item.targetId : item.action;
+            const itemStyle: CSSProperties = {
+              display: "flex",
+              flex: 1,
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: MOBILE_BOTTOM_NAV_ITEM_GAP_PX,
+              color: isActive ? "var(--color-primary)" : "var(--color-muted)",
+            };
+            const itemContent = (
+              <>
+                <span
+                  aria-hidden="true"
+                  style={{
+                    width: MOBILE_BOTTOM_NAV_OVERLINE_WIDTH_PX,
+                    height: MOBILE_BOTTOM_NAV_OVERLINE_HEIGHT_PX,
+                    borderRadius: 9999,
+                    backgroundColor: isActive ? "var(--color-primary)" : "transparent",
+                  }}
+                />
 
-              <Icon size={MOBILE_BOTTOM_NAV_ICON_SIZE_PX} />
+                <Icon size={MOBILE_BOTTOM_NAV_ICON_SIZE_PX} />
 
-              <span
-                style={{
-                  fontSize: MOBILE_BOTTOM_NAV_LABEL_TEXT_SIZE_PX,
-                  fontWeight: MOBILE_BOTTOM_NAV_LABEL_TEXT_WEIGHT,
-                  lineHeight: `${MOBILE_BOTTOM_NAV_LABEL_LINE_HEIGHT_PX}px`,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {item.label}
-              </span>
-            </>
-          );
-
-          if (!isSectionLink) {
-            return (
-              <a key={itemKey} href={item.href} aria-label={item.label} style={itemStyle}>
-                {itemContent}
-              </a>
+                <span
+                  style={{
+                    fontSize: MOBILE_BOTTOM_NAV_LABEL_TEXT_SIZE_PX,
+                    fontWeight: MOBILE_BOTTOM_NAV_LABEL_TEXT_WEIGHT,
+                    lineHeight: `${MOBILE_BOTTOM_NAV_LABEL_LINE_HEIGHT_PX}px`,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {item.label}
+                </span>
+              </>
             );
-          }
 
-          return (
-            <button
-              key={itemKey}
-              type="button"
-              onClick={() => scrollToSection(item.targetId)}
-              aria-label={item.label}
-              aria-current={isActive ? "page" : undefined}
-              style={itemStyle}
-            >
-              {itemContent}
-            </button>
-          );
-        })}
-      </nav>
-    </footer>
+            if (!isSectionLink) {
+              return (
+                <button
+                  key={itemKey}
+                  type="button"
+                  onClick={() => setIsContactSheetOpen(true)}
+                  aria-label={item.label}
+                  aria-expanded={isContactSheetOpen}
+                  style={itemStyle}
+                >
+                  {itemContent}
+                </button>
+              );
+            }
+
+            return (
+              <button
+                key={itemKey}
+                type="button"
+                onClick={() => scrollToSection(item.targetId)}
+                aria-label={item.label}
+                aria-current={isActive ? "page" : undefined}
+                style={itemStyle}
+              >
+                {itemContent}
+              </button>
+            );
+          })}
+        </nav>
+      </footer>
+
+      <MobileContactBottomSheet
+        isOpen={isContactSheetOpen}
+        onClose={() => setIsContactSheetOpen(false)}
+      />
+    </>
   );
 }

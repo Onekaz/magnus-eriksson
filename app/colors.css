@@ -13,6 +13,10 @@
   --color-muted: #827F8E;
   --color-dark-muted: #5C5868;
 
+  --color-skill-pill: #E8D3DC;
+  --color-skill-pill-border: #D8B8C5;
+  --color-skill-card: #EFEDF1;
+
   --color-canvas: #F7F6F8;
   --color-border: var(--color-secondary-3);
   --color-surface: #FFFFFF;

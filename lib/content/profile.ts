@@ -3,6 +3,9 @@
 export const CONTACT_EMAIL = "eriksson.magnus@outlook.com";
 export const CONTACT_MAILTO_HREF = `mailto:${CONTACT_EMAIL}`;
 
+export const CONTACT_PHONE_DISPLAY = "070 873 33 20";
+export const CONTACT_PHONE_HREF = "tel:+46708733320";
+
 export const profileDownloads = [
   {
     label: "Resume",
@@ -53,20 +56,21 @@ export const skillGroups = [
     title: "Marketing and Communication",
     skills: [
       "Marketing Strategy",
-      "Brand Strategy",
-      "Corporate Communication",
+      "Brand Positioning",
+      "Strategic Communication",
+      "Market Positioning",
       "Pipeline Generation",
       "Performance Management",
     ],
   },
   {
-    title: "Web and AI Support",
+    title: "Web Structure, Content and AI Support",
     skills: [
       "Web Structure",
-      "Visual Presentation",
-      "AI Optimization",
       "Content Strategy",
       "Messaging and Copywriting",
+      "Visual Presentation",
+      "SEO and AI Optimization",
       "AI-Assisted Prototyping",
     ],
   },
