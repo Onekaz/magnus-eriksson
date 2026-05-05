@@ -1,0 +1,34 @@
+/* components/desktop/DesktopHeader.module.css */
+
+.navButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navButton::after {
+  position: absolute;
+  top: calc(100% + var(--desktop-header-nav-underline-offset-top));
+  left: 50%;
+  width: var(--desktop-header-nav-underline-width);
+  height: var(--desktop-header-nav-underline-height);
+  border-radius: var(--desktop-header-nav-underline-radius);
+  background: var(--color-secondary-2);
+  content: "";
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.navButton:hover::after,
+.navButton:focus-visible::after,
+.navButtonActive::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}

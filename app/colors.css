@@ -1,0 +1,19 @@
+/* app/colors.css */
+
+:root {
+  --color-primary: #4A4759;
+  --color-accent: #6A5A82;
+  --color-cta-accent: #E4D4A1;
+  --color-link: #4E67A1;
+
+  --color-secondary-1: #6C697D;
+  --color-secondary-2: #9E9BA9;
+  --color-secondary-3: #DCDADD;
+
+  --color-muted: #827F8E;
+  --color-dark-muted: #5C5868;
+
+  --color-canvas: #F7F6F8;
+  --color-border: var(--color-secondary-3);
+  --color-surface: #FFFFFF;
+}

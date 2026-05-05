@@ -1,0 +1,31 @@
+/* app/page.module.css */
+
+.sitePage {
+  min-height: 100vh;
+  background: var(--color-canvas);
+}
+
+.pageInner {
+  max-width: var(--desktop-page-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding: var(--mobile-page-top-padding) var(--mobile-page-horizontal-padding)
+    var(--mobile-page-bottom-padding);
+}
+
+.sectionStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-section-stack-gap);
+}
+
+@media (min-width: 768px) {
+  .pageInner {
+    padding: var(--desktop-page-top-padding) var(--desktop-page-horizontal-padding)
+      var(--desktop-page-bottom-padding);
+  }
+
+  .sectionStack {
+    gap: var(--desktop-section-stack-gap);
+  }
+}
