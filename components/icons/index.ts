@@ -7,3 +7,4 @@ export { default as Lightbulb } from "./Lightbulb";
 export { default as List } from "./List";
 export { default as Profile } from "./Profile";
 export { default as Telephone } from "./Telephone";
+export { default as LinkedIn } from "./LinkedIn";

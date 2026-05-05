@@ -2,7 +2,9 @@
 
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import {
+  MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX,
   MOBILE_TOP_OVERLAY_BRAND_STACK_GAP_PX,
   MOBILE_TOP_OVERLAY_HEIGHT_PX,
   MOBILE_TOP_OVERLAY_HORIZONTAL_PADDING_PX,
@@ -22,6 +24,40 @@ function scrollToTop() {
 }
 
 export default function MobileTopOverlay() {
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollYRef = useRef(0);
+
+  useEffect(() => {
+    lastScrollYRef.current = window.scrollY;
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollYRef.current;
+
+      if (currentScrollY <= 0) {
+        setIsHidden(false);
+        lastScrollYRef.current = currentScrollY;
+        return;
+      }
+
+      if (scrollDelta > MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
+        setIsHidden(true);
+      }
+
+      if (scrollDelta < -MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
+        setIsHidden(false);
+      }
+
+      lastScrollYRef.current = currentScrollY;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header
       className="mobile-only"
@@ -33,6 +69,10 @@ export default function MobileTopOverlay() {
         width: "100%",
         backgroundColor: "var(--color-canvas)",
         backdropFilter: "blur(8px)",
+        opacity: isHidden ? 0 : 1,
+        pointerEvents: isHidden ? "none" : "auto",
+        transform: isHidden ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 220ms ease, opacity 220ms ease",
       }}
     >
       <div

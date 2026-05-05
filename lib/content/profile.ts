@@ -6,6 +6,9 @@ export const CONTACT_MAILTO_HREF = `mailto:${CONTACT_EMAIL}`;
 export const CONTACT_PHONE_DISPLAY = "070 873 33 20";
 export const CONTACT_PHONE_HREF = "tel:+46708733320";
 
+export const CONTACT_LINKEDIN_DISPLAY = "LinkedIn";
+export const CONTACT_LINKEDIN_HREF = "https://www.linkedin.com/in/magnus-eriksson-se/";
+
 export const profileDownloads = [
   {
     label: "Resume",
@@ -25,15 +28,15 @@ export const profileDownloads = [
 ] as const;
 
 export const aboutParagraphs = [
-  "With a background in senior commercial roles within telecom and IT/IoT, I have driven profitable growth by building scalable structures and leading cross-functional execution. My focus has consistently been on translating strategic intent into measurable business outcomes, ensuring strong alignment across stakeholders, sales, partnerships, and market priorities.",
-  "I bring a structured, commercially driven approach to change and execution, and I am at my best in dynamic environments where growth depends on clear priorities, disciplined follow-through, and strong alignment across functions.",
+  "With a background in senior commercial roles within telecom and IT/IoT, I drive profitable growth by building scalable structures and leading cross-functional teams. My focus is consistently on translating strategic vision into measurable business outcomes, ensuring strong collaboration across sales, partnerships, and market priorities.",
+  "I bring a structured approach to change management and execution. I am at my best in dynamic environments where success depends on clear priorities, disciplined follow-through, and seamless alignment across the organization.",
 ] as const;
 
 export const skillGroups = [
   {
     title: "Organization and Leadership",
     skills: [
-      "Strategic Prioritization",
+      "Modern Management Concepts",
       "Organizational Development",
       "Change Management",
       "Governance and Accountability",
@@ -47,7 +50,7 @@ export const skillGroups = [
       "Revenue Growth",
       "Commercial Strategy",
       "Go-To-Market Execution",
-      "Business Model Development",
+      "Business Development",
       "Pricing and Profitability",
       "Commercial Agreements",
     ],
@@ -57,21 +60,20 @@ export const skillGroups = [
     skills: [
       "Marketing Strategy",
       "Brand Positioning",
-      "Strategic Communication",
-      "Market Positioning",
+      "Corporate Communication",
       "Pipeline Generation",
       "Performance Management",
     ],
   },
   {
-    title: "Web Structure, Content and AI Support",
+    title: "Web, Content and AI Support",
     skills: [
       "Web Structure",
       "Content Strategy",
       "Messaging and Copywriting",
       "Visual Presentation",
-      "SEO and AI Optimization",
-      "AI-Assisted Prototyping",
+      "AI Optimization",
+      "AI-assisted Prototyping",
     ],
   },
 ] as const;

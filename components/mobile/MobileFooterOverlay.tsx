@@ -18,6 +18,7 @@ import {
   MOBILE_BOTTOM_NAV_PADDING_BOTTOM_PX,
   MOBILE_BOTTOM_NAV_PADDING_TOP_PX,
   MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
+  MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX,
   MOBILE_SECTION_SCROLL_MARGIN_TOP_PX,
 } from "@/lib/config/mobile";
 
@@ -30,8 +31,6 @@ const iconComponents: Record<MobileNavigationIcon, ComponentType<{ size?: number
   graduation: Graduation,
   envelope: Envelope,
 };
-
-const SCROLL_DIRECTION_THRESHOLD_PX = 8;
 
 function scrollToSection(targetId: string) {
   document.getElementById(targetId)?.scrollIntoView({
@@ -86,11 +85,11 @@ export default function MobileFooterOverlay() {
         return;
       }
 
-      if (scrollDelta > SCROLL_DIRECTION_THRESHOLD_PX) {
+      if (scrollDelta > MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
         setIsTransparent(true);
       }
 
-      if (scrollDelta < -SCROLL_DIRECTION_THRESHOLD_PX) {
+      if (scrollDelta < -MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
         setIsTransparent(false);
       }
 
@@ -134,7 +133,6 @@ export default function MobileFooterOverlay() {
         >
           {mobileNavigationItems.map((item) => {
             const isSectionLink = "targetId" in item;
-            const isContactSheetAction = "action" in item && item.action === "contactSheet";
             const isActive = isSectionLink ? activeTargetId === item.targetId : false;
             const Icon = iconComponents[item.icon];
             const itemKey = isSectionLink ? item.targetId : item.action;

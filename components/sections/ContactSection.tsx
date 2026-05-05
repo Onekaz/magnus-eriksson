@@ -1,8 +1,10 @@
 // components/sections/ContactSection.tsx
 
-import { Envelope, Telephone } from "@/components/icons";
+import { Envelope, LinkedIn, Telephone } from "@/components/icons";
 import {
   CONTACT_EMAIL,
+  CONTACT_LINKEDIN_DISPLAY,
+  CONTACT_LINKEDIN_HREF,
   CONTACT_MAILTO_HREF,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_HREF,
@@ -36,6 +38,20 @@ export default function ContactSection() {
           </span>
           <a href={CONTACT_PHONE_HREF} className={styles.contactLink}>
             {CONTACT_PHONE_DISPLAY}
+          </a>
+        </div>
+
+        <div className={styles.contactRow}>
+          <span className={styles.contactIcon} aria-hidden="true">
+            <LinkedIn />
+          </span>
+          <a
+            href={CONTACT_LINKEDIN_HREF}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.contactLink}
+          >
+            {CONTACT_LINKEDIN_DISPLAY}
           </a>
         </div>
       </div>
