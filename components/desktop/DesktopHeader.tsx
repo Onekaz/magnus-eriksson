@@ -30,6 +30,8 @@ import styles from "./DesktopHeader.module.css";
 type HeaderVariables = CSSProperties & Record<`--${string}`, string>;
 type DesktopTargetId = (typeof desktopNavigationItems)[number]["targetId"];
 
+const SCROLL_ACTIVATION_TOLERANCE_PX = 1;
+
 const navUnderlineVariables: HeaderVariables = {
   "--desktop-header-nav-underline-width": `${DESKTOP_HEADER_NAV_UNDERLINE_WIDTH_PX}px`,
   "--desktop-header-nav-underline-height": `${DESKTOP_HEADER_NAV_UNDERLINE_HEIGHT_PX}px`,
@@ -44,8 +46,30 @@ function scrollToSection(targetId: DesktopTargetId) {
   });
 }
 
+function getScrollingElement() {
+  return document.scrollingElement ?? document.documentElement;
+}
+
+function getMaxScrollTop() {
+  const scrollingElement = getScrollingElement();
+
+  return Math.max(0, scrollingElement.scrollHeight - scrollingElement.clientHeight);
+}
+
+function getCurrentScrollTop() {
+  return getScrollingElement().scrollTop;
+}
+
+function getClampedSectionTop(sectionElement: HTMLElement) {
+  const maxScrollTop = getMaxScrollTop();
+  const sectionTop = sectionElement.offsetTop - DESKTOP_SECTION_SCROLL_MARGIN_TOP_PX;
+
+  return Math.min(Math.max(0, sectionTop), maxScrollTop);
+}
+
 function getActiveTargetId() {
   let activeTargetId: DesktopTargetId = desktopNavigationItems[0]?.targetId ?? "about";
+  const currentScrollTop = getCurrentScrollTop();
 
   desktopNavigationItems.forEach((item) => {
     const sectionElement = document.getElementById(item.targetId);
@@ -54,9 +78,9 @@ function getActiveTargetId() {
       return;
     }
 
-    const sectionTop = sectionElement.offsetTop - DESKTOP_SECTION_SCROLL_MARGIN_TOP_PX;
+    const sectionTop = getClampedSectionTop(sectionElement);
 
-    if (window.scrollY >= sectionTop) {
+    if (currentScrollTop >= sectionTop - SCROLL_ACTIVATION_TOLERANCE_PX) {
       activeTargetId = item.targetId;
     }
   });

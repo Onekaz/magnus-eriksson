@@ -16,13 +16,10 @@ export default function EducationSection() {
 
       <div className={styles.educationList}>
         {educationEntries.map((entry) => (
-          <article key={entry.year} className={styles.educationEntry}>
-            <div className={styles.educationYear}>{entry.year}</div>
-            <div className={styles.educationDetails}>
-              {entry.details.map((detail) => (
-                <p key={detail}>{detail}</p>
-              ))}
-            </div>
+          <article key={`${entry.title}-${entry.period}`} className={styles.educationEntry}>
+            <h3 className={styles.educationTitle}>{entry.title}</h3>
+            <p className={styles.educationInstitution}>{entry.institution}</p>
+            <p className={styles.educationPeriod}>{entry.period}</p>
           </article>
         ))}
       </div>

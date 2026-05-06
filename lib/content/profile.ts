@@ -106,9 +106,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
     entry: {
       role: "Contract Specialist",
       company: "IoT Open AB",
-      location: "Distance",
-      start: "2025-10",
-      end: "2025-12",
+      location: "Skellefteå (distance)",
+      start: "Oct 2025",
+      end: "Dec 2025",
       responsibilities: [
         "Contract Development",
         "Legal Quality Assurance",
@@ -126,8 +126,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         role: "Chief Commercial Officer (CCO)",
         company: "TH1NG AB (publ)",
         location: "Stockholm",
-        start: "2024-11",
-        end: "2025-07",
+        start: "Nov 2024",
+        end: "Jul 2025",
         responsibilities: [
           "Revenue Budgeting",
           "Commercial Operating Plan",
@@ -141,8 +141,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         role: "Chief Strategy Officer (CSO)",
         company: "TH1NG AB (publ)",
         location: "Stockholm",
-        start: "2024-05",
-        end: "2024-11",
+        start: "May 2024",
+        end: "Nov 2024",
         responsibilities: [
           "Corporate Strategy",
           "Governance and Regulation",
@@ -155,8 +155,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         role: "Chief Marketing Officer (CMO)",
         company: "TH1NG AB (publ)",
         location: "Stockholm",
-        start: "2023-10",
-        end: "2024-05",
+        start: "Oct 2023",
+        end: "May 2024",
         responsibilities: [
           "Brand and Market Positioning",
           "Marketing Performance",
@@ -175,8 +175,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         role: "Business Development Manager",
         company: "GlobalConnect AB",
         location: "Stockholm",
-        start: "2019-03",
-        end: "2023-05",
+        start: "Mar 2019",
+        end: "May 2023",
         responsibilities: ["Revenue Growth", "Pricing Strategy", "Contract Development"],
         description:
           "Increased ARPU by 19% via pricing strategy and product diversification. Developed and negotiated a business agreement proposed by service providers as industry standard.",
@@ -186,8 +186,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         role: "Data Protection Manager (DPM)",
         company: "IP-Only Networks AB",
         location: "Stockholm",
-        start: "2018-05",
-        end: "2023-05",
+        start: "May 2018",
+        end: "May 2023",
         responsibilities: [
           "Data Protection Governance",
           "GDPR Compliance",
@@ -200,8 +200,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         role: "KAM, Business Developer",
         company: "IP-Only Networks AB",
         location: "Stockholm",
-        start: "2016-06",
-        end: "2019-03",
+        start: "Jun 2016",
+        end: "Mar 2019",
         responsibilities: [
           "Key Accounts",
           "Contract Management",
@@ -219,8 +219,8 @@ export const resumeBlocks: readonly ResumeBlock[] = [
       role: "Business and Strategy Consultant",
       company: "WSP Sverige AB",
       location: "Stockholm",
-      start: "2015-03",
-      end: "2016-06",
+      start: "Mar 2015",
+      end: "Jun 2016",
       responsibilities: [
         "Strategic Advisory",
         "Financial and Business Modelling",
@@ -234,21 +234,18 @@ export const resumeBlocks: readonly ResumeBlock[] = [
 
 export const educationEntries = [
   {
-    year: "2000-2007",
-    details: [
-      "Business Administration, Master’s level, Stockholm University, Stockholm",
-    ],
+    title: "Business Administration, Master’s level",
+    institution: "Stockholm University, Stockholm",
+    period: "2000–2007",
   },
   {
-    year: "2024",
-    details: ["Rules and Regulations at First North Growth Market, Redeye AB, Stockholm"],
+    title: "Rules and Regulations at First North",
+    institution: "Redeye AB, Stockholm",
+    period: "2024",
   },
   {
-    year: "2014",
-    details: ["Personal trainer, DS Personal Training School, Stockholm"],
-  },
-  {
-    year: "1997-1998",
-    details: ["Conscript Parachute Ranger, Swedish Parachute Ranger School, Karlsborg"],
+    title: "Conscript Parachute Ranger",
+    institution: "Swedish Parachute Ranger School, Karlsborg",
+    period: "1997–1998",
   },
 ] as const;

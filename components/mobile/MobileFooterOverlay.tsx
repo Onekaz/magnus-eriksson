@@ -24,6 +24,8 @@ import {
 
 type MobileNavigationIcon = "profile" | "list" | "lightbulb" | "graduation" | "envelope";
 
+const SCROLL_ACTIVATION_TOLERANCE_PX = 1;
+
 const iconComponents: Record<MobileNavigationIcon, ComponentType<{ size?: number }>> = {
   profile: Profile,
   list: List,
@@ -39,8 +41,30 @@ function scrollToSection(targetId: string) {
   });
 }
 
+function getScrollingElement() {
+  return document.scrollingElement ?? document.documentElement;
+}
+
+function getMaxScrollTop() {
+  const scrollingElement = getScrollingElement();
+
+  return Math.max(0, scrollingElement.scrollHeight - scrollingElement.clientHeight);
+}
+
+function getCurrentScrollTop() {
+  return getScrollingElement().scrollTop;
+}
+
+function getClampedSectionTop(sectionElement: HTMLElement) {
+  const maxScrollTop = getMaxScrollTop();
+  const sectionTop = sectionElement.offsetTop - MOBILE_SECTION_SCROLL_MARGIN_TOP_PX;
+
+  return Math.min(Math.max(0, sectionTop), maxScrollTop);
+}
+
 function getActiveTargetId() {
   let activeTargetId = "about";
+  const currentScrollTop = getCurrentScrollTop();
 
   mobileNavigationItems.forEach((item) => {
     if (!("targetId" in item)) {
@@ -53,9 +77,9 @@ function getActiveTargetId() {
       return;
     }
 
-    const sectionTop = sectionElement.offsetTop - MOBILE_SECTION_SCROLL_MARGIN_TOP_PX;
+    const sectionTop = getClampedSectionTop(sectionElement);
 
-    if (window.scrollY >= sectionTop) {
+    if (currentScrollTop >= sectionTop - SCROLL_ACTIVATION_TOLERANCE_PX) {
       activeTargetId = item.targetId;
     }
   });

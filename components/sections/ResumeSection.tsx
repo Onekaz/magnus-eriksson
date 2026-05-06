@@ -9,13 +9,46 @@ function ResumeDescription({ entry, variant }: { entry: ResumeEntry; variant: "d
 
   return (
     <div className={className}>
-      <span className={styles.resumeDescriptionLabel}>Description:</span>
       <p>
         {entry.descriptionLead ? <em>{entry.descriptionLead}</em> : null}
         {entry.descriptionLead ? " " : null}
         {entry.description}
       </p>
     </div>
+  );
+}
+
+function ResumeEntryHeader({ entry }: { entry: ResumeEntry }) {
+  return (
+    <div className={styles.resumeEntryHeader}>
+      <p className={styles.resumeRoleTitle}>{entry.role}</p>
+      <p className={styles.resumeMetaText}>{`${entry.company}, ${entry.location}`}</p>
+      <p className={styles.resumeMetaText}>{`${entry.start}–${entry.end}`}</p>
+    </div>
+  );
+}
+
+function ResumeResponsibilities({
+  entry,
+  variant,
+}: {
+  entry: ResumeEntry;
+  variant: "desktop" | "mobile";
+}) {
+  const className =
+    variant === "desktop"
+      ? styles.desktopResumeResponsibilitiesInline
+      : styles.mobileResumeResponsibilitiesInline;
+
+  return (
+    <p className={className}>
+      {entry.responsibilities.map((responsibility, index) => (
+        <span key={responsibility}>
+          {index > 0 ? <span aria-hidden="true"> • </span> : null}
+          {responsibility}
+        </span>
+      ))}
+    </p>
   );
 }
 
@@ -26,44 +59,12 @@ function DesktopResumeEntry({ entry }: { entry: ResumeEntry }) {
         <span className={styles.desktopResumeTimelineMarker} aria-hidden="true" />
       ) : null}
 
-      <p className={styles.resumeRoleTitle}>{entry.role}</p>
+      <ResumeEntryHeader entry={entry} />
 
-      <div className={styles.desktopResumeEntryTop}>
-        <div className={styles.desktopResumeMetaColumn}>
-          <dl className={styles.desktopResumeMetaList}>
-            <div className={styles.desktopResumeMetaRow}>
-              <dt>Company:</dt>
-              <dd>{entry.company}</dd>
-            </div>
-
-            <div className={styles.desktopResumeMetaRow}>
-              <dt>Location:</dt>
-              <dd>{entry.location}</dd>
-            </div>
-
-            <div className={styles.desktopResumeMetaRow}>
-              <dt>Start:</dt>
-              <dd>{entry.start}</dd>
-            </div>
-
-            <div className={styles.desktopResumeMetaRow}>
-              <dt>End:</dt>
-              <dd>{entry.end}</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div className={styles.desktopResumeResponsibilities}>
-          <p>Key Responsibilities:</p>
-          <ul>
-            {entry.responsibilities.map((responsibility) => (
-              <li key={responsibility}>{responsibility}</li>
-            ))}
-          </ul>
-        </div>
+      <div className={styles.resumeEntryBody}>
+        <ResumeResponsibilities entry={entry} variant="desktop" />
+        <ResumeDescription entry={entry} variant="desktop" />
       </div>
-
-      <ResumeDescription entry={entry} variant="desktop" />
     </article>
   );
 }
@@ -75,42 +76,12 @@ function MobileResumeEntry({ entry }: { entry: ResumeEntry }) {
         <span className={styles.mobileResumeTimelineMarker} aria-hidden="true" />
       ) : null}
 
-      <p className={styles.resumeRoleTitle}>{entry.role}</p>
+      <ResumeEntryHeader entry={entry} />
 
-      <div className={styles.mobileResumeMetaColumn}>
-        <dl className={styles.mobileResumeMetaList}>
-          <div className={styles.mobileResumeMetaRow}>
-            <dt>Company:</dt>
-            <dd>{entry.company}</dd>
-          </div>
-
-          <div className={styles.mobileResumeMetaRow}>
-            <dt>Location:</dt>
-            <dd>{entry.location}</dd>
-          </div>
-
-          <div className={styles.mobileResumeMetaRow}>
-            <dt>Start:</dt>
-            <dd>{entry.start}</dd>
-          </div>
-
-          <div className={styles.mobileResumeMetaRow}>
-            <dt>End:</dt>
-            <dd>{entry.end}</dd>
-          </div>
-        </dl>
+      <div className={styles.resumeEntryBody}>
+        <ResumeResponsibilities entry={entry} variant="mobile" />
+        <ResumeDescription entry={entry} variant="mobile" />
       </div>
-
-      <div className={styles.mobileResumeResponsibilities}>
-        <p>Key Responsibilities:</p>
-        <ul>
-          {entry.responsibilities.map((responsibility) => (
-            <li key={responsibility}>{responsibility}</li>
-          ))}
-        </ul>
-      </div>
-
-      <ResumeDescription entry={entry} variant="mobile" />
     </article>
   );
 }

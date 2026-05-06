@@ -235,12 +235,22 @@
   margin: 0;
   color: var(--color-primary);
   font-size: var(--mobile-resume-role-title-text-size);
-  font-weight: 700;
+  font-weight: var(--mobile-resume-role-title-text-weight);
 }
 
-.resumeDescriptionLabel {
-  color: var(--color-primary);
-  font-weight: 500;
+.resumeEntryHeader,
+.resumeEntryBody {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.resumeEntryHeader {
+  gap: var(--mobile-resume-entry-header-gap);
+}
+
+.resumeEntryBody {
+  gap: var(--mobile-resume-entry-body-gap);
 }
 
 .desktopResumeList {
@@ -309,61 +319,26 @@
   background: var(--color-primary);
 }
 
-.mobileResumeMetaColumn {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mobile-resume-meta-column-gap);
-}
-
-.mobileResumeMetaList {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mobile-resume-meta-list-gap);
-  margin: 0;
-}
-
-.mobileResumeMetaRow {
-  display: grid;
-  grid-template-columns: var(--mobile-resume-meta-label-width) minmax(0, 1fr);
-  gap: var(--mobile-resume-meta-row-gap);
-}
-
-.mobileResumeMetaRow dt,
-.mobileResumeMetaRow dd,
-.mobileResumeResponsibilities p,
-.mobileResumeResponsibilities ul,
-.mobileResumeDescription span,
+.resumeMetaText,
+.mobileResumeResponsibilitiesInline,
 .mobileResumeDescription p {
   margin: 0;
 }
 
-.mobileResumeMetaRow dt {
-  font-weight: 500;
+.resumeMetaText {
+  color: var(--color-primary);
+  font-size: var(--mobile-resume-meta-text-size);
+  font-weight: var(--mobile-resume-meta-text-weight);
+  line-height: var(--mobile-body-line-height);
+  letter-spacing: var(--mobile-body-letter-spacing);
 }
 
-.mobileResumeMetaRow dd {
-  min-width: 0;
-}
-
-.mobileResumeResponsibilities {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mobile-resume-responsibilities-gap);
-}
-
-.mobileResumeResponsibilities p {
-  font-weight: 500;
-}
-
-.mobileResumeResponsibilities ul {
-  margin: 0;
-  padding-left: var(--mobile-resume-responsibilities-list-padding-left);
-  list-style-position: outside;
-  list-style-type: disc;
-}
-
-.mobileResumeResponsibilities li + li {
-  margin-top: var(--mobile-resume-responsibilities-list-item-gap);
+.mobileResumeResponsibilitiesInline {
+  color: var(--color-primary);
+  font-size: var(--mobile-resume-responsibilities-text-size);
+  font-weight: var(--mobile-resume-responsibilities-text-weight);
+  line-height: var(--mobile-body-line-height);
+  letter-spacing: var(--mobile-body-letter-spacing);
 }
 
 .mobileResumeDescription {
@@ -375,6 +350,7 @@
 .mobileResumeDescription p {
   color: var(--color-muted);
   font-size: var(--mobile-resume-description-text-size);
+  font-weight: var(--mobile-resume-description-text-weight);
   line-height: var(--mobile-resume-description-line-height);
 }
 
@@ -383,36 +359,50 @@
 }
 
 .educationList {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  column-gap: var(--mobile-education-column-gap);
-  row-gap: var(--mobile-education-row-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-education-list-gap);
   color: var(--color-muted);
-  font-size: var(--mobile-resume-description-text-size);
   font-weight: var(--mobile-body-text-weight);
   line-height: var(--mobile-body-line-height);
   letter-spacing: var(--mobile-body-letter-spacing);
 }
 
 .educationEntry {
-  display: contents;
-}
-
-.educationYear {
-  color: var(--color-primary);
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.educationDetails {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--mobile-education-entry-gap);
 }
 
-.educationDetails p {
+.educationTitle,
+.educationInstitution,
+.educationPeriod {
   margin: 0;
+}
+
+.educationTitle {
+  color: var(--color-primary);
+  font-size: var(--mobile-education-title-text-size);
+  font-weight: var(--mobile-education-title-text-weight);
+  line-height: var(--mobile-body-line-height);
+  letter-spacing: var(--mobile-body-letter-spacing);
+}
+
+.educationInstitution {
+  color: var(--color-muted);
+  font-size: var(--mobile-education-institution-text-size);
+  font-weight: var(--mobile-education-institution-text-weight);
+  line-height: var(--mobile-body-line-height);
+  letter-spacing: var(--mobile-body-letter-spacing);
+}
+
+.educationPeriod {
+  color: var(--color-muted);
+  font-size: var(--mobile-education-period-text-size);
+  font-weight: var(--mobile-education-period-text-weight);
+  line-height: var(--mobile-body-line-height);
+  letter-spacing: var(--mobile-body-letter-spacing);
 }
 
 .contactSection {
@@ -596,7 +586,15 @@
 
   .resumeRoleTitle {
     font-size: var(--desktop-resume-role-title-text-size);
-    margin-bottom: var(--desktop-resume-role-title-margin-bottom);
+    font-weight: var(--desktop-resume-role-title-text-weight);
+  }
+
+  .resumeEntryHeader {
+    gap: var(--desktop-resume-entry-header-gap);
+  }
+
+  .resumeEntryBody {
+    gap: var(--desktop-resume-entry-body-gap);
   }
 
   .mobileResumeList {
@@ -619,6 +617,12 @@
   .desktopResumeTimelineGroup {
     position: relative;
     overflow: visible;
+  }
+
+  .desktopResumeEntry {
+    display: flex;
+    flex-direction: column;
+    gap: var(--desktop-resume-entry-gap);
   }
 
   .desktopResumeTimelineGroup {
@@ -659,81 +663,32 @@
     background: var(--color-primary);
   }
 
-  .desktopResumeEntryTop {
-    display: grid;
-    grid-template-columns: var(--desktop-resume-entry-grid-columns);
-    gap: var(--desktop-resume-entry-column-gap);
-    align-items: start;
-    justify-content: start;
-  }
-
-  .desktopResumeMetaColumn {
-    display: flex;
-    flex-direction: column;
-    gap: var(--desktop-resume-meta-column-gap);
-  }
-
-  .desktopResumeMetaList {
-    display: flex;
-    flex-direction: column;
-    gap: var(--desktop-resume-meta-list-gap);
-    margin: 0;
-  }
-
-  .desktopResumeMetaRow {
-    display: grid;
-    grid-template-columns: var(--desktop-resume-meta-label-width) minmax(0, 1fr);
-    gap: var(--desktop-resume-meta-row-gap);
-  }
-
-  .desktopResumeMetaRow dt,
-  .desktopResumeMetaRow dd,
-  .desktopResumeResponsibilities p,
-  .desktopResumeResponsibilities ul,
-  .desktopResumeDescription span,
+  .resumeMetaText,
+  .desktopResumeResponsibilitiesInline,
   .desktopResumeDescription p {
     margin: 0;
   }
 
-  .desktopResumeMetaRow dt {
-    font-weight: 500;
+  .resumeMetaText {
+    color: var(--color-primary);
+    font-size: var(--desktop-resume-meta-text-size);
+    font-weight: var(--desktop-resume-meta-text-weight);
+    line-height: var(--desktop-body-line-height);
+    letter-spacing: var(--desktop-body-letter-spacing);
   }
 
-  .desktopResumeMetaRow dd {
-    min-width: 0;
-  }
-
-  .desktopResumeResponsibilities {
-    display: flex;
-    flex-direction: column;
-    gap: var(--desktop-resume-responsibilities-gap);
-  }
-
-  .desktopResumeResponsibilities p {
-    font-weight: 500;
-  }
-
-  .desktopResumeResponsibilities ul {
-    margin: 0;
-    padding-left: var(--desktop-resume-responsibilities-list-padding-left);
-    list-style-position: outside;
-    list-style-type: disc;
-  }
-
-  .desktopResumeResponsibilities li + li {
-    margin-top: var(--desktop-resume-responsibilities-list-item-gap);
-  }
-
-  .desktopResumeDescription {
-    display: grid;
-    grid-template-columns: var(--desktop-resume-meta-label-width) minmax(0, 1fr);
-    gap: var(--desktop-resume-description-column-gap);
-    margin-top: var(--desktop-resume-description-margin-top);
+  .desktopResumeResponsibilitiesInline {
+    color: var(--color-primary);
+    font-size: var(--desktop-resume-responsibilities-text-size);
+    font-weight: var(--desktop-resume-responsibilities-text-weight);
+    line-height: var(--desktop-body-line-height);
+    letter-spacing: var(--desktop-body-letter-spacing);
   }
 
   .desktopResumeDescription p {
     color: var(--color-muted);
     font-size: var(--desktop-resume-description-text-size);
+    font-weight: var(--desktop-resume-description-text-weight);
     line-height: var(--desktop-resume-description-line-height);
   }
 
@@ -742,10 +697,33 @@
   }
 
   .educationList {
-    column-gap: var(--desktop-education-column-gap);
-    row-gap: var(--desktop-education-row-gap);
-    font-size: var(--desktop-body-text-size);
+    gap: var(--desktop-education-list-gap);
     font-weight: var(--desktop-body-text-weight);
+    line-height: var(--desktop-body-line-height);
+    letter-spacing: var(--desktop-body-letter-spacing);
+  }
+
+  .educationEntry {
+    gap: var(--desktop-education-entry-gap);
+  }
+
+  .educationTitle {
+    font-size: var(--desktop-education-title-text-size);
+    font-weight: var(--desktop-education-title-text-weight);
+    line-height: var(--desktop-body-line-height);
+    letter-spacing: var(--desktop-body-letter-spacing);
+  }
+
+  .educationInstitution {
+    font-size: var(--desktop-education-institution-text-size);
+    font-weight: var(--desktop-education-institution-text-weight);
+    line-height: var(--desktop-body-line-height);
+    letter-spacing: var(--desktop-body-letter-spacing);
+  }
+
+  .educationPeriod {
+    font-size: var(--desktop-education-period-text-size);
+    font-weight: var(--desktop-education-period-text-weight);
     line-height: var(--desktop-body-line-height);
     letter-spacing: var(--desktop-body-letter-spacing);
   }
