@@ -2,6 +2,7 @@
 
 "use client";
 
+import { useRef, useState, type PointerEvent } from "react";
 import { Envelope, LinkedIn, Telephone } from "@/components/icons";
 import {
   CONTACT_EMAIL,
@@ -31,6 +32,68 @@ export default function MobileContactBottomSheet({
   isOpen,
   onClose,
 }: MobileContactBottomSheetProps) {
+  const [dragOffsetY, setDragOffsetY] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartYRef = useRef(0);
+  const dragOffsetYRef = useRef(0);
+  const isDraggingRef = useRef(false);
+
+  function resetDragState() {
+    isDraggingRef.current = false;
+    dragStartYRef.current = 0;
+    dragOffsetYRef.current = 0;
+    setIsDragging(false);
+    setDragOffsetY(0);
+  }
+
+  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    isDraggingRef.current = true;
+    dragStartYRef.current = event.clientY;
+    dragOffsetYRef.current = 0;
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    if (!isDraggingRef.current) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const nextDragOffsetY = Math.max(0, event.clientY - dragStartYRef.current);
+
+    dragOffsetYRef.current = nextDragOffsetY;
+    setDragOffsetY(nextDragOffsetY);
+  }
+
+  function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
+    if (!isDraggingRef.current) {
+      return;
+    }
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    const shouldClose =
+      dragOffsetYRef.current >= mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_CLOSE_THRESHOLD_PX;
+
+    resetDragState();
+
+    if (shouldClose) {
+      onClose();
+    }
+  }
+
+  function handlePointerCancel(event: PointerEvent<HTMLDivElement>) {
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    resetDragState();
+  }
+
   if (!isOpen) {
     return null;
   }
@@ -56,16 +119,28 @@ export default function MobileContactBottomSheet({
           backgroundColor: "var(--color-canvas)",
           boxShadow: "0 -12px 32px rgba(31, 27, 42, 0.12)",
           overflow: "hidden",
+          transform: `translateY(${dragOffsetY}px)`,
+          transition: isDragging
+            ? "none"
+            : `transform ${mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_TRANSITION_MS}ms ease`,
         }}
       >
         <div
           className={bottomSheetHandleWrapClass}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
           style={{
             marginTop: `${mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_TOP_PX}px`,
             marginBottom: `${mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_BOTTOM_PX}px`,
+            cursor: isDragging ? "grabbing" : "grab",
+            touchAction: "none",
+            userSelect: "none",
           }}
         >
           <span
+            aria-hidden="true"
             style={{
               width: `${mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_WIDTH_PX}px`,
               height: `${mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_HEIGHT_PX}px`,

@@ -432,7 +432,7 @@
 .contactLink {
   color: var(--color-link);
   font-size: var(--mobile-body-text-size);
-  font-weight: 500;
+  font-weight: var(--mobile-contact-link-text-weight);
   line-height: var(--mobile-body-line-height);
   letter-spacing: var(--mobile-body-letter-spacing);
 }
@@ -734,6 +734,7 @@
 
   .contactLink {
     font-size: var(--desktop-body-text-size);
+    font-weight: var(--desktop-contact-link-text-weight);
     line-height: var(--desktop-body-line-height);
     letter-spacing: var(--desktop-body-letter-spacing);
   }

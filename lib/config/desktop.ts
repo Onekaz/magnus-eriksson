@@ -69,6 +69,8 @@ export const DESKTOP_BODY_TEXT_WEIGHT = 400 as const;
 export const DESKTOP_BODY_LINE_HEIGHT = 1.7;
 export const DESKTOP_BODY_LETTER_SPACING_EM = -0.01;
 
+export const DESKTOP_CONTACT_LINK_TEXT_WEIGHT = 500 as const;
+
 export const DESKTOP_STANDARD_SECTION_GAP_PX = 28;
 
 export const DESKTOP_SKILLS_GRID_COLUMN_GAP_PX = 24;
