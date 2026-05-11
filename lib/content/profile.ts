@@ -28,8 +28,8 @@ export const profileDownloads = [
 ] as const;
 
 export const aboutParagraphs = [
-  "With a background in senior commercial roles within telecom and IT/IoT, I drive profitable growth by building scalable structures and leading cross-functional teams. My focus is consistently on translating strategic vision into measurable business outcomes, ensuring strong collaboration across sales, partnerships, and market priorities.",
-  "I bring a structured approach to change management and execution. I am at my best in dynamic environments where success depends on clear priorities, disciplined follow-through, and seamless alignment across the organization.",
+  "With a background in senior commercial roles within telecom and IT/IoT, I drive profitable growth by building scalable structures, strengthening commercial performance, and turning priorities into progress. My focus is consistently on translating strategic plans into measurable results, ensuring strong collaboration across sales, partnerships, and market execution.",
+  "I bring a structured and execution-oriented approach to change management and am at my best in dynamic environments where success depends on clear priorities, disciplined follow-through, and close collaboration across functions. I communicate effectively at all levels and foster engagement through involvement and clarity.",
 ] as const;
 
 export const skillGroups = [
