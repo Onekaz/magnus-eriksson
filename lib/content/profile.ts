@@ -21,9 +21,9 @@ export const profileDownloads = [
     ariaLabel: "Download personality test",
   },
   {
-    label: "Logic test",
-    href: "/downloads/magnus-eriksson-logic-test.pdf",
-    ariaLabel: "Download logic test",
+    label: "Logical reasoning test",
+    href: "/downloads/magnus-eriksson-logical-reasoning-test.pdf",
+    ariaLabel: "Download logical reasoning test",
   },
 ] as const;
 
@@ -104,19 +104,18 @@ export const resumeBlocks: readonly ResumeBlock[] = [
   {
     type: "entry",
     entry: {
-      role: "Contract Specialist",
+      role: "Contract Specialist (Consultant)",
       company: "IoT Open AB",
-      location: "Skellefteå (distance)",
+      location: "Skellefteå (Remote)",
       start: "Oct 2025",
       end: "Dec 2025",
       responsibilities: [
         "Contract Development",
-        "Legal Quality Assurance",
+        "Legal Document Preparation",
         "Stakeholder Alignment",
       ],
-      descriptionLead: "Project consultant:",
       description:
-        "Developed and structured a platform contract (SaaS), focused on professional packaging and preparing legal proposals to ensure clarity and relevance.",
+        "Developed and structured a SaaS platform contract, focusing on professional presentation and legal proposals to ensure clarity and relevance.",
     },
   },
   {
