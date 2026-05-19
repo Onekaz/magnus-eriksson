@@ -20,6 +20,17 @@ export default function EducationSection() {
             <h3 className={styles.educationTitle}>{entry.title}</h3>
             <p className={styles.educationInstitution}>{entry.institution}</p>
             <p className={styles.educationPeriod}>{entry.period}</p>
+
+            {entry.theses ? (
+              <div className={styles.educationThesisList}>
+                {entry.theses.map((thesis) => (
+                  <div key={`${entry.title}-${thesis.label}`} className={styles.educationThesisItem}>
+                    <p className={styles.educationThesisLabel}>{thesis.label}</p>
+                    <p className={styles.educationThesisTitle}>{thesis.title}</p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </article>
         ))}
       </div>

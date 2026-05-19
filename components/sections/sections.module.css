@@ -335,8 +335,8 @@
 
 .mobileResumeResponsibilitiesInline {
   color: var(--color-primary);
-  font-size: var(--mobile-resume-responsibilities-text-size);
-  font-weight: var(--mobile-resume-responsibilities-text-weight);
+  font-size: var(--mobile-resume-meta-text-size);
+  font-weight: var(--mobile-resume-meta-text-weight);
   line-height: var(--mobile-body-line-height);
   letter-spacing: var(--mobile-body-letter-spacing);
 }
@@ -358,6 +358,10 @@
   font-style: italic;
 }
 
+.resumeDescriptionLabel {
+  font-weight: var(--mobile-resume-description-label-text-weight);
+}
+
 .educationList {
   display: flex;
   flex-direction: column;
@@ -377,7 +381,9 @@
 
 .educationTitle,
 .educationInstitution,
-.educationPeriod {
+.educationPeriod,
+.educationThesisLabel,
+.educationThesisTitle {
   margin: 0;
 }
 
@@ -403,6 +409,34 @@
   font-weight: var(--mobile-education-period-text-weight);
   line-height: var(--mobile-body-line-height);
   letter-spacing: var(--mobile-body-letter-spacing);
+}
+
+.educationThesisList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-education-entry-gap);
+}
+
+.educationThesisItem {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.educationThesisLabel,
+.educationThesisTitle {
+  color: var(--color-muted);
+  font-weight: var(--mobile-education-institution-text-weight);
+  line-height: var(--mobile-body-line-height);
+  letter-spacing: var(--mobile-body-letter-spacing);
+}
+
+.educationThesisLabel {
+  font-size: var(--mobile-education-thesis-label-text-size);
+}
+
+.educationThesisTitle {
+  font-size: var(--mobile-education-thesis-text-size);
 }
 
 .contactSection {
@@ -679,8 +713,8 @@
 
   .desktopResumeResponsibilitiesInline {
     color: var(--color-primary);
-    font-size: var(--desktop-resume-responsibilities-text-size);
-    font-weight: var(--desktop-resume-responsibilities-text-weight);
+    font-size: var(--desktop-resume-meta-text-size);
+    font-weight: var(--desktop-resume-meta-text-weight);
     line-height: var(--desktop-body-line-height);
     letter-spacing: var(--desktop-body-letter-spacing);
   }
@@ -694,6 +728,10 @@
 
   .desktopResumeDescription em {
     font-style: italic;
+  }
+
+  .resumeDescriptionLabel {
+    font-weight: var(--desktop-resume-description-label-text-weight);
   }
 
   .educationList {
@@ -726,6 +764,25 @@
     font-weight: var(--desktop-education-period-text-weight);
     line-height: var(--desktop-body-line-height);
     letter-spacing: var(--desktop-body-letter-spacing);
+  }
+
+  .educationThesisList {
+    gap: var(--desktop-education-entry-gap);
+  }
+
+  .educationThesisLabel,
+  .educationThesisTitle {
+    font-weight: var(--desktop-education-institution-text-weight);
+    line-height: var(--desktop-body-line-height);
+    letter-spacing: var(--desktop-body-letter-spacing);
+  }
+
+  .educationThesisLabel {
+    font-size: var(--desktop-education-thesis-label-text-size);
+  }
+
+  .educationThesisTitle {
+    font-size: var(--desktop-education-thesis-text-size);
   }
 
   .contactSection {

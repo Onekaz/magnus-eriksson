@@ -110,7 +110,7 @@ export default function MobileTopOverlay() {
 
           <span
             style={{
-              color: "var(--color-dark-muted)",
+              color: "var(--color-muted)",
               fontSize: MOBILE_TOP_OVERLAY_SUBTITLE_TEXT_SIZE_PX,
               fontWeight: MOBILE_TOP_OVERLAY_SUBTITLE_TEXT_WEIGHT,
               lineHeight: MOBILE_TOP_OVERLAY_SUBTITLE_LINE_HEIGHT,

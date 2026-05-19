@@ -28,8 +28,8 @@ export const profileDownloads = [
 ] as const;
 
 export const aboutParagraphs = [
-  "With a background in senior commercial roles within telecom and IT/IoT, I drive profitable growth by building scalable structures, turning priorities into progress, and strengthening commercial performance. My focus is consistently on translating strategic plans into measurable results, ensuring strong collaboration across sales, partnerships, and market execution.",
-  "I bring a structured and execution-oriented approach to change management and am at my best in dynamic environments where success depends on clear priorities, disciplined follow-through, and close collaboration across functions. I communicate effectively at all levels and foster engagement through involvement and clarity.",
+ "With a background in senior commercial roles within telecom and IT/IoT, I drive profitable growth by building scalable structures, translating priorities into action, and strengthening commercial performance. My focus is consistently on turning strategic plans into measurable results, ensuring strong alignment across sales, partnerships, and market initiatives.",
+"I bring a structured and execution-oriented approach to change management and am at my best in dynamic environments where success depends on clear priorities, disciplined follow-through, and close collaboration across functions. I communicate effectively at all levels and create engagement through clarity, involvement, and shared ownership.",
 ] as const;
 
 export const skillGroups = [
@@ -87,6 +87,7 @@ export type ResumeEntry = {
   responsibilities: readonly string[];
   description: string;
   descriptionLead?: string;
+  achievementLabel?: string;
   showTimelineMarker?: boolean;
 };
 
@@ -114,8 +115,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         "Legal Document Preparation",
         "Stakeholder Alignment",
       ],
+      achievementLabel: "Achievements:",
       description:
-        "Developed and structured a SaaS platform contract, focusing on professional presentation and legal proposals to ensure clarity and relevance.",
+        "Developed a SaaS platform contract framework, creating the structure and legal proposal format for the company’s SaaS offering.",
     },
   },
   {
@@ -132,8 +134,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
           "Commercial Operating Plan",
           "Investor Relations",
         ],
+        achievementLabel: "Achievements:",
         description:
-          "Mandate expanded to include the development of the sales strategy, ownership of revenue budgeting, and senior management formation with the CEO.",
+          "Created a commercial action plan covering target markets, sales priorities, KPI follow-up and CRM structure, supporting a more results-driven sales organization.",
         showTimelineMarker: true,
       },
       {
@@ -147,8 +150,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
           "Governance and Regulation",
           "Investor Relations",
         ],
+        achievementLabel: "Achievements:",
         description:
-          "Mandate expanded to include regulatory communication, including general meetings, and close collaboration with the CEO and the board on capitalization matters.",
+          "Structured regulatory communication and governance matters, ensuring alignment of legal documentation in capitalization initiatives.",
       },
       {
         role: "Chief Marketing Officer (CMO)",
@@ -161,8 +165,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
           "Marketing Performance",
           "Corporate Legal Matters",
         ],
+        achievementLabel: "Achievements:",
         description:
-          "Established consistent marketing communications, monitored performance metrics, strengthened brand management, and developed a new visual identity and logo.",
+          "Established consistent marketing communications, strengthened brand management, monitored performance metrics, and developed a new visual identity and logo.",
         showTimelineMarker: true,
       },
     ],
@@ -177,8 +182,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         start: "Mar 2019",
         end: "May 2023",
         responsibilities: ["Revenue Growth", "Pricing Strategy", "Contract Development"],
+        achievementLabel: "Achievements:",
         description:
-          "Increased ARPU by 19% via pricing strategy and product diversification. Developed and negotiated a business agreement proposed by service providers as industry standard.",
+          "Increased ARPU by 19% via pricing strategy and product diversification. Developed and negotiated a business agreement proposed by Service Providers as industry standard.",
         showTimelineMarker: true,
       },
       {
@@ -192,8 +198,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
           "GDPR Compliance",
           "Internal Advisory",
         ],
+        achievementLabel: "Achievements:",
         description:
-          "Ensured GDPR compliance across all personal data within the business area, and served as primary internal contact for GDPR matters.",
+          "Established GDPR governance across the business area and served as primary internal contact for data protection matters.",
       },
       {
         role: "KAM, Business Developer",
@@ -206,8 +213,9 @@ export const resumeBlocks: readonly ResumeBlock[] = [
           "Contract Management",
           "Business and Product Development",
         ],
+        achievementLabel: "Achievements:",
         description:
-          "Strengthened service provider partnerships, increased platform activity, and drove cross-functional alignment through a team I initiated and led.",
+          "Strengthened Service Provider partnerships, increased platform activity, and drove cross-functional alignment through a team I initiated and led.",
         showTimelineMarker: true,
       },
     ],
@@ -225,17 +233,40 @@ export const resumeBlocks: readonly ResumeBlock[] = [
         "Financial and Business Modelling",
         "Commercial Agreements",
       ],
+      achievementLabel: "Achievements:",
       description:
-        "Led and supported projects by shaping business strategies, developing financial models and investment cases, and drafting and negotiating commercial agreements.",
+        "Shaped business strategies, developed financial models and investment cases, and drafted and negotiated commercial agreements.",
     },
   },
 ] as const;
 
-export const educationEntries = [
+export type EducationThesis = {
+  label: string;
+  title: string;
+};
+
+export type EducationEntry = {
+  title: string;
+  institution: string;
+  period: string;
+  theses?: readonly EducationThesis[];
+};
+
+export const educationEntries: readonly EducationEntry[] = [
   {
     title: "Business Administration, Master’s level",
     institution: "Stockholm University, Stockholm",
     period: "2000–2007",
+    theses: [
+      {
+        label: "Bachelor’s Thesis:",
+        title: "Employee Satisfaction in Relation to Organizational Communication",
+      },
+      {
+        label: "Master’s Thesis:",
+        title: "Balanced Scorecard in Municipal Operations in Theory and Practice",
+      },
+    ],
   },
   {
     title: "Rules and Regulations at First North",

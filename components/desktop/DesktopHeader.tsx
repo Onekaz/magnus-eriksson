@@ -158,7 +158,7 @@ export default function DesktopHeader() {
 
           <span
             style={{
-              color: "var(--color-dark-muted)",
+              color: "var(--color-muted)",
               fontSize: DESKTOP_HEADER_SUBTITLE_TEXT_SIZE_PX,
               fontWeight: DESKTOP_HEADER_SUBTITLE_TEXT_WEIGHT,
               lineHeight: DESKTOP_HEADER_SUBTITLE_LINE_HEIGHT,

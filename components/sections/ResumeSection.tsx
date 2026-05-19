@@ -12,6 +12,10 @@ function ResumeDescription({ entry, variant }: { entry: ResumeEntry; variant: "d
       <p>
         {entry.descriptionLead ? <em>{entry.descriptionLead}</em> : null}
         {entry.descriptionLead ? " " : null}
+        {entry.achievementLabel ? (
+          <span className={styles.resumeDescriptionLabel}>{entry.achievementLabel}</span>
+        ) : null}
+        {entry.achievementLabel ? " " : null}
         {entry.description}
       </p>
     </div>
