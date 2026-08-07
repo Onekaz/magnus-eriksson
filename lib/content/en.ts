@@ -36,8 +36,8 @@ export const englishContent = {
     heading: "About",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-"With a background in senior commercial roles within telecom and IT/IoT, I have driven profitable growth by building scalable structures, translating strategic priorities into measurable business outcomes, and leading cross-functional execution. My focus has consistently been on creating clear priorities, defining ownership, and fostering strong alignment across sales, partnerships, marketing and key stakeholders.",
-"I bring a structured, commercially driven and hands-on approach to change and execution, and I am at my best in complex, fast-moving environments where performance depends on decision discipline, close collaboration, and consistent follow-through. I communicate effectively at all levels and create engagement through clarity and involvement.",
+"With a background in senior commercial roles within telecom and IT/IoT, I have driven profitable growth by building scalable structures and leading cross-functional execution. My focus has always been on translating strategic priorities into measurable business outcomes, ensuring strong alignment across key stakeholders, sales, and market initiatives.",
+"I bring a structured, commercially driven approach to change and execution, and I am at my best in dynamic environments where growth depends on clear priorities, disciplined follow-through, and strong alignment across functions. I communicate effectively at all levels and create engagement through clarity and involvement.",
     ],
     downloads: [
       {
@@ -199,52 +199,53 @@ export const englishContent = {
     ],
   },
   skills: {
-    heading: "Skills",
-    groups: [
-      {
-        title: "Organization and Leadership",
-        skills: [
-          "Modern Management Concepts",
-          "Organizational Development",
-          "Change Management",
-          "Governance and Accountability",
-          "Stakeholder Management",
-          "Cross-Functional Alignment",
-        ],
-      },
-      {
-        title: "Business Development and Sales",
-        skills: [
-          "Revenue Growth",
-          "Commercial Strategy",
-          "Go-To-Market Execution",
-          "Business Development",
-          "Pricing and Profitability",
-          "Commercial Agreements",
-        ],
-      },
-      {
-        title: "Marketing and Communication",
-        skills: [
-          "Marketing Strategy",
-          "Brand Positioning",
-          "Corporate Communication",
-          "Pipeline Generation",
-          "Performance Management",
-        ],
-      },
-      {
-        title: "Web, Content and AI Support",
-        skills: [
-          "Web Structure",
-          "Content Strategy",
-          "Messaging and Copywriting",
-          "Visual Presentation",
-          "AI Optimization",
-          "AI-assisted Prototyping",
-        ],
-      },
+heading: "Skills",
+groups: [
+  {
+    title: "Organization and Leadership",
+    skills: [
+      "Modern Management Concepts",
+      "Organizational Development",
+      "Change Management",
+      "Governance and Accountability",
+      "Stakeholder Management",
+      "Cross-Functional Alignment",
     ],
+  },
+  {
+    title: "Business Development and Sales",
+    skills: [
+      "Sales Leadership",
+      "Commercial Strategy",
+      "Revenue Growth",
+      "Business Development",
+      "Data-driven Analysis",
+      "Pricing and Profitability",
+      "Commercial Agreements",
+    ],
+  },
+  {
+    title: "Marketing and Communication",
+    skills: [
+      "Marketing Strategy",
+      "Brand Positioning",
+      "Corporate Communication",
+      "Go-To-Market Execution",
+      "Pipeline Generation",
+    ],
+  },
+  {
+    title: "Web, Content and AI Support",
+    skills: [
+      "Web Structure",
+      "Content Strategy",
+      "Messaging and Copywriting",
+      "Visual Presentation",
+      "AI Optimization",
+      "AI-assisted Prototyping",
+    ],
+  },
+],
   },
   education: {
     heading: "Education",

@@ -36,8 +36,8 @@ export const swedishContent = {
     heading: "Om mig",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att utveckla skalbara strukturer, omsätta strategiska prioriteringar i mätbara affärsresultat och driva tvärfunktionella initiativ. Mitt fokus har konsekvent legat på att konkretisera prioriteringar, tydliggöra ansvar och säkerställa samsyn mellan försäljning, partners, marknad och andra nyckelintressenter.",
-      "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag trivs i dynamiska miljöer där kommersiella utmaningar behöver omsättas i beslut, prioriteringar och aktiviteter, och presterar bäst när jag får kombinera analys med ett starkt genomförandefokus. Jag kommunicerar effektivt på alla nivåer och skapar engagemang genom tydlighet och delaktighet.",
+      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit lönsam tillväxt genom att bygga skalbara strukturer och driva tvärfunktionella initiativ från plan till genomförande. Mitt fokus har konsekvent varit att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan nyckelintressenter, försäljning och marknadsinitiativ.",
+      "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag trivs i dynamiska miljöer där tillväxt kräver tydliga prioriteringar, konsekvent genomförande och nära samarbete mellan olika funktioner. Jag kommunicerar effektivt på alla nivåer och skapar engagemang genom tydlighet och delaktighet.",
     ],
     downloads: [
       {
@@ -199,52 +199,53 @@ export const swedishContent = {
     ],
   },
   skills: {
-    heading: "Kompetenser",
-    groups: [
-      {
-        title: "Organisation och ledarskap",
-        skills: [
-          "Moderna ledarskapskoncept",
-          "Organisationsutveckling",
-          "Förändringsledning",
-          "Styrning och ansvar",
-          "Intressenthantering",
-          "Tvärfunktionell samordning",
-        ],
-      },
-      {
-        title: "Affärsutveckling och försäljning",
-        skills: [
-          "Intäktstillväxt",
-          "Kommersiell strategi",
-          "Go-To-Market-genomförande",
-          "Affärsutveckling",
-          "Prissättning och lönsamhet",
-          "Kommersiella avtal",
-        ],
-      },
-      {
-        title: "Marknadsföring och kommunikation",
-        skills: [
-          "Marknadsstrategi",
-          "Varumärkespositionering",
-          "Företagskommunikation",
-          "Pipelinegenerering",
-          "Resultatstyrning",
-        ],
-      },
-      {
-        title: "Webb, innehåll och AI-stöd",
-        skills: [
-          "Webbstruktur",
-          "Innehållsstrategi",
-          "Budskap och copywriting",
-          "Visuell presentation",
-          "AI-optimering",
-          "AI-assisterad prototypframtagning",
-        ],
-      },
+heading: "Kompetenser",
+groups: [
+  {
+    title: "Organisation och ledarskap",
+    skills: [
+      "Moderna managementkoncept",
+      "Organisationsutveckling",
+      "Förändringsledning",
+      "Styrning och ansvar",
+      "Intressenthantering",
+      "Tvärfunktionell samordning",
     ],
+  },
+  {
+    title: "Affärsutveckling och försäljning",
+    skills: [
+      "Försäljningsledning",
+      "Kommersiell strategi",
+      "Intäkts- och lönsamhetstillväxt",
+      "Affärsutveckling",
+      "Datadriven analys",
+      "Prissättning och lönsamhet",
+      "Kommersiella avtal",
+    ],
+  },
+  {
+    title: "Marknad och kommunikation",
+    skills: [
+      "Marknadsstrategi",
+      "Varumärkespositionering",
+      "Företagskommunikation",
+      "Go-To-Market",
+      "Pipelinegenerering",
+    ],
+  },
+  {
+    title: "Webb, innehåll och AI-stöd",
+    skills: [
+      "Webbstruktur",
+      "Innehållsstrategi",
+      "Budskap och copywriting",
+      "Visuell presentation",
+      "AI-optimering",
+      "AI-assisterad prototypframtagning",
+    ],
+  },
+],
   },
   education: {
     heading: "Utbildning",
