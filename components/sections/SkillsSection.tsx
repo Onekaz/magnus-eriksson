@@ -1,9 +1,13 @@
 // components/sections/SkillsSection.tsx
 
-import { skillGroups } from "@/lib/content/profile";
+import type { SiteContent } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
-export default function SkillsSection() {
+type SkillsSectionProps = {
+  content: SiteContent;
+};
+
+export default function SkillsSection({ content }: SkillsSectionProps) {
   return (
     <section
       id="skills"
@@ -11,11 +15,11 @@ export default function SkillsSection() {
       className={`${styles.pageSection} ${styles.standardSection}`}
     >
       <h2 id="skills-heading" className={styles.sectionHeading}>
-        Skills
+        {content.skills.heading}
       </h2>
 
       <div className={styles.skillsGrid}>
-        {skillGroups.map((group) => (
+        {content.skills.groups.map((group) => (
           <article key={group.title} className={styles.skillsCard}>
             <h3 className={styles.skillsCardTitle}>{group.title}</h3>
 

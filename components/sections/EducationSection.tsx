@@ -1,9 +1,13 @@
 // components/sections/EducationSection.tsx
 
-import { educationEntries } from "@/lib/content/profile";
+import type { SiteContent } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
-export default function EducationSection() {
+type EducationSectionProps = {
+  content: SiteContent;
+};
+
+export default function EducationSection({ content }: EducationSectionProps) {
   return (
     <section
       id="education"
@@ -11,11 +15,11 @@ export default function EducationSection() {
       className={`${styles.pageSection} ${styles.standardSection}`}
     >
       <h2 id="education-heading" className={styles.sectionHeading}>
-        Education
+        {content.education.heading}
       </h2>
 
       <div className={styles.educationList}>
-        {educationEntries.map((entry) => (
+        {content.education.entries.map((entry) => (
           <article key={`${entry.title}-${entry.period}`} className={styles.educationEntry}>
             <h3 className={styles.educationTitle}>{entry.title}</h3>
             <p className={styles.educationInstitution}>{entry.institution}</p>

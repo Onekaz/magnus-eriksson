@@ -1,17 +1,18 @@
 // lib/content/navigation.ts
 
-export const desktopNavigationItems = [
-  { targetId: "about", label: "About" },
-  { targetId: "resume", label: "Resume" },
-  { targetId: "skills", label: "Skills" },
-  { targetId: "education", label: "Education" },
-  { targetId: "contact", label: "Contact" },
-] as const;
+import type { NavigationTargetId } from "@/lib/content/profile";
 
-export const mobileNavigationItems = [
-  { targetId: "about", label: "About", icon: "profile" },
-  { targetId: "resume", label: "Resume", icon: "list" },
-  { targetId: "skills", label: "Skills", icon: "lightbulb" },
-  { targetId: "education", label: "Education", icon: "graduation" },
-  { action: "contactSheet", label: "Contact", icon: "envelope" },
+export const DESKTOP_NAVIGATION_TARGET_IDS: readonly NavigationTargetId[] = [
+  "about",
+  "resume",
+  "skills",
+  "education",
+  "contact",
+];
+
+export const MOBILE_NAVIGATION_TARGET_IDS = [
+  "about",
+  "resume",
+  "skills",
+  "education",
 ] as const;

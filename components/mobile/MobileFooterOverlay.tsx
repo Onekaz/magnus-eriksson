@@ -5,7 +5,6 @@
 import { useEffect, useRef, useState, type ComponentType, type CSSProperties } from "react";
 import { Envelope, Graduation, Lightbulb, List, Profile } from "@/components/icons";
 import MobileContactBottomSheet from "@/components/mobile/bottom-sheet/MobileContactBottomSheet";
-import { mobileNavigationItems } from "@/lib/content/navigation";
 import {
   MOBILE_BOTTOM_NAV_HEIGHT_PX,
   MOBILE_BOTTOM_NAV_ICON_SIZE_PX,
@@ -21,8 +20,12 @@ import {
   MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX,
   MOBILE_SECTION_SCROLL_MARGIN_TOP_PX,
 } from "@/lib/config/mobile";
+import { MOBILE_NAVIGATION_TARGET_IDS } from "@/lib/content/navigation";
+import type { MobileNavigationIcon, SiteContent } from "@/lib/content/profile";
 
-type MobileNavigationIcon = "profile" | "list" | "lightbulb" | "graduation" | "envelope";
+type MobileFooterOverlayProps = {
+  content: SiteContent;
+};
 
 const SCROLL_ACTIVATION_TOLERANCE_PX = 1;
 
@@ -66,12 +69,8 @@ function getActiveTargetId() {
   let activeTargetId = "about";
   const currentScrollTop = getCurrentScrollTop();
 
-  mobileNavigationItems.forEach((item) => {
-    if (!("targetId" in item)) {
-      return;
-    }
-
-    const sectionElement = document.getElementById(item.targetId);
+  MOBILE_NAVIGATION_TARGET_IDS.forEach((targetId) => {
+    const sectionElement = document.getElementById(targetId);
 
     if (!sectionElement) {
       return;
@@ -80,14 +79,14 @@ function getActiveTargetId() {
     const sectionTop = getClampedSectionTop(sectionElement);
 
     if (currentScrollTop >= sectionTop - SCROLL_ACTIVATION_TOLERANCE_PX) {
-      activeTargetId = item.targetId;
+      activeTargetId = targetId;
     }
   });
 
   return activeTargetId;
 }
 
-export default function MobileFooterOverlay() {
+export default function MobileFooterOverlay({ content }: MobileFooterOverlayProps) {
   const [isTransparent, setIsTransparent] = useState(false);
   const [activeTargetId, setActiveTargetId] = useState("about");
   const [isContactSheetOpen, setIsContactSheetOpen] = useState(false);
@@ -143,7 +142,7 @@ export default function MobileFooterOverlay() {
         }}
       >
         <nav
-          aria-label="Mobile navigation"
+          aria-label={content.navigation.mobileAriaLabel}
           style={{
             display: "flex",
             height: MOBILE_BOTTOM_NAV_HEIGHT_PX,
@@ -155,7 +154,7 @@ export default function MobileFooterOverlay() {
             paddingLeft: MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
           }}
         >
-          {mobileNavigationItems.map((item) => {
+          {content.navigation.mobileItems.map((item) => {
             const isSectionLink = "targetId" in item;
             const isActive = isSectionLink ? activeTargetId === item.targetId : false;
             const Icon = iconComponents[item.icon];
@@ -230,6 +229,7 @@ export default function MobileFooterOverlay() {
       <MobileContactBottomSheet
         isOpen={isContactSheetOpen}
         onClose={() => setIsContactSheetOpen(false)}
+        content={content}
       />
     </>
   );

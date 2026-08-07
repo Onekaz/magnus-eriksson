@@ -3,12 +3,17 @@
 "use client";
 
 import { useEffect, useState, type CSSProperties } from "react";
-import { desktopNavigationItems } from "@/lib/content/navigation";
 import {
   DESKTOP_HEADER_BRAND_STACK_GAP_PX,
   DESKTOP_HEADER_HEIGHT_PX,
+  DESKTOP_HEADER_LANGUAGE_FLAG_BORDER_WIDTH_PX,
+  DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX,
+  DESKTOP_HEADER_LANGUAGE_FLAGS_GAP_PX,
+  DESKTOP_HEADER_LANGUAGE_FLAG_OFFSET_X_PX,
+  DESKTOP_HEADER_LANGUAGE_FLAG_OFFSET_Y_PX,
   DESKTOP_HEADER_NAV_GAP_PX,
   DESKTOP_HEADER_NAV_OFFSET_X_PX,
+  DESKTOP_HEADER_NAV_OFFSET_Y_PX,
   DESKTOP_HEADER_NAV_TEXT_SIZE_PX,
   DESKTOP_HEADER_NAV_TEXT_WEIGHT,
   DESKTOP_HEADER_NAV_UNDERLINE_HEIGHT_PX,
@@ -16,19 +21,35 @@ import {
   DESKTOP_HEADER_NAV_UNDERLINE_RADIUS_PX,
   DESKTOP_HEADER_NAV_UNDERLINE_WIDTH_PX,
   DESKTOP_HEADER_SUBTITLE_LINE_HEIGHT,
+  DESKTOP_HEADER_SUBTITLE_OFFSET_X_PX,
+  DESKTOP_HEADER_SUBTITLE_OFFSET_Y_PX,
   DESKTOP_HEADER_SUBTITLE_TEXT_SIZE_PX,
   DESKTOP_HEADER_SUBTITLE_TEXT_WEIGHT,
   DESKTOP_HEADER_WORDMARK_LINE_HEIGHT,
+  DESKTOP_HEADER_WORDMARK_OFFSET_X_PX,
+  DESKTOP_HEADER_WORDMARK_OFFSET_Y_PX,
   DESKTOP_HEADER_WORDMARK_TEXT_SIZE_PX,
   DESKTOP_HEADER_WORDMARK_TEXT_WEIGHT,
   DESKTOP_PAGE_HORIZONTAL_PADDING_PX,
   DESKTOP_PAGE_MAX_WIDTH_PX,
   DESKTOP_SECTION_SCROLL_MARGIN_TOP_PX,
 } from "@/lib/config/desktop";
+import { DESKTOP_NAVIGATION_TARGET_IDS } from "@/lib/content/navigation";
+import { LANGUAGE_OPTIONS } from "@/lib/data/languages";
+import type {
+  NavigationTargetId,
+  SiteContent,
+  SiteLanguage,
+} from "@/lib/content/profile";
 import styles from "./DesktopHeader.module.css";
 
 type HeaderVariables = CSSProperties & Record<`--${string}`, string>;
-type DesktopTargetId = (typeof desktopNavigationItems)[number]["targetId"];
+
+type DesktopHeaderProps = {
+  language: SiteLanguage;
+  content: SiteContent;
+  onToggleLanguage: () => void;
+};
 
 const SCROLL_ACTIVATION_TOLERANCE_PX = 1;
 
@@ -39,7 +60,7 @@ const navUnderlineVariables: HeaderVariables = {
   "--desktop-header-nav-underline-radius": `${DESKTOP_HEADER_NAV_UNDERLINE_RADIUS_PX}px`,
 };
 
-function scrollToSection(targetId: DesktopTargetId) {
+function scrollToSection(targetId: NavigationTargetId) {
   document.getElementById(targetId)?.scrollIntoView({
     behavior: "smooth",
     block: "start",
@@ -68,11 +89,11 @@ function getClampedSectionTop(sectionElement: HTMLElement) {
 }
 
 function getActiveTargetId() {
-  let activeTargetId: DesktopTargetId = desktopNavigationItems[0]?.targetId ?? "about";
+  let activeTargetId: NavigationTargetId = "about";
   const currentScrollTop = getCurrentScrollTop();
 
-  desktopNavigationItems.forEach((item) => {
-    const sectionElement = document.getElementById(item.targetId);
+  DESKTOP_NAVIGATION_TARGET_IDS.forEach((targetId) => {
+    const sectionElement = document.getElementById(targetId);
 
     if (!sectionElement) {
       return;
@@ -81,15 +102,23 @@ function getActiveTargetId() {
     const sectionTop = getClampedSectionTop(sectionElement);
 
     if (currentScrollTop >= sectionTop - SCROLL_ACTIVATION_TOLERANCE_PX) {
-      activeTargetId = item.targetId;
+      activeTargetId = targetId;
     }
   });
 
   return activeTargetId;
 }
 
-export default function DesktopHeader() {
-  const [activeTargetId, setActiveTargetId] = useState<DesktopTargetId>("about");
+export default function DesktopHeader({
+  language,
+  content,
+  onToggleLanguage,
+}: DesktopHeaderProps) {
+  const [activeTargetId, setActiveTargetId] = useState<NavigationTargetId>("about");
+  const englishLanguageOption =
+    LANGUAGE_OPTIONS.find((option) => option.value === "English") ?? null;
+  const swedishLanguageOption =
+    LANGUAGE_OPTIONS.find((option) => option.value === "Swedish") ?? null;
 
   useEffect(() => {
     setActiveTargetId(getActiveTargetId());
@@ -131,12 +160,7 @@ export default function DesktopHeader() {
           paddingLeft: DESKTOP_PAGE_HORIZONTAL_PADDING_PX,
         }}
       >
-        <button
-          type="button"
-          onClick={() => {
-            setActiveTargetId("about");
-            scrollToSection("about");
-          }}
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -151,9 +175,10 @@ export default function DesktopHeader() {
               fontWeight: DESKTOP_HEADER_WORDMARK_TEXT_WEIGHT,
               lineHeight: DESKTOP_HEADER_WORDMARK_LINE_HEIGHT,
               letterSpacing: "-0.02em",
+              transform: `translate(${DESKTOP_HEADER_WORDMARK_OFFSET_X_PX}px, ${DESKTOP_HEADER_WORDMARK_OFFSET_Y_PX}px)`,
             }}
           >
-            Magnus Eriksson
+            {content.header.name}
           </span>
 
           <span
@@ -163,44 +188,135 @@ export default function DesktopHeader() {
               fontWeight: DESKTOP_HEADER_SUBTITLE_TEXT_WEIGHT,
               lineHeight: DESKTOP_HEADER_SUBTITLE_LINE_HEIGHT,
               letterSpacing: "-0.01em",
+              transform: `translate(${DESKTOP_HEADER_SUBTITLE_OFFSET_X_PX}px, ${DESKTOP_HEADER_SUBTITLE_OFFSET_Y_PX}px)`,
             }}
           >
-            Action-oriented&nbsp;&nbsp;|&nbsp;&nbsp;Pragmatic&nbsp;&nbsp;|&nbsp;&nbsp;Structured&nbsp;&nbsp;|&nbsp;&nbsp;Communicative&nbsp;&nbsp;|&nbsp;&nbsp;Change-oriented
+            {content.header.desktopSubtitle}
           </span>
-        </button>
+        </div>
 
         <nav
-          aria-label="Primary navigation"
+          aria-label={content.navigation.desktopAriaLabel}
           style={{
             ...navUnderlineVariables,
             display: "flex",
             alignItems: "center",
             gap: DESKTOP_HEADER_NAV_GAP_PX,
-            transform: `translateX(${DESKTOP_HEADER_NAV_OFFSET_X_PX}px)`,
+            transform: `translate(${DESKTOP_HEADER_NAV_OFFSET_X_PX}px, ${DESKTOP_HEADER_NAV_OFFSET_Y_PX}px)`,
           }}
         >
-          {desktopNavigationItems.map((item) => {
+          {content.navigation.desktopItems.map((item) => {
             const isActive = activeTargetId === item.targetId;
 
             return (
-              <button
+              <div
                 key={item.targetId}
-                type="button"
-                onClick={() => {
-                  setActiveTargetId(item.targetId);
-                  scrollToSection(item.targetId);
-                }}
-                aria-current={isActive ? "page" : undefined}
-                className={`${styles.navButton} ${isActive ? styles.navButtonActive : ""}`}
                 style={{
-                  color: "var(--color-primary)",
-                  fontSize: DESKTOP_HEADER_NAV_TEXT_SIZE_PX,
-                  fontWeight: DESKTOP_HEADER_NAV_TEXT_WEIGHT,
-                  lineHeight: 1,
+                  position: "relative",
+                  display: "inline-flex",
                 }}
               >
-                {item.label}
-              </button>
+                {item.targetId === "contact" ? (
+                  <div
+                    style={{
+                      position: "absolute",
+                      right: 0,
+                      bottom: "100%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      gap: DESKTOP_HEADER_LANGUAGE_FLAGS_GAP_PX,
+                      transform: `translate(${DESKTOP_HEADER_LANGUAGE_FLAG_OFFSET_X_PX}px, ${DESKTOP_HEADER_LANGUAGE_FLAG_OFFSET_Y_PX}px)`,
+                    }}
+                  >
+                    {swedishLanguageOption?.flagUrl ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (language !== "sv") {
+                            onToggleLanguage();
+                          }
+                        }}
+                        aria-label={content.header.swedishLanguageLabel}
+                        title={content.header.swedishLanguageLabel}
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          border: "none",
+                          background: "transparent",
+                          padding: 0,
+                        }}
+                      >
+                        <img
+                          src={swedishLanguageOption.flagUrl}
+                          alt={content.header.swedishLanguageLabel}
+                          style={{
+                            height: DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX,
+                            maxWidth: "none",
+                            display: "block",
+                            flexShrink: 0,
+                            boxSizing: "content-box",
+                            border: `${DESKTOP_HEADER_LANGUAGE_FLAG_BORDER_WIDTH_PX}px solid var(--color-border)`,
+                          }}
+                        />
+                      </button>
+                    ) : null}
+
+                    {englishLanguageOption?.flagUrl ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (language !== "en") {
+                            onToggleLanguage();
+                          }
+                        }}
+                        aria-label={content.header.englishLanguageLabel}
+                        title={content.header.englishLanguageLabel}
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          border: "none",
+                          background: "transparent",
+                          padding: 0,
+                        }}
+                      >
+                        <img
+                          src={englishLanguageOption.flagUrl}
+                          alt={content.header.englishLanguageLabel}
+                          style={{
+                            height: DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX,
+                            maxWidth: "none",
+                            display: "block",
+                            flexShrink: 0,
+                            boxSizing: "content-box",
+                            border: `${DESKTOP_HEADER_LANGUAGE_FLAG_BORDER_WIDTH_PX}px solid var(--color-border)`,
+                          }}
+                        />
+                      </button>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTargetId(item.targetId);
+                    scrollToSection(item.targetId);
+                  }}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`${styles.navButton} ${isActive ? styles.navButtonActive : ""}`}
+                  style={{
+                    color: "var(--color-primary)",
+                    fontSize: DESKTOP_HEADER_NAV_TEXT_SIZE_PX,
+                    fontWeight: DESKTOP_HEADER_NAV_TEXT_WEIGHT,
+                    lineHeight: 1,
+                  }}
+                >
+                  {item.label}
+                </button>
+              </div>
             );
           })}
         </nav>

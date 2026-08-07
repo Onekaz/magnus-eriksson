@@ -2,16 +2,18 @@
 
 import { Envelope, LinkedIn, Telephone } from "@/components/icons";
 import {
-  CONTACT_EMAIL,
-  CONTACT_LINKEDIN_DISPLAY,
   CONTACT_LINKEDIN_HREF,
   CONTACT_MAILTO_HREF,
-  CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_HREF,
+  type SiteContent,
 } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
-export default function ContactSection() {
+type ContactSectionProps = {
+  content: SiteContent;
+};
+
+export default function ContactSection({ content }: ContactSectionProps) {
   return (
     <section
       id="contact"
@@ -19,7 +21,7 @@ export default function ContactSection() {
       className={`${styles.pageSection} ${styles.standardSection} ${styles.contactSection}`}
     >
       <h2 id="contact-heading" className={styles.sectionHeading}>
-        Contact
+        {content.contact.heading}
       </h2>
 
       <div className={styles.contactDetails}>
@@ -28,7 +30,7 @@ export default function ContactSection() {
             <Envelope />
           </span>
           <a href={CONTACT_MAILTO_HREF} className={styles.contactLink}>
-            {CONTACT_EMAIL}
+            {content.contact.emailDisplay}
           </a>
         </div>
 
@@ -37,7 +39,7 @@ export default function ContactSection() {
             <Telephone />
           </span>
           <a href={CONTACT_PHONE_HREF} className={styles.contactLink}>
-            {CONTACT_PHONE_DISPLAY}
+            {content.contact.phoneDisplay}
           </a>
         </div>
 
@@ -51,7 +53,7 @@ export default function ContactSection() {
             rel="noreferrer"
             className={styles.contactLink}
           >
-            {CONTACT_LINKEDIN_DISPLAY}
+            {content.contact.linkedInDisplay}
           </a>
         </div>
       </div>

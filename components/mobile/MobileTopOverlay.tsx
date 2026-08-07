@@ -8,6 +8,10 @@ import {
   MOBILE_TOP_OVERLAY_BRAND_STACK_GAP_PX,
   MOBILE_TOP_OVERLAY_HEIGHT_PX,
   MOBILE_TOP_OVERLAY_HORIZONTAL_PADDING_PX,
+  MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_BORDER_WIDTH_PX,
+  MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_HEIGHT_PX,
+  MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_OFFSET_X_PX,
+  MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_OFFSET_Y_PX,
   MOBILE_TOP_OVERLAY_SUBTITLE_LINE_HEIGHT,
   MOBILE_TOP_OVERLAY_SUBTITLE_TEXT_SIZE_PX,
   MOBILE_TOP_OVERLAY_SUBTITLE_TEXT_WEIGHT,
@@ -15,17 +19,26 @@ import {
   MOBILE_TOP_OVERLAY_WORDMARK_TEXT_SIZE_PX,
   MOBILE_TOP_OVERLAY_WORDMARK_TEXT_WEIGHT,
 } from "@/lib/config/mobile";
+import type { SiteContent, SiteLanguage } from "@/lib/content/profile";
+import { LANGUAGE_OPTIONS } from "@/lib/data/languages";
 
-function scrollToTop() {
-  document.getElementById("about")?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-}
+type MobileTopOverlayProps = {
+  language: SiteLanguage;
+  content: SiteContent;
+  onToggleLanguage: () => void;
+};
 
-export default function MobileTopOverlay() {
+export default function MobileTopOverlay({
+  language,
+  content,
+  onToggleLanguage,
+}: MobileTopOverlayProps) {
   const [isHidden, setIsHidden] = useState(false);
   const lastScrollYRef = useRef(0);
+  const activeLanguageOption =
+    LANGUAGE_OPTIONS.find(
+      (option) => option.value === (language === "en" ? "English" : "Swedish"),
+    ) ?? null;
 
   useEffect(() => {
     lastScrollYRef.current = window.scrollY;
@@ -77,6 +90,7 @@ export default function MobileTopOverlay() {
     >
       <div
         style={{
+          position: "relative",
           display: "flex",
           height: MOBILE_TOP_OVERLAY_HEIGHT_PX,
           alignItems: "center",
@@ -85,9 +99,7 @@ export default function MobileTopOverlay() {
           paddingLeft: MOBILE_TOP_OVERLAY_HORIZONTAL_PADDING_PX,
         }}
       >
-        <button
-          type="button"
-          onClick={scrollToTop}
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -105,7 +117,7 @@ export default function MobileTopOverlay() {
               letterSpacing: "-0.02em",
             }}
           >
-            Magnus Eriksson
+            {content.header.name}
           </span>
 
           <span
@@ -117,8 +129,41 @@ export default function MobileTopOverlay() {
               letterSpacing: "-0.01em",
             }}
           >
-            Action-oriented • Pragmatic • Structured • Communicative • Change-oriented
+            {content.header.mobileSubtitle}
           </span>
+        </div>
+
+        <button
+          type="button"
+          onClick={onToggleLanguage}
+          aria-label={content.header.languageButtonAriaLabel}
+          style={{
+            position: "absolute",
+            top: 0,
+            right: MOBILE_TOP_OVERLAY_HORIZONTAL_PADDING_PX,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            border: "none",
+            background: "transparent",
+            padding: 0,
+            transform: `translate(${MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_OFFSET_X_PX}px, ${MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_OFFSET_Y_PX}px)`,
+          }}
+        >
+          {activeLanguageOption?.flagUrl ? (
+            <img
+              src={activeLanguageOption.flagUrl}
+              alt={content.header.languageLabel}
+              style={{
+                height: MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_HEIGHT_PX,
+                maxWidth: "none",
+                display: "block",
+                flexShrink: 0,
+                boxSizing: "content-box",
+                border: `${MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_BORDER_WIDTH_PX}px solid var(--color-border)`,
+              }}
+            />
+          ) : null}
         </button>
       </div>
     </header>

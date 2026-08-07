@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import { Download } from "@/components/icons";
-import { aboutParagraphs, profileDownloads } from "@/lib/content/profile";
+import type { SiteContent } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
-export default function AboutSection() {
+type AboutSectionProps = {
+  content: SiteContent;
+};
+
+export default function AboutSection({ content }: AboutSectionProps) {
   return (
     <section
       id="about"
@@ -16,7 +20,7 @@ export default function AboutSection() {
         <div className={styles.aboutImageFrame}>
           <Image
             src="/images/profile.jpg"
-            alt="Magnus Eriksson"
+            alt={content.about.imageAlt}
             fill
             priority
             unoptimized
@@ -27,10 +31,10 @@ export default function AboutSection() {
 
         <div className={styles.aboutTextColumn}>
           <h1 id="about-heading" className={styles.heroHeading}>
-            About
+            {content.about.heading}
           </h1>
 
-          {aboutParagraphs.map((paragraph) => (
+          {content.about.paragraphs.map((paragraph) => (
             <p key={paragraph} className={styles.bodyText}>
               {paragraph}
             </p>
@@ -38,7 +42,7 @@ export default function AboutSection() {
 
           <div className={styles.downloadBlock}>
             <div className={styles.downloadList}>
-              {profileDownloads.map((download) => (
+              {content.about.downloads.map((download) => (
                 <div key={download.href} className={styles.downloadItem}>
                   <span className={styles.downloadLabel}>{download.label}</span>
                   <a

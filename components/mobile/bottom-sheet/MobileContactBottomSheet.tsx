@@ -4,19 +4,18 @@
 
 import { useRef, useState, type PointerEvent } from "react";
 import { Envelope, LinkedIn, Telephone } from "@/components/icons";
+import * as mobileConfig from "@/lib/config/mobile";
 import {
-  CONTACT_EMAIL,
-  CONTACT_LINKEDIN_DISPLAY,
   CONTACT_LINKEDIN_HREF,
   CONTACT_MAILTO_HREF,
-  CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_HREF,
+  type SiteContent,
 } from "@/lib/content/profile";
-import * as mobileConfig from "@/lib/config/mobile";
 
 type MobileContactBottomSheetProps = {
   isOpen: boolean;
   onClose: () => void;
+  content: SiteContent;
 };
 
 const overlayClass = "fixed inset-0 z-[60] bg-black/15";
@@ -31,6 +30,7 @@ const bottomSheetFooterClass = "border-t border-[var(--color-border)]";
 export default function MobileContactBottomSheet({
   isOpen,
   onClose,
+  content,
 }: MobileContactBottomSheetProps) {
   const [dragOffsetY, setDragOffsetY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -102,7 +102,7 @@ export default function MobileContactBottomSheet({
     <>
       <button
         type="button"
-        aria-label="Close contact sheet"
+        aria-label={content.contactSheet.closeButtonAriaLabel}
         onClick={onClose}
         className={overlayClass}
       />
@@ -111,7 +111,7 @@ export default function MobileContactBottomSheet({
         className={bottomSheetClass}
         role="dialog"
         aria-modal="true"
-        aria-label="Contact details"
+        aria-label={content.contactSheet.dialogAriaLabel}
         style={{
           maxHeight: `calc(100dvh - ${mobileConfig.MOBILE_BOTTOM_SHEET_MAX_VIEWPORT_OFFSET_PX}px)`,
           borderTopLeftRadius: `${mobileConfig.MOBILE_BOTTOM_SHEET_RADIUS_PX}px`,
@@ -189,7 +189,7 @@ export default function MobileContactBottomSheet({
               >
                 <Envelope size={mobileConfig.MOBILE_CONTACT_SHEET_ICON_SIZE_PX} />
               </span>
-              <span>{CONTACT_EMAIL}</span>
+              <span>{content.contact.emailDisplay}</span>
             </a>
 
             <a
@@ -217,7 +217,7 @@ export default function MobileContactBottomSheet({
               >
                 <Telephone size={mobileConfig.MOBILE_CONTACT_SHEET_ICON_SIZE_PX} />
               </span>
-              <span>{CONTACT_PHONE_DISPLAY}</span>
+              <span>{content.contact.phoneDisplay}</span>
             </a>
 
             <a
@@ -247,7 +247,7 @@ export default function MobileContactBottomSheet({
               >
                 <LinkedIn size={mobileConfig.MOBILE_CONTACT_SHEET_ICON_SIZE_PX} />
               </span>
-              <span>{CONTACT_LINKEDIN_DISPLAY}</span>
+              <span>{content.contact.linkedInDisplay}</span>
             </a>
           </div>
         </div>
@@ -275,7 +275,7 @@ export default function MobileContactBottomSheet({
               lineHeight: `${mobileConfig.MOBILE_CONTACT_SHEET_CLOSE_LINE_HEIGHT_PX}px`,
             }}
           >
-            Close
+            {content.contactSheet.closeLabel}
           </button>
         </div>
       </div>
