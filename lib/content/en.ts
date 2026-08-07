@@ -36,8 +36,8 @@ export const englishContent = {
     heading: "About",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "With a background in senior commercial roles within telecom and IT/IoT, I drive profitable growth by building scalable structures, translating priorities into action, and strengthening commercial performance. My focus is consistently on turning strategic plans into measurable results, ensuring strong alignment across sales, partnerships, and market initiatives.",
-      "I bring a structured and execution-oriented approach to change management and am at my best in dynamic environments where success depends on clear priorities, disciplined follow-through, and close collaboration across functions. I communicate effectively at all levels and create engagement through clarity, involvement, and shared ownership.",
+"With a background in senior commercial roles within telecom and IT/IoT, I have driven profitable growth by building scalable structures, translating strategic priorities into measurable business outcomes, and leading cross-functional execution. My focus has consistently been on creating clear priorities, defining ownership, and fostering strong alignment across sales, partnerships, marketing and key stakeholders.",
+"I bring a structured, commercially driven and hands-on approach to change and execution, and I am at my best in complex, fast-moving environments where performance depends on decision discipline, close collaboration, and consistent follow-through. I communicate effectively at all levels and create engagement through clarity and involvement.",
     ],
     downloads: [
       {

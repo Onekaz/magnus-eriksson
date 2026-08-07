@@ -36,8 +36,8 @@ export const swedishContent = {
     heading: "Om mig",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT driver jag lönsam tillväxt genom att bygga skalbara strukturer, omsätta prioriteringar i handling och stärka den kommersiella prestationen. Mitt fokus ligger konsekvent på att omsätta strategiska planer i mätbara resultat och säkerställa stark samsyn inom försäljning, partnerskap och marknadsinitiativ.",
-      "Jag arbetar strukturerat och genomförandeorienterat med förändringsledning och trivs bäst i dynamiska miljöer där framgång bygger på tydliga prioriteringar, disciplinerat genomförande och nära samarbete mellan funktioner. Jag kommunicerar effektivt på alla nivåer och skapar engagemang genom tydlighet, delaktighet och gemensamt ägarskap.",
+      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att utveckla skalbara strukturer, omsätta strategiska prioriteringar i mätbara affärsresultat och driva tvärfunktionella initiativ. Mitt fokus har konsekvent legat på att konkretisera prioriteringar, tydliggöra ansvar och säkerställa samsyn mellan försäljning, partners, marknad och andra nyckelintressenter.",
+      "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag trivs i dynamiska miljöer där kommersiella utmaningar behöver omsättas i beslut, prioriteringar och aktiviteter, och presterar bäst när jag får kombinera analys med ett starkt genomförandefokus. Jag kommunicerar effektivt på alla nivåer och skapar engagemang genom tydlighet och delaktighet.",
     ],
     downloads: [
       {
