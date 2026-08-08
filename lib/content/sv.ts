@@ -46,13 +46,13 @@ export const swedishContent = {
         ariaLabel: "Ladda ner CV",
       },
       {
-        label: "Personlighetstest",
-        href: "/downloads/magnus-eriksson-personality-test.pdf",
-        ariaLabel: "Ladda ner personlighetstest",
+        label: "Personlighetsrapport",
+        href: "/downloads/magnus-eriksson-personality-report.pdf",
+        ariaLabel: "Ladda ner personlighetsrapport",
       },
       {
         label: "Logiktestrapport",
-        href: "/downloads/magnus-eriksson-logical-reasoning-test.pdf",
+        href: "/downloads/magnus-eriksson-logical-reasoning-report.pdf",
         ariaLabel: "Ladda ner logiktestrapport",
       },
     ],
