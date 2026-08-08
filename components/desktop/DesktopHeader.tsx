@@ -252,8 +252,10 @@ export default function DesktopHeader({
                           src={swedishLanguageOption.flagUrl}
                           alt={content.header.swedishLanguageLabel}
                           style={{
+                            width: DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX * (8 / 5),
                             height: DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX,
                             maxWidth: "none",
+                            objectFit: "cover",
                             display: "block",
                             flexShrink: 0,
                             boxSizing: "content-box",
@@ -286,8 +288,10 @@ export default function DesktopHeader({
                           src={englishLanguageOption.flagUrl}
                           alt={content.header.englishLanguageLabel}
                           style={{
+                            width: DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX * (8.3 / 5),
                             height: DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX,
                             maxWidth: "none",
+                            objectFit: "cover",
                             display: "block",
                             flexShrink: 0,
                             boxSizing: "content-box",

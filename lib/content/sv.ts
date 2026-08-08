@@ -42,7 +42,7 @@ export const swedishContent = {
     downloads: [
       {
         label: "CV",
-        href: "/downloads/magnus-eriksson-resume.pdf",
+        href: "/downloads/magnus-eriksson-CV.pdf",
         ariaLabel: "Ladda ner CV",
       },
       {
@@ -266,7 +266,7 @@ groups: [
         ],
       },
       {
-        title: "Rules and Regulations på First North Growth Market",
+        title: "Rules and Regulations på First North",
         institution: "Redeye AB, Stockholm",
         period: "2024",
       },

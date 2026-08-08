@@ -155,8 +155,10 @@ export default function MobileTopOverlay({
               src={activeLanguageOption.flagUrl}
               alt={content.header.languageLabel}
               style={{
+                width: MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_HEIGHT_PX * (8.25 / 5),
                 height: MOBILE_TOP_OVERLAY_LANGUAGE_FLAG_HEIGHT_PX,
                 maxWidth: "none",
+                objectFit: "cover",
                 display: "block",
                 flexShrink: 0,
                 boxSizing: "content-box",
