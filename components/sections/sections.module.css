@@ -323,7 +323,7 @@
 }
 
 .resumeMetaText {
-  color: var(--color-primary);
+  color: var(--color-dark-muted);
   font-size: var(--mobile-body-text-size);
   font-weight: var(--mobile-body-text-weight);
   line-height: var(--mobile-text-line-height-relaxed);
@@ -331,10 +331,10 @@
 }
 
 .mobileResumeResponsibilitiesInline {
-  color: var(--color-primary);
-  font-size: var(--mobile-body-text-size);
-  font-weight: var(--mobile-body-text-weight);
-  line-height: var(--mobile-text-line-height-relaxed);
+  color: var(--color-muted);
+  font-size: var(--mobile-small-text-size);
+  font-weight: var(--mobile-small-text-strong-weight);
+  line-height: var(--mobile-text-line-height-small);
   letter-spacing: var(--mobile-text-letter-spacing);
 }
 
@@ -356,7 +356,11 @@
 }
 
 .resumeDescriptionLabel {
-  font-weight: var(--mobile-small-text-strong-weight);
+  font-size: var(--mobile-result-label-text-size);
+  font-weight: var(--mobile-result-label-text-weight);
+  font-style: var(--mobile-result-label-font-style);
+  line-height: var(--mobile-result-label-line-height);
+  letter-spacing: var(--mobile-result-label-letter-spacing);
 }
 
 .educationList {
@@ -700,7 +704,7 @@
   }
 
   .resumeMetaText {
-    color: var(--color-primary);
+    color: var(--color-muted);
     font-size: var(--desktop-body-text-size);
     font-weight: var(--desktop-body-text-weight);
     line-height: var(--desktop-text-line-height-relaxed);
@@ -708,10 +712,10 @@
   }
 
   .desktopResumeResponsibilitiesInline {
-    color: var(--color-primary);
-    font-size: var(--desktop-body-text-size);
-    font-weight: var(--desktop-body-text-weight);
-    line-height: var(--desktop-text-line-height-relaxed);
+    color: var(--color-muted);
+    font-size: var(--desktop-small-text-size);
+    font-weight: var(--desktop-small-text-strong-weight);
+    line-height: var(--desktop-text-line-height-small);
     letter-spacing: var(--desktop-text-letter-spacing);
   }
 
@@ -728,7 +732,11 @@
   }
 
   .resumeDescriptionLabel {
-    font-weight: var(--desktop-small-text-strong-weight);
+    font-size: var(--desktop-result-label-text-size);
+    font-weight: var(--desktop-result-label-text-weight);
+    font-style: var(--desktop-result-label-font-style);
+    line-height: var(--desktop-result-label-line-height);
+    letter-spacing: var(--desktop-result-label-letter-spacing);
   }
 
   .educationList {
