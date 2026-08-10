@@ -400,7 +400,7 @@
 }
 
 .educationInstitution {
-  color: var(--color-muted);
+  color: var(--color-dark-muted);
   font-size: var(--mobile-body-text-size);
   font-weight: var(--mobile-body-text-weight);
   line-height: var(--mobile-text-line-height-relaxed);
@@ -408,7 +408,7 @@
 }
 
 .educationPeriod {
-  color: var(--color-muted);
+  color: var(--color-dark-muted);
   font-size: var(--mobile-body-text-size);
   font-weight: var(--mobile-body-text-weight);
   line-height: var(--mobile-text-line-height-relaxed);
@@ -704,7 +704,7 @@
   }
 
   .resumeMetaText {
-    color: var(--color-muted);
+    color: var(--color-dark-muted);
     font-size: var(--desktop-body-text-size);
     font-weight: var(--desktop-body-text-weight);
     line-height: var(--desktop-text-line-height-relaxed);
