@@ -36,8 +36,8 @@ export const swedishContent = {
     heading: "Om mig",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att bygga skalbara strukturer och driva tvärfunktionella projekt från planering till genomförande. Mitt fokus har alltid legat i att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan olika funktioner och nyckelintressenter.",
-      "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag trivs i dynamiska miljöer där tillväxt kräver tydliga prioriteringar, konsekvent genomförande och nära samarbete mellan olika funktioner. Jag kommunicerar effektivt på alla nivåer och skapar engagemang genom tydlighet och delaktighet.",
+      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att utforma prisstrategier, ta fram skalbara strukturer och ansvara för tvärfunktionella projekt. Mitt fokus har alltid legat i att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan olika funktioner och nyckelintressenter.",
+      "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag kommunicerar effektivt på alla nivåer, skapar engagemang genom delaktighet och trivs i dynamiska miljöer där framgång är beroende av tydliga prioriteringar, konsekvent genomförande, tillit och nära samarbete.",
     ],
     downloads: [
       {
@@ -73,7 +73,7 @@ export const swedishContent = {
             "Framtagning av juridiska dokument",
             "Samordning av intressenter",
           ],
-          achievementLabel: "Resultat:",
+          achievementLabel: "Prestationer:",
           description:
             "Strukturerade och skapade ett SaaS-avtal, med fokus på affärsmässig relevans och juridisk förankring.",
         },
@@ -92,7 +92,7 @@ export const swedishContent = {
               "Kommersiell verksamhetsplanering",
               "Investor Relations",
             ],
-            achievementLabel: "Resultat:",
+            achievementLabel: "Prestationer:",
             description:
               "Skapade en kommersiell handlingsplan utifrån målmarknader, försäljningsprioritering och uppföljning av nyckeltal – för en mer resultatorienterad säljorganisation.",
             showTimelineMarker: true,
@@ -108,7 +108,7 @@ export const swedishContent = {
               "Bolagsjuridiska och regulatoriska frågor",
               "Investor Relations",
             ],
-            achievementLabel: "Resultat:",
+            achievementLabel: "Prestationer:",
             description:
               "Strukturerade regulatorisk kommunikation och bolagsstyrningsfrågor samt säkerställde samordning av juridisk dokumentation i kapitaliseringsinitiativ.",
           },
@@ -123,9 +123,9 @@ export const swedishContent = {
               "Marknadsprestation",
               "Bolagsjuridiska frågor",
             ],
-            achievementLabel: "Resultat:",
+            achievementLabel: "Prestationer:",
             description:
-              "Etablerade konsekvent marknadskommunikation, stärkte varumärkesstyrningen, följde upp prestationsmått och utvecklade ny visuell identitet och logotyp.",
+              "Etablerade enhetlig marknadskommunikation, stärkte varumärkesstyrningen, följde upp prestationsmått och utvecklade ny visuell identitet och logotyp.",
             showTimelineMarker: true,
           },
         ],
@@ -140,7 +140,7 @@ export const swedishContent = {
             start: "Mar 2019",
             end: "Maj 2023",
             responsibilities: ["Lönsamhetsutveckling", "Prisstrategi", "Avtalsutveckling"],
-            achievementLabel: "Resultat:",
+            achievementLabel: "Prestationer:",
             description:
               "Ökade ARPU med 19 % genom prisstrategi och produktdiversifiering. Skapade och förhandlade det affärsavtal som tjänsteleverantörerna föreslogs som branschstandard.",
             showTimelineMarker: true,
@@ -156,7 +156,7 @@ export const swedishContent = {
               "GDPR-efterlevnad",
               "Intern rådgivning",
             ],
-            achievementLabel: "Resultat:",
+            achievementLabel: "Prestationer:",
             description:
               "Säkerställde GDPR-efterlevnad i hanteringen av personuppgifter inom affärsområdet och utgjorde primär kontaktyta för dataskyddsfrågor och ärenden internt.",
           },
@@ -171,7 +171,7 @@ export const swedishContent = {
               "Avtalsutveckling och -förvaltning",
               "Affärsutveckling",
             ],
-            achievementLabel: "Resultat:",
+            achievementLabel: "Prestationer:",
             description:
               "Stärkte relationen med tjänsteleverantörerna, vilket ökade deras aktivitet. Initierade och ledde ett tvärfunktionellt team för säkerställande av samsyn och samordning.",
             showTimelineMarker: true,
@@ -191,7 +191,7 @@ export const swedishContent = {
             "Strategisk rådgivning",
             "Finansiell analys och investeringsunderlag",
           ],
-          achievementLabel: "Resultat:",
+          achievementLabel: "Prestationer:",
           description:
             "Utformade affärsstrategier, utvecklade finansiella modeller och investeringsunderlag samt tog fram och förhandlade kommersiella avtal.",
         },
