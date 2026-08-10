@@ -36,7 +36,7 @@ export const englishContent = {
     heading: "About",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-"With a background in senior commercial roles within telecom and IT/IoT, I have driven profitable growth by building scalable structures and leading cross-functional execution. My focus has always been on translating strategic priorities into measurable business outcomes, ensuring strong alignment across key stakeholders, sales, and market initiatives.",
+"With a background in senior commercial roles within telecom and IT/IoT, I have driven profitable growth by building scalable structures and leading cross-functional projects from planning through implementation. My focus has always been on translating strategic priorities into measurable business outcomes, ensuring strong alignment across functions and key stakeholders.",
 "I bring a structured, commercially driven approach to change and execution, and I am at my best in dynamic environments where growth depends on clear priorities, disciplined follow-through, and strong alignment across functions. I communicate effectively at all levels and create engagement through clarity and involvement.",
     ],
     downloads: [
@@ -187,9 +187,9 @@ export const englishContent = {
           start: "Mar 2015",
           end: "Jun 2016",
           responsibilities: [
+            "Project Management",
             "Strategic Advisory",
             "Financial and Business Modelling",
-            "Commercial Agreements",
           ],
           achievementLabel: "Achievements:",
           description:
@@ -204,12 +204,11 @@ groups: [
   {
     title: "Organization and Leadership",
     skills: [
-      "Modern Management Concepts",
-      "Organizational Development",
+      "Project Management",
       "Change Management",
-      "Governance and Accountability",
+      "Business Improvement",
       "Stakeholder Management",
-      "Cross-Functional Alignment",
+      "Cross-Functional Leadership",
     ],
   },
   {
@@ -217,7 +216,6 @@ groups: [
     skills: [
       "Sales Leadership",
       "Commercial Strategy",
-      "Revenue Growth",
       "Business Development",
       "Data-driven Analysis",
       "Pricing and Profitability",
@@ -229,7 +227,7 @@ groups: [
     skills: [
       "Marketing Strategy",
       "Brand Positioning",
-      "Corporate Communication",
+      "Corporate Communications",
       "Go-To-Market Execution",
       "Pipeline Generation",
     ],
@@ -241,7 +239,6 @@ groups: [
       "Content Strategy",
       "Messaging and Copywriting",
       "Visual Presentation",
-      "AI Optimization",
       "AI-assisted Prototyping",
     ],
   },

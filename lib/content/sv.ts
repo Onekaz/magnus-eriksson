@@ -36,7 +36,7 @@ export const swedishContent = {
     heading: "Om mig",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit lönsam tillväxt genom att bygga skalbara strukturer och driva tvärfunktionella initiativ från plan till genomförande. Mitt fokus har konsekvent varit att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan nyckelintressenter, försäljning och marknadsinitiativ.",
+      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att bygga skalbara strukturer och driva tvärfunktionella projekt från planering till genomförande. Mitt fokus har alltid legat i att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan olika funktioner och nyckelintressenter.",
       "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag trivs i dynamiska miljöer där tillväxt kräver tydliga prioriteringar, konsekvent genomförande och nära samarbete mellan olika funktioner. Jag kommunicerar effektivt på alla nivåer och skapar engagemang genom tydlighet och delaktighet.",
     ],
     downloads: [
@@ -187,9 +187,9 @@ export const swedishContent = {
           start: "Mar 2015",
           end: "Jun 2016",
           responsibilities: [
+            "Projektledning",
             "Strategisk rådgivning",
             "Finansiell analys och investeringsunderlag",
-            "Kommersiella avtal",
           ],
           achievementLabel: "Resultat:",
           description:
@@ -204,12 +204,11 @@ groups: [
   {
     title: "Organisation och ledarskap",
     skills: [
-      "Moderna managementkoncept",
-      "Organisationsutveckling",
+      "Projektledning",
       "Förändringsledning",
-      "Styrning och ansvar",
+      "Verksamhetsutveckling",
       "Intressenthantering",
-      "Tvärfunktionell samordning",
+      "Tvärfunktionellt ägarskap",
     ],
   },
   {
@@ -217,7 +216,6 @@ groups: [
     skills: [
       "Försäljningsledning",
       "Kommersiell strategi",
-      "Intäkts- och lönsamhetstillväxt",
       "Affärsutveckling",
       "Datadriven analys",
       "Prissättning och lönsamhet",
@@ -241,7 +239,6 @@ groups: [
       "Innehållsstrategi",
       "Budskap och copywriting",
       "Visuell presentation",
-      "AI-optimering",
       "AI-assisterad prototypframtagning",
     ],
   },

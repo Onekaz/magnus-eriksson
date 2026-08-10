@@ -112,34 +112,33 @@
   color: var(--color-muted);
   font-size: var(--mobile-body-text-size);
   font-weight: var(--mobile-body-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .downloadBlock {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-download-block-gap);
   margin-top: var(--mobile-download-block-margin-top);
 }
 
 .downloadList {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-download-list-gap);
+  gap: var(--mobile-gap-8);
 }
 
 .downloadItem {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: var(--mobile-download-link-gap);
+  gap: var(--mobile-gap-8);
 }
 
 .downloadLabel {
   color: var(--color-primary);
-  font-size: var(--mobile-download-link-text-size);
-  font-weight: var(--mobile-download-link-text-weight);
+  font-size: var(--mobile-link-text-size);
+  font-weight: var(--mobile-link-text-weight);
 }
 
 .downloadIconLink {
@@ -157,8 +156,9 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--mobile-download-icon-tab-radius);
+  background-color: var(--color-secondary-3);
   color: var(--color-primary);
-  transition: background-color 200ms ease, color 200ms ease;
+  transition: background-color 200ms ease;
 }
 
 .downloadIconTab svg {
@@ -170,7 +170,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: var(--mobile-standard-section-gap);
+  gap: var(--mobile-gap-24);
   padding-top: var(--mobile-standard-section-padding-top);
   padding-bottom: var(--mobile-standard-section-padding-bottom);
 }
@@ -178,7 +178,7 @@
 .skillsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--mobile-skills-grid-row-gap);
+  gap: var(--mobile-gap-18);
 }
 
 .skillsCard {
@@ -193,16 +193,16 @@
 .skillsCardTitle {
   margin: 0 0 var(--mobile-skills-card-title-margin-bottom);
   color: var(--color-primary);
-  font-size: var(--mobile-skills-card-title-text-size);
-  font-weight: var(--mobile-skills-card-title-text-weight);
-  line-height: var(--mobile-skills-card-title-line-height);
+  font-size: var(--mobile-title-text-size);
+  font-weight: var(--mobile-title-text-weight);
+  line-height: var(--mobile-text-line-height-tight);
 }
 
 .skillsPillList {
   display: flex;
   flex-wrap: wrap;
-  column-gap: var(--mobile-skills-pill-list-column-gap);
-  row-gap: var(--mobile-skills-pill-list-row-gap);
+  column-gap: var(--mobile-gap-8);
+  row-gap: var(--mobile-gap-8);
 }
 
 .skillsPill {
@@ -215,9 +215,9 @@
   border-radius: var(--mobile-skills-pill-radius);
   background: var(--color-skill-pill);
   color: var(--color-primary);
-  font-size: var(--mobile-skills-pill-text-size);
-  font-weight: var(--mobile-skills-pill-text-weight);
-  line-height: var(--mobile-skills-pill-line-height);
+  font-size: var(--mobile-pill-text-size);
+  font-weight: var(--mobile-pill-text-weight);
+  line-height: var(--mobile-pill-line-height);
 }
 
 .resumeSection {
@@ -228,14 +228,16 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: var(--mobile-standard-section-gap);
+  gap: var(--mobile-gap-24);
 }
 
 .resumeRoleTitle {
   margin: 0;
   color: var(--color-primary);
-  font-size: var(--mobile-resume-role-title-text-size);
-  font-weight: var(--mobile-resume-role-title-text-weight);
+  font-size: var(--mobile-title-text-size);
+  font-weight: var(--mobile-title-text-weight);
+  line-height: var(--mobile-text-line-height-standard);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .resumeEntryHeader,
@@ -246,11 +248,11 @@
 }
 
 .resumeEntryHeader {
-  gap: var(--mobile-resume-entry-header-gap);
+  gap: var(--mobile-gap-4);
 }
 
 .resumeEntryBody {
-  gap: var(--mobile-resume-entry-body-gap);
+  gap: var(--mobile-gap-8);
 }
 
 .desktopResumeList {
@@ -260,13 +262,8 @@
 .mobileResumeList {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-resume-list-gap);
+  gap: var(--mobile-gap-32);
   padding-left: var(--mobile-resume-list-padding-left);
-  color: var(--color-primary);
-  font-size: var(--mobile-body-text-size);
-  font-weight: var(--mobile-body-text-weight);
-  line-height: 1.45;
-  letter-spacing: var(--mobile-body-letter-spacing);
 }
 
 .mobileResumeEntry,
@@ -278,13 +275,13 @@
 .mobileResumeEntry {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-resume-entry-gap);
+  gap: var(--mobile-gap-14);
 }
 
 .mobileResumeTimelineGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-resume-timeline-group-gap);
+  gap: var(--mobile-gap-32);
 }
 
 .mobileResumeTimelineLine {
@@ -327,31 +324,31 @@
 
 .resumeMetaText {
   color: var(--color-primary);
-  font-size: var(--mobile-resume-meta-text-size);
-  font-weight: var(--mobile-resume-meta-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  font-size: var(--mobile-body-text-size);
+  font-weight: var(--mobile-body-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .mobileResumeResponsibilitiesInline {
   color: var(--color-primary);
-  font-size: var(--mobile-resume-meta-text-size);
-  font-weight: var(--mobile-resume-meta-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  font-size: var(--mobile-body-text-size);
+  font-weight: var(--mobile-body-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .mobileResumeDescription {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-resume-description-gap);
 }
 
 .mobileResumeDescription p {
   color: var(--color-muted);
-  font-size: var(--mobile-resume-description-text-size);
-  font-weight: var(--mobile-resume-description-text-weight);
-  line-height: var(--mobile-resume-description-line-height);
+  font-size: var(--mobile-small-text-size);
+  font-weight: var(--mobile-small-text-weight);
+  line-height: var(--mobile-text-line-height-small);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .mobileResumeDescription em {
@@ -359,24 +356,27 @@
 }
 
 .resumeDescriptionLabel {
-  font-weight: var(--mobile-resume-description-label-text-weight);
+  font-weight: var(--mobile-small-text-strong-weight);
 }
 
 .educationList {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-education-list-gap);
-  color: var(--color-muted);
-  font-weight: var(--mobile-body-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  gap: var(--mobile-gap-24);
 }
 
 .educationEntry {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: var(--mobile-education-entry-gap);
+  gap: var(--mobile-gap-8);
+}
+
+.educationEntryMeta {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--mobile-gap-4);
 }
 
 .educationTitle,
@@ -389,32 +389,32 @@
 
 .educationTitle {
   color: var(--color-primary);
-  font-size: var(--mobile-education-title-text-size);
-  font-weight: var(--mobile-education-title-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  font-size: var(--mobile-title-text-size);
+  font-weight: var(--mobile-title-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .educationInstitution {
   color: var(--color-muted);
-  font-size: var(--mobile-education-institution-text-size);
-  font-weight: var(--mobile-education-institution-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  font-size: var(--mobile-body-text-size);
+  font-weight: var(--mobile-body-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .educationPeriod {
   color: var(--color-muted);
-  font-size: var(--mobile-education-period-text-size);
-  font-weight: var(--mobile-education-period-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  font-size: var(--mobile-body-text-size);
+  font-weight: var(--mobile-body-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .educationThesisList {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-education-entry-gap);
+  gap: var(--mobile-gap-8);
 }
 
 .educationThesisItem {
@@ -423,20 +423,20 @@
   flex-direction: column;
 }
 
-.educationThesisLabel,
+.educationThesisLabel {
+  color: var(--color-muted);
+  font-size: var(--mobile-label-text-size);
+  font-weight: var(--mobile-label-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
+}
+
 .educationThesisTitle {
   color: var(--color-muted);
-  font-weight: var(--mobile-education-institution-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
-}
-
-.educationThesisLabel {
-  font-size: var(--mobile-education-thesis-label-text-size);
-}
-
-.educationThesisTitle {
-  font-size: var(--mobile-education-thesis-text-size);
+  font-size: var(--mobile-small-text-size);
+  font-weight: var(--mobile-small-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 .contactSection {
@@ -447,14 +447,14 @@
   display: flex;
   width: fit-content;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--mobile-gap-8);
 }
 
 .contactRow {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: 8px;
+  gap: var(--mobile-gap-8);
 }
 
 .contactIcon {
@@ -465,10 +465,10 @@
 
 .contactLink {
   color: var(--color-link);
-  font-size: var(--mobile-body-text-size);
-  font-weight: var(--mobile-contact-link-text-weight);
-  line-height: var(--mobile-body-line-height);
-  letter-spacing: var(--mobile-body-letter-spacing);
+  font-size: var(--mobile-link-text-size);
+  font-weight: var(--mobile-link-text-weight);
+  line-height: var(--mobile-text-line-height-relaxed);
+  letter-spacing: var(--mobile-text-letter-spacing);
 }
 
 @media (min-width: 768px) {
@@ -527,33 +527,33 @@
   .bodyText {
     font-size: var(--desktop-body-text-size);
     font-weight: var(--desktop-body-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .downloadBlock {
-    gap: var(--desktop-download-block-gap);
     margin-top: var(--desktop-download-block-margin-top);
   }
 
   .downloadList {
     flex-direction: row;
-    gap: var(--desktop-download-list-gap);
+    gap: var(--desktop-gap-44);
   }
 
   .downloadItem {
-    gap: var(--desktop-download-link-gap);
+    gap: var(--desktop-gap-8);
   }
 
   .downloadLabel {
-    font-size: var(--desktop-download-link-text-size);
-    font-weight: var(--desktop-download-link-text-weight);
+    font-size: var(--desktop-link-text-size);
+    font-weight: var(--desktop-link-text-weight);
   }
 
   .downloadIconTab {
     width: var(--desktop-download-icon-tab-size);
     height: var(--desktop-download-icon-tab-size);
     border-radius: var(--desktop-download-icon-tab-radius);
+    background-color: transparent;
   }
 
   .downloadIconTab svg {
@@ -563,22 +563,21 @@
 
   .downloadIconLink:hover .downloadIconTab {
     background-color: var(--color-secondary-3);
-    color: var(--color-surface);
   }
 
   .standardSection {
     align-self: center;
     width: 100%;
     max-width: var(--desktop-standard-section-width);
-    gap: var(--desktop-standard-section-gap);
+    gap: var(--desktop-gap-28);
     padding-top: var(--desktop-standard-section-padding-top);
     padding-bottom: var(--desktop-standard-section-padding-bottom);
   }
 
   .skillsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--desktop-skills-grid-column-gap);
-    row-gap: var(--desktop-skills-grid-row-gap);
+    column-gap: var(--desktop-gap-24);
+    row-gap: var(--desktop-gap-24);
   }
 
   .skillsCard {
@@ -588,22 +587,22 @@
 
   .skillsCardTitle {
     margin-bottom: var(--desktop-skills-card-title-margin-bottom);
-    font-size: var(--desktop-skills-card-title-text-size);
-    font-weight: var(--desktop-skills-card-title-text-weight);
-    line-height: var(--desktop-skills-card-title-line-height);
+    font-size: var(--desktop-title-text-size);
+    font-weight: var(--desktop-title-text-weight);
+    line-height: var(--desktop-text-line-height-tight);
   }
 
   .skillsPillList {
-    column-gap: var(--desktop-skills-pill-list-column-gap);
-    row-gap: var(--desktop-skills-pill-list-row-gap);
+    column-gap: var(--desktop-gap-10);
+    row-gap: var(--desktop-gap-10);
   }
 
   .skillsPill {
     padding: var(--desktop-skills-pill-padding-y) var(--desktop-skills-pill-padding-x);
     border-radius: var(--desktop-skills-pill-radius);
-    font-size: var(--desktop-skills-pill-text-size);
-    font-weight: var(--desktop-skills-pill-text-weight);
-    line-height: var(--desktop-skills-pill-line-height);
+    font-size: var(--desktop-pill-text-size);
+    font-weight: var(--desktop-pill-text-weight);
+    line-height: var(--desktop-pill-line-height);
   }
 
   .resumeSection {
@@ -613,22 +612,24 @@
   .resumeContent {
     width: 100%;
     max-width: none;
-    gap: var(--desktop-standard-section-gap);
+    gap: var(--desktop-gap-28);
     margin-right: 0;
     margin-left: 0;
   }
 
   .resumeRoleTitle {
-    font-size: var(--desktop-resume-role-title-text-size);
-    font-weight: var(--desktop-resume-role-title-text-weight);
+    font-size: var(--desktop-title-text-size);
+    font-weight: var(--desktop-title-text-weight);
+    line-height: var(--desktop-text-line-height-standard);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .resumeEntryHeader {
-    gap: var(--desktop-resume-entry-header-gap);
+    gap: var(--desktop-gap-4);
   }
 
   .resumeEntryBody {
-    gap: var(--desktop-resume-entry-body-gap);
+    gap: var(--desktop-gap-8);
   }
 
   .mobileResumeList {
@@ -638,13 +639,8 @@
   .desktopResumeList {
     display: flex;
     flex-direction: column;
-    gap: var(--desktop-resume-list-gap);
+    gap: var(--desktop-gap-34);
     padding-left: var(--desktop-resume-list-padding-left);
-    color: var(--color-primary);
-    font-size: var(--desktop-body-text-size);
-    font-weight: var(--desktop-body-text-weight);
-    line-height: 1.42;
-    letter-spacing: var(--desktop-body-letter-spacing);
   }
 
   .desktopResumeEntry,
@@ -656,13 +652,13 @@
   .desktopResumeEntry {
     display: flex;
     flex-direction: column;
-    gap: var(--desktop-resume-entry-gap);
+    gap: var(--desktop-gap-16);
   }
 
   .desktopResumeTimelineGroup {
     display: flex;
     flex-direction: column;
-    gap: var(--desktop-resume-timeline-group-gap);
+    gap: var(--desktop-gap-34);
   }
 
   .desktopResumeTimelineLine {
@@ -705,25 +701,26 @@
 
   .resumeMetaText {
     color: var(--color-primary);
-    font-size: var(--desktop-resume-meta-text-size);
-    font-weight: var(--desktop-resume-meta-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    font-size: var(--desktop-body-text-size);
+    font-weight: var(--desktop-body-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .desktopResumeResponsibilitiesInline {
     color: var(--color-primary);
-    font-size: var(--desktop-resume-meta-text-size);
-    font-weight: var(--desktop-resume-meta-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    font-size: var(--desktop-body-text-size);
+    font-weight: var(--desktop-body-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .desktopResumeDescription p {
     color: var(--color-muted);
-    font-size: var(--desktop-resume-description-text-size);
-    font-weight: var(--desktop-resume-description-text-weight);
-    line-height: var(--desktop-resume-description-line-height);
+    font-size: var(--desktop-small-text-size);
+    font-weight: var(--desktop-small-text-weight);
+    line-height: var(--desktop-text-line-height-small);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .desktopResumeDescription em {
@@ -731,68 +728,75 @@
   }
 
   .resumeDescriptionLabel {
-    font-weight: var(--desktop-resume-description-label-text-weight);
+    font-weight: var(--desktop-small-text-strong-weight);
   }
 
   .educationList {
-    gap: var(--desktop-education-list-gap);
-    font-weight: var(--desktop-body-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    gap: var(--desktop-gap-26);
   }
 
   .educationEntry {
-    gap: var(--desktop-education-entry-gap);
+    gap: var(--desktop-gap-8);
+  }
+
+  .educationEntryMeta {
+    gap: var(--desktop-gap-4);
   }
 
   .educationTitle {
-    font-size: var(--desktop-education-title-text-size);
-    font-weight: var(--desktop-education-title-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    font-size: var(--desktop-title-text-size);
+    font-weight: var(--desktop-title-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .educationInstitution {
-    font-size: var(--desktop-education-institution-text-size);
-    font-weight: var(--desktop-education-institution-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    font-size: var(--desktop-body-text-size);
+    font-weight: var(--desktop-body-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .educationPeriod {
-    font-size: var(--desktop-education-period-text-size);
-    font-weight: var(--desktop-education-period-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    font-size: var(--desktop-body-text-size);
+    font-weight: var(--desktop-body-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .educationThesisList {
-    gap: var(--desktop-education-entry-gap);
-  }
-
-  .educationThesisLabel,
-  .educationThesisTitle {
-    font-weight: var(--desktop-education-institution-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    gap: var(--desktop-gap-8);
   }
 
   .educationThesisLabel {
-    font-size: var(--desktop-education-thesis-label-text-size);
+    color: var(--color-muted);
+    font-size: var(--desktop-label-text-size);
+    font-weight: var(--desktop-label-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .educationThesisTitle {
-    font-size: var(--desktop-education-thesis-text-size);
+    color: var(--color-muted);
+    font-size: var(--desktop-small-text-size);
+    font-weight: var(--desktop-small-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 
   .contactSection {
     display: flex;
   }
 
+  .contactDetails,
+  .contactRow {
+    gap: var(--desktop-gap-8);
+  }
+
   .contactLink {
-    font-size: var(--desktop-body-text-size);
-    font-weight: var(--desktop-contact-link-text-weight);
-    line-height: var(--desktop-body-line-height);
-    letter-spacing: var(--desktop-body-letter-spacing);
+    font-size: var(--desktop-link-text-size);
+    font-weight: var(--desktop-link-text-weight);
+    line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
   }
 }
