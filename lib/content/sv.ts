@@ -6,9 +6,9 @@ export const swedishContent = {
   header: {
     name: "Magnus Eriksson",
     desktopSubtitle:
-      "Handlingskraftig\u00a0\u00a0|\u00a0\u00a0Pragmatisk\u00a0\u00a0|\u00a0\u00a0Strukturerad\u00a0\u00a0|\u00a0\u00a0Kommunikativ\u00a0\u00a0|\u00a0\u00a0Förändringsbenägen",
+      "Handlingskraftig\u00a0\u00a0|\u00a0\u00a0Pragmatisk\u00a0\u00a0|\u00a0\u00a0Strukturerad\u00a0\u00a0|\u00a0\u00a0Kommunikativ\u00a0\u00a0|\u00a0\u00a0Förändringsdriven",
     mobileSubtitle:
-      "Handlingskraftig • Pragmatisk • Strukturerad • Kommunikativ • Förändringsbenägen",
+      "Handlingskraftig • Pragmatisk • Strukturerad • Kommunikativ • Förändringsdriven",
     languageLabel: "Svenska",
     languageButtonAriaLabel: "Byt till engelska",
     englishLanguageLabel: "English",
@@ -36,8 +36,8 @@ export const swedishContent = {
     heading: "Om mig",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att utforma prisstrategier, ta fram skalbara strukturer och ansvara för tvärfunktionella projekt. Mitt fokus har alltid legat i att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan olika funktioner och nyckelintressenter.",
-      "Som person är jag affärsorienterad, strukturerad och handlingskraftig. Jag kommunicerar effektivt på alla nivåer, skapar engagemang genom delaktighet och trivs i dynamiska miljöer där framgång är beroende av tydliga prioriteringar, konsekvent genomförande, tillit och nära samarbete.",
+      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att ta fram skalbara kommersiella strukturer, utveckla starka kund- och partnerrelationer och leda tvärfunktionella initiativ. Mitt fokus har alltid legat på att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan olika funktioner och nyckelintressenter.",
+      "Jag har ett strukturerat och affärsorienterat förhållningssätt till förändring och genomförande, och skapar engagemang genom tydlighet och delaktighet. Jag kommunicerar effektivt på alla nivåer och trivs bäst i dynamiska miljöer där framgång vilar på tydliga prioriteringar, disciplin, tillit och nära samarbete.",
     ],
     downloads: [
       {
