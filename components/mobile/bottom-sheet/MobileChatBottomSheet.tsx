@@ -159,21 +159,6 @@ export default function MobileChatBottomSheet({
           />
         </div>
 
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label={content.chat.closeButtonAriaLabel}
-          className={`${styles.closeButton} ${styles.mobileCloseButton}`}
-          style={{
-            top: mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_TOP_PX,
-            right: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
-            width: mobileConfig.MOBILE_CHAT_CLOSE_BUTTON_SIZE_PX,
-            height: mobileConfig.MOBILE_CHAT_CLOSE_BUTTON_SIZE_PX,
-          }}
-        >
-          <Close size={mobileConfig.MOBILE_CHAT_CLOSE_ICON_SIZE_PX} />
-        </button>
-
         <div className={styles.mobileContent}>
           <div
             style={{
@@ -185,16 +170,34 @@ export default function MobileChatBottomSheet({
               paddingLeft: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
             }}
           >
-            <h2
-              className={styles.panelHeading}
-              style={{
-                fontSize: mobileConfig.MOBILE_TITLE_TEXT_SIZE_PX,
-                fontWeight: mobileConfig.MOBILE_TITLE_TEXT_WEIGHT,
-                lineHeight: mobileConfig.MOBILE_TEXT_LINE_HEIGHT_STANDARD,
-              }}
+            <div
+              className={styles.panelHeader}
+              style={{ gap: mobileConfig.MOBILE_GAP_8_PX }}
             >
-              {content.chat.heading}
-            </h2>
+              <h2
+                className={styles.panelHeading}
+                style={{
+                  fontSize: mobileConfig.MOBILE_TITLE_TEXT_SIZE_PX,
+                  fontWeight: mobileConfig.MOBILE_TITLE_TEXT_WEIGHT,
+                  lineHeight: mobileConfig.MOBILE_TEXT_LINE_HEIGHT_STANDARD,
+                }}
+              >
+                {content.chat.heading}
+              </h2>
+
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label={content.chat.closeButtonAriaLabel}
+                className={styles.closeButton}
+                style={{
+                  width: mobileConfig.MOBILE_CHAT_CLOSE_BUTTON_SIZE_PX,
+                  height: mobileConfig.MOBILE_CHAT_CLOSE_BUTTON_SIZE_PX,
+                }}
+              >
+                <Close size={mobileConfig.MOBILE_CHAT_CLOSE_ICON_SIZE_PX} />
+              </button>
+            </div>
 
             <p
               className={styles.intro}
