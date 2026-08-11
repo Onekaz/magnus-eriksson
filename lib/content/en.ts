@@ -69,6 +69,8 @@ export const englishContent = {
           location: "Skellefteå (Remote)",
           start: "Oct 2025",
           end: "Dec 2025",
+          startDate: "2025-10",
+          endDate: "2025-12",
           responsibilities: [
             "Contract Development",
             "Legal Document Preparation",
@@ -88,6 +90,8 @@ export const englishContent = {
             location: "Stockholm",
             start: "Nov 2024",
             end: "Jul 2025",
+            startDate: "2024-11",
+            endDate: "2025-07",
             responsibilities: [
               "Revenue Budgeting",
               "Commercial Operating Plan",
@@ -104,6 +108,8 @@ export const englishContent = {
             location: "Stockholm",
             start: "May 2024",
             end: "Nov 2024",
+            startDate: "2024-05",
+            endDate: "2024-11",
             responsibilities: [
               "Corporate Strategy",
               "Governance and Regulation",
@@ -119,6 +125,8 @@ export const englishContent = {
             location: "Stockholm",
             start: "Oct 2023",
             end: "May 2024",
+            startDate: "2023-10",
+            endDate: "2024-05",
             responsibilities: [
               "Brand and Market Positioning",
               "Marketing Performance",
@@ -140,6 +148,8 @@ export const englishContent = {
             location: "Stockholm",
             start: "Mar 2019",
             end: "May 2023",
+            startDate: "2019-03",
+            endDate: "2023-05",
             responsibilities: ["Revenue Growth", "Pricing Strategy", "Contract Development"],
             achievementLabel: "Achievements:",
             description:
@@ -152,6 +162,8 @@ export const englishContent = {
             location: "Stockholm",
             start: "May 2018",
             end: "May 2023",
+            startDate: "2018-05",
+            endDate: "2023-05",
             responsibilities: [
               "Data Protection Governance",
               "GDPR Compliance",
@@ -167,6 +179,8 @@ export const englishContent = {
             location: "Stockholm",
             start: "Jun 2016",
             end: "Mar 2019",
+            startDate: "2016-06",
+            endDate: "2019-03",
             responsibilities: [
               "Key Accounts",
               "Contract Management",
@@ -187,6 +201,8 @@ export const englishContent = {
           location: "Stockholm",
           start: "Mar 2015",
           end: "Jun 2016",
+          startDate: "2015-03",
+          endDate: "2016-06",
           responsibilities: [
             "Project Management",
             "Strategic Advisory",
@@ -252,6 +268,8 @@ groups: [
         title: "Business Administration, Master’s level",
         institution: "Stockholm University, Stockholm",
         period: "2000–2007",
+        startDate: "2000",
+        endDate: "2007",
         theses: [
           {
             label: "Bachelor’s Thesis:",
@@ -267,11 +285,15 @@ groups: [
         title: "Rules and Regulations at First North",
         institution: "Redeye AB, Stockholm",
         period: "2024",
+        startDate: "2024",
+        endDate: "2024",
       },
       {
         title: "Conscript Parachute Ranger",
         institution: "Swedish Parachute Ranger School, Karlsborg",
         period: "1997–1998",
+        startDate: "1997",
+        endDate: "1998",
       },
     ],
   },
@@ -285,5 +307,16 @@ groups: [
     closeLabel: "Close",
     closeButtonAriaLabel: "Close contact sheet",
     dialogAriaLabel: "Contact details",
+  },
+  chat: {
+    triggerLabel: "Ask a question",
+    heading: "What do you want to know?",
+    intro: "Ask about experience, skills, education or other related information.",
+    placeholder: "Ask a question...",
+    sendLabel: "Send",
+    clearInputAriaLabel: "Clear question",
+    closeButtonAriaLabel: "Close chat",
+    dialogAriaLabel: "Chat",
+    noAnswer: "I don’t have information about that.",
   },
 } as const satisfies SiteContent;

@@ -178,7 +178,7 @@
 .skillsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--mobile-gap-18);
+  gap: var(--mobile-gap-16);
 }
 
 .skillsCard {
@@ -203,6 +203,9 @@
   flex-wrap: wrap;
   column-gap: var(--mobile-gap-8);
   row-gap: var(--mobile-gap-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .skillsPill {
@@ -275,7 +278,7 @@
 .mobileResumeEntry {
   display: flex;
   flex-direction: column;
-  gap: var(--mobile-gap-14);
+  gap: var(--mobile-gap-16);
 }
 
 .mobileResumeTimelineGroup {
@@ -541,7 +544,7 @@
 
   .downloadList {
     flex-direction: row;
-    gap: var(--desktop-gap-44);
+    gap: var(--desktop-gap-40);
   }
 
   .downloadItem {
@@ -597,8 +600,8 @@
   }
 
   .skillsPillList {
-    column-gap: var(--desktop-gap-10);
-    row-gap: var(--desktop-gap-10);
+    column-gap: var(--desktop-gap-8);
+    row-gap: var(--desktop-gap-8);
   }
 
   .skillsPill {
@@ -643,7 +646,7 @@
   .desktopResumeList {
     display: flex;
     flex-direction: column;
-    gap: var(--desktop-gap-34);
+    gap: var(--desktop-gap-32);
     padding-left: var(--desktop-resume-list-padding-left);
   }
 
@@ -662,7 +665,7 @@
   .desktopResumeTimelineGroup {
     display: flex;
     flex-direction: column;
-    gap: var(--desktop-gap-34);
+    gap: var(--desktop-gap-32);
   }
 
   .desktopResumeTimelineLine {
@@ -740,7 +743,7 @@
   }
 
   .educationList {
-    gap: var(--desktop-gap-26);
+    gap: var(--desktop-gap-28);
   }
 
   .educationEntry {

@@ -68,6 +68,8 @@ export const swedishContent = {
           location: "Skellefteå (distans)",
           start: "Okt 2025",
           end: "Dec 2025",
+          startDate: "2025-10",
+          endDate: "2025-12",
           responsibilities: [
             "Avtalsutveckling",
             "Framtagning av juridiska dokument",
@@ -87,6 +89,8 @@ export const swedishContent = {
             location: "Stockholm",
             start: "Nov 2024",
             end: "Jul 2025",
+            startDate: "2024-11",
+            endDate: "2025-07",
             responsibilities: [
               "Intäktsbudget",
               "Kommersiell verksamhetsplanering",
@@ -103,6 +107,8 @@ export const swedishContent = {
             location: "Stockholm",
             start: "Maj 2024",
             end: "Nov 2024",
+            startDate: "2024-05",
+            endDate: "2024-11",
             responsibilities: [
               "Bolagsstrategi",
               "Bolagsjuridiska och regulatoriska frågor",
@@ -118,6 +124,8 @@ export const swedishContent = {
             location: "Stockholm",
             start: "Okt 2023",
             end: "Maj 2024",
+            startDate: "2023-10",
+            endDate: "2024-05",
             responsibilities: [
               "Varumärkespositionering",
               "Marknadsprestation",
@@ -139,6 +147,8 @@ export const swedishContent = {
             location: "Stockholm",
             start: "Mar 2019",
             end: "Maj 2023",
+            startDate: "2019-03",
+            endDate: "2023-05",
             responsibilities: ["Lönsamhetsutveckling", "Prisstrategi", "Avtalsutveckling"],
             achievementLabel: "Prestationer:",
             description:
@@ -151,6 +161,8 @@ export const swedishContent = {
             location: "Stockholm",
             start: "Maj 2018",
             end: "Maj 2023",
+            startDate: "2018-05",
+            endDate: "2023-05",
             responsibilities: [
               "Dataskyddsstyrning",
               "GDPR-efterlevnad",
@@ -166,6 +178,8 @@ export const swedishContent = {
             location: "Stockholm",
             start: "Jun 2016",
             end: "Mar 2019",
+            startDate: "2016-06",
+            endDate: "2019-03",
             responsibilities: [
               "Nyckelkunder",
               "Avtalsutveckling och -förvaltning",
@@ -186,6 +200,8 @@ export const swedishContent = {
           location: "Stockholm",
           start: "Mar 2015",
           end: "Jun 2016",
+          startDate: "2015-03",
+          endDate: "2016-06",
           responsibilities: [
             "Projektledning",
             "Strategisk rådgivning",
@@ -251,6 +267,8 @@ groups: [
         title: "Företagsekonomi, magisternivå",
         institution: "Stockholms Universitet, Stockholm",
         period: "2000–2007",
+        startDate: "2000",
+        endDate: "2007",
         theses: [
           {
             label: "Kandidatuppsats:",
@@ -266,11 +284,15 @@ groups: [
         title: "Rules and Regulations på First North",
         institution: "Redeye AB, Stockholm",
         period: "2024",
+        startDate: "2024",
+        endDate: "2024",
       },
       {
         title: "Värnpliktig fallskärmsjägare",
         institution: "Fallskärmsjägarskolan, Karlsborg",
         period: "1997–1998",
+        startDate: "1997",
+        endDate: "1998",
       },
     ],
   },
@@ -284,5 +306,16 @@ groups: [
     closeLabel: "Stäng",
     closeButtonAriaLabel: "Stäng kontaktuppgifter",
     dialogAriaLabel: "Kontaktuppgifter",
+  },
+  chat: {
+    triggerLabel: "Ställ en fråga",
+    heading: "Vad vill du veta?",
+    intro: "Fråga om erfarenhet, kompetenser, utbildning eller annan relaterad information.",
+    placeholder: "Ställ en fråga...",
+    sendLabel: "Skicka",
+    clearInputAriaLabel: "Rensa fråga",
+    closeButtonAriaLabel: "Stäng chatten",
+    dialogAriaLabel: "Chat",
+    noAnswer: "Jag har ingen information om det.",
   },
 } as const satisfies SiteContent;

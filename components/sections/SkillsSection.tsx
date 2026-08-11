@@ -23,13 +23,13 @@ export default function SkillsSection({ content }: SkillsSectionProps) {
           <article key={group.title} className={styles.skillsCard}>
             <h3 className={styles.skillsCardTitle}>{group.title}</h3>
 
-            <div className={styles.skillsPillList}>
+            <ul className={styles.skillsPillList}>
               {group.skills.map((skill) => (
-                <span key={skill} className={styles.skillsPill}>
+                <li key={skill} className={styles.skillsPill} data-skill={skill}>
                   {skill}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </article>
         ))}
       </div>

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import DesktopHeader from "@/components/desktop/DesktopHeader";
 import MobileFooterOverlay from "@/components/mobile/MobileFooterOverlay";
 import MobileTopOverlay from "@/components/mobile/MobileTopOverlay";
+import ProfileChat from "@/components/chat/ProfileChat";
 import AboutSection from "@/components/sections/AboutSection";
 import ContactSection from "@/components/sections/ContactSection";
 import EducationSection from "@/components/sections/EducationSection";
@@ -42,6 +43,7 @@ export default function Home() {
         onToggleLanguage={toggleLanguage}
       />
       <MobileFooterOverlay content={content} />
+      <ProfileChat language={language} content={content} />
 
       <main className={styles.sitePage} style={pageVariables}>
         <div className={styles.pageInner}>

@@ -29,9 +29,13 @@ function ResumeDescription({ entry, variant }: { entry: ResumeEntry; variant: "d
 function ResumeEntryHeader({ entry }: { entry: ResumeEntry }) {
   return (
     <div className={styles.resumeEntryHeader}>
-      <p className={styles.resumeRoleTitle}>{entry.role}</p>
+      <h3 className={styles.resumeRoleTitle}>{entry.role}</h3>
       <p className={styles.resumeMetaText}>{`${entry.company}, ${entry.location}`}</p>
-      <p className={styles.resumeMetaText}>{`${entry.start}-${entry.end}`}</p>
+      <p className={styles.resumeMetaText}>
+        <time dateTime={entry.startDate}>{entry.start}</time>
+        <span aria-hidden="true">-</span>
+        <time dateTime={entry.endDate}>{entry.end}</time>
+      </p>
     </div>
   );
 }
@@ -62,7 +66,13 @@ function ResumeResponsibilities({
 
 function DesktopResumeEntry({ entry }: { entry: ResumeEntry }) {
   return (
-    <article className={styles.desktopResumeEntry}>
+    <article
+      className={styles.desktopResumeEntry}
+      data-role={entry.role}
+      data-company={entry.company}
+      data-start-date={entry.startDate}
+      data-end-date={entry.endDate}
+    >
       {entry.showTimelineMarker ? (
         <span className={styles.desktopResumeTimelineMarker} aria-hidden="true" />
       ) : null}
@@ -79,7 +89,13 @@ function DesktopResumeEntry({ entry }: { entry: ResumeEntry }) {
 
 function MobileResumeEntry({ entry }: { entry: ResumeEntry }) {
   return (
-    <article className={styles.mobileResumeEntry}>
+    <article
+      className={styles.mobileResumeEntry}
+      data-role={entry.role}
+      data-company={entry.company}
+      data-start-date={entry.startDate}
+      data-end-date={entry.endDate}
+    >
       {entry.showTimelineMarker ? (
         <span className={styles.mobileResumeTimelineMarker} aria-hidden="true" />
       ) : null}

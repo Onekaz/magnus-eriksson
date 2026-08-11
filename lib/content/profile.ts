@@ -15,6 +15,8 @@ export type ResumeEntry = {
   location: string;
   start: string;
   end: string;
+  startDate: string;
+  endDate: string;
   responsibilities: readonly string[];
   description: string;
   descriptionLead?: string;
@@ -41,6 +43,8 @@ export type EducationEntry = {
   title: string;
   institution: string;
   period: string;
+  startDate?: string;
+  endDate?: string;
   theses?: readonly EducationThesis[];
 };
 
@@ -110,4 +114,21 @@ export type SiteContent = {
     closeButtonAriaLabel: string;
     dialogAriaLabel: string;
   };
+  chat: {
+    triggerLabel: string;
+    heading: string;
+    intro: string;
+    placeholder: string;
+    sendLabel: string;
+    clearInputAriaLabel: string;
+    closeButtonAriaLabel: string;
+    dialogAriaLabel: string;
+    noAnswer: string;
+  };
 };
+
+export function getResumeEntries(content: SiteContent): readonly ResumeEntry[] {
+  return content.resume.blocks.flatMap((block) =>
+    block.type === "entry" ? [block.entry] : block.entries,
+  );
+}
