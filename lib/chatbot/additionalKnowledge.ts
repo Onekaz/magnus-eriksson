@@ -1177,7 +1177,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "The board of TH1NG AB (publ), where Magnus worked as Chief Commercial Officer, filed for the company's bankruptcy in June 2025. Magnus enjoyed working at the company and in his role very much and found it extremely sad. At the same time, he tries to see the learning value in having experienced a corporate bankruptcy and the situations and experiences that came with it.",
+          "The board of TH1NG AB (publ), where Magnus worked as Chief Commercial Officer, filed for the company's bankruptcy in June 2025. Magnus enjoyed working at the company and in his role very much. At the same time, he tries to see the learning value in having experienced a corporate bankruptcy and the situations and experiences that followed.",
         terms: [
           "why did Magnus leave",
           "why did Magnus leave TH1NG",
@@ -1194,7 +1194,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "TH1NG AB (publ), där Magnus arbetade som Chief Commercial Officer, begärdes i konkurs av styrelsen i juni 2025. Magnus trivdes väldigt bra på företaget och i sin roll och tyckte att det var oerhört tråkigt. Samtidigt försöker han se det lärorika i att ha upplevt en företagskonkurs och de situationer samt erfarenheter som följde med den.",
+          "TH1NG AB (publ), där Magnus arbetade som Chief Commercial Officer, begärdes i konkurs av styrelsen i juni 2025. Magnus trivdes väldigt bra på företaget och i sin roll. Samtidigt försöker han se det lärorika i att ha upplevt en företagskonkurs och de situationer samt erfarenheter som följde därav.",
         terms: [
           "varför slutade Magnus",
           "varför lämnade Magnus TH1NG",
