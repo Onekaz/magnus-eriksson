@@ -7,7 +7,7 @@ import {
   getResumeEntries,
 } from "@/lib/content/profile";
 
-export const PROFILE_CANONICAL_URL = "https://magnus-eriksson.se";
+export const PROFILE_CANONICAL_URL = "https://www.magnus-eriksson.se";
 
 export function buildStructuredProfileData() {
   const resumeEntries = getResumeEntries(englishContent);
