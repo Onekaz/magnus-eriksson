@@ -19,8 +19,10 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "Magnus is primarily searching for roles in business development, commercial leadership, and project management. And he prefers situations where the business or operations have development potential.",
         terms: [
           "next role",
+          "next job",
           "roles Magnus is looking for",
           "what roles is Magnus looking for",
+          "what positions is Magnus looking for",
           "what job is Magnus looking for",
           "what does Magnus want to work with",
           "what does Magnus want to work on",
@@ -36,10 +38,12 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus söker framför allt roller inom affärsutveckling, kommersiell ledning och projektledning. Och det han finner mest intressant är roller där affär och verksamhet har utvecklingspotential.",
+          "Magnus söker framför allt roller inom affärsutveckling, kommersiell ledning och projektledning. Och det han finner mest lockande är roller där affär och verksamhet har utvecklingspotential.",
         terms: [
           "nästa roll",
+          "nästa jobb",
           "vilka roller söker Magnus",
+          "vilka jobb söker Magnus",
           "vad söker Magnus för jobb",
           "vad vill Magnus arbeta med",
           "vad vill Magnus jobba med",
@@ -61,12 +65,11 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "As a leader, Magnus is clear, empathetic, and fair. He focuses on understanding his surroundings and building trust, which he sees as the key to both strong engagement and confidence in what he communicates.",
+          "As a leader, Magnus is clear, attentive, fair, and inclusive. He practices and expects direct communication and honesty, and advocates autonomy with accountability.",
         terms: [
           "leadership style",
           "how does Magnus lead",
           "leadership",
-          "engagement",
           "build trust",
           "trust based leadership",
           "people leadership",
@@ -82,12 +85,11 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Som ledare är Magnus tydlig, lyhörd och rättvis. Han utgår ifrån att förstå sin omgivning och bygga tillit, vilket han ser som nyckeln till både starkt engagemang och trygghet i det han förmedlar.",
+          "Som ledare är Magnus tydlig, lyhörd, rättvis och involverande. Han tillämpar samt förväntar sig rak kommunikation och ärlighet, och förespråkar frihet under ansvar.",
         terms: [
           "ledarskapsstil",
           "hur leder Magnus",
           "ledarskap",
-          "engagemang",
           "skapa förtroende",
           "personalledning",
           "ledarstil",
@@ -108,7 +110,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus has held formal people-management responsibility as Marketing Manager and acting CEO at Bahnhof Unipessoal Lda., based in Funchal, Portugal, and as Chief Commercial Officer at TH1NG AB.",
+          "Magnus has held formal people-management responsibility as Marketing Manager and acting CEO at Bahnhof Unipessoal Lda., based in Funchal, Portugal, and as Chief Commercial Officer at TH1NG AB (publ).",
         terms: [
           "formal people management",
           "people management responsibility",
@@ -129,7 +131,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus har haft formellt personalansvar som marknadschef och tillförordnad VD på Bahnhof Unipessoal Lda., i Funchal, Portugal, och som Chief Commercial Officer på TH1NG AB.",
+          "Magnus har haft formellt personalansvar som marknadschef och tillförordnad VD på Bahnhof Unipessoal Lda., i Funchal, Portugal, och som Chief Commercial Officer på TH1NG AB (publ).",
         terms: [
           "formellt personalansvar",
           "personalansvar",
@@ -155,26 +157,28 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "When Magnus meets resistance, he tries different angles and checks his reasoning with people who have stronger experience in the relevant area. Difficult decisions depend on the situation, but when a decision is required to deliver on an assignment, he tries to stay factual and focus on the task, the conditions, and what needs to be delivered rather than making the decision overly emotional.",
+          "When Magnus encounters resistance, he tries to approach the issue from different perspectives. He also consults others for advice and additional points of view. When decisions are required to deliver on an assignment, he takes a pragmatic view of the task and the circumstances at hand rather than being guided by emotions.",
         terms: [
           "handle resistance",
           "dealing with resistance",
+          "how does Magnus handle resistance",
           "difficult decisions",
           "hard decisions",
+          "how does Magnus make difficult decisions",
           "decision making under pressure",
-          "conflict",
         ],
       },
       sv: {
         answer:
-          "När Magnus möter motstånd försöker han angripa frågan från olika håll och stämmer gärna av med personer som har större erfarenhet inom det aktuella området. Svåra beslut beror på situationen, men när ett beslut krävs för att leverera på ett uppdrag försöker han förhålla sig sakligt till uppgiften, förutsättningarna och det som behöver levereras snarare än att göra beslutet mer känslomässigt än nödvändigt.",
+          "I situationer när Magnus möter motstånd, försöker han angripa frågan från olika perspektiv. Han stämmer även av med andra för tips och ytterligare infallsvinklar. När beslut krävs för att leverera på ett uppdrag, förhåller han sig krasst till uppgiften och rådande förutsättningar snarare än att vägledas av känslor.",
         terms: [
           "hantera motstånd",
           "motstånd",
+          "hur hanterar Magnus motstånd",
           "svåra beslut",
           "jobbiga beslut",
+          "hur fattar Magnus svåra beslut",
           "beslutsfattande under press",
-          "konflikt",
         ],
       },
     },
@@ -185,12 +189,14 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "When Magnus takes responsibility for a new project, he first gets a firm understanding of the assignment and its premises. He then builds the outline of a project and timeline plan and keeps iterating it to make delivery and timing as realistic as possible. He prefers to structure what can be structured in an overall plan, work from it continuously, and revise it when conditions change rather than create expectations that cannot be met.",
+          "When Magnus takes responsibility for a new project, he starts by establishing a clear understanding of its scope, framework, and timeline. He develops a project plan and combines a clear foundational structure with ongoing revisions to avoid surprises. Throughout the project, he stress-tests different elements and deliverables to maintain control.",
         terms: [
           "project management approach",
           "how does Magnus manage projects",
           "how does Magnus run projects",
           "new project",
+          "starting a project",
+          "how does Magnus start a project",
           "project plan",
           "project planning",
           "timeline planning",
@@ -201,12 +207,14 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "När Magnus får ansvar för ett nytt projekt börjar han med att sätta sig in i uppgiften och de premisser som gäller. Därefter tar han fram ett övergripande skal till projekt- och tidsplan och itererar löpande för att göra leverans och tidsåtgång så realistiska som möjligt. Han försöker strukturera det som går att strukturera i en övergripande plan, arbeta utifrån den och revidera när förutsättningarna förändras, i stället för att skapa förväntningar som inte går att uppfylla.",
+          "När Magnus får ansvar för ett nytt projekt börjar han med att skapa en bild av omfattning, ramverk och tidsplan. Magnus arbetar fram en projektplan och kombinerar en tydlig grundstruktur med löpande revideringar för att undvika överraskningar. Under projektets gång trycktestar han olika delar och leveranser för att söka bibehålla kontroll.",
         terms: [
           "projektledning",
           "hur arbetar Magnus med projektledning",
           "hur driver Magnus projekt",
           "nytt projekt",
+          "starta ett projekt",
+          "hur börjar Magnus ett projekt",
           "projektplan",
           "projektplanering",
           "tidsplan",
@@ -222,7 +230,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus's main strength lies in the complete cycle: rapidly grasping a task, analyzing conditions, and creating forward momentum. Within this process, analytical structure and systematic planning come naturally to him, while initiative and proactive execution are his defining qualities.",
+          "Magnus’s primary strength is his ability to quickly take action and drive things forward. He starts with a rapid analysis to build an understanding of the situation and the prevailing conditions, then moves into execution. Analysis and structuring continue in parallel with the work, allowing him to combine decisiveness and pace with a structured way of working.",
         terms: [
           "strategy execution",
           "analysis or execution",
@@ -230,16 +238,18 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "structuring",
           "execution strength",
           "getting started",
-          "initiative",
           "strategic execution",
           "analytical or execution oriented",
           "is Magnus more analytical or execution oriented",
           "analysis to execution",
+          "take action",
+          "drive things forward",
+          "execution focus",
         ],
       },
       sv: {
         answer:
-          "Magnus främsta styrka ligger i helheten – att snabbt ta tag i en ny uppgift, analysera förutsättningarna och skapa framåtdriv. Inom det arbetet faller analys och strukturering sig naturligt, men det är initiativförmåga och uthålligt genomförande som är hans mest framträdande egenskaper.",
+          "Magnus främsta styrka är att snabbt ta tag i saker och driva dem framåt. Han börjar med en snabb analys för att skapa en bild av situationen och rådande förutsättningar och går därefter över i genomförande. Analys och strukturering fortsätter parallellt med arbetet, vilket gör att han kan kombinera handlingskraft och tempo med ett strukturerat arbetssätt.",
         terms: [
           "strategigenomförande",
           "strategiexekvering",
@@ -248,7 +258,9 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "strukturering",
           "genomförande",
           "komma igång",
-          "initiativ",
+          "handlingskraft",
+          "driva saker framåt",
+          "genomförandefokus",
         ],
       },
     },
@@ -259,7 +271,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus has worked in changing environments for much of his career, so he tends to treat change as part of the normal working context rather than as something exceptional. Change can require more effort, but he focuses primarily on what the situation requires and what needs to be done.",
+          "Magnus has worked in changing environments throughout much of his career and views change as a natural part of working life rather than something exceptional. Change can lead to duplicated efforts and create uncertainty, but his primary focus is on what the situation requires and what needs to be done.",
         terms: [
           "change",
           "change management",
@@ -274,7 +286,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus har arbetat i föränderliga miljöer under stora delar av karriären och betraktar därför förändring mer som en normal del av arbetslivet än som något exceptionellt. Förändring kan kräva mer energi, men han fokuserar framför allt på vad situationen kräver och vad som behöver göras.",
+          "Magnus har arbetat i föränderliga miljöer under stora delar av sin karriär och betraktar förändring mer som ett naturligt inslag i arbetslivet än någonting exceptionellt. Förändring kan medföra dubbelarbete och skapa ovisshet, men han fokuserar framför allt på vad situationen kräver och vad som behöver göras.",
         terms: [
           "förändring",
           "förändringsledning",
@@ -295,7 +307,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Within commercial work, Magnus sees business development, pricing, and commercial agreements as particularly strong areas.",
+          "Magnus sees business development, pricing strategy, and commercial agreements as particularly strong competence areas.",
         terms: [
           "commercial strengths",
           "business development",
@@ -311,7 +323,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Inom det kommersiella området ser Magnus affärsutveckling, prissättning och kommersiella avtal som väldigt starka områden",
+          "Magnus bedömer affärsutveckling, prisstrategi och kommersiella avtal som väldigt starka kompetensområden.",
         terms: [
           "kommersiella styrkor",
           "affärsutveckling",
@@ -328,42 +340,84 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     },
   },
   {
-    id: "additional-cross-functional-collaboration",
-    priority: 12,
+    id: "additional-cross-functional-work",
+    priority: 13,
     translations: {
       en: {
         answer:
-          "When functions or stakeholders have different objectives, Magnus first looks at the situation and which objective is overriding. He tries to understand why the views differ, iterate toward a workable solution, and zoom out to the overall business perspective rather than stay locked in a functional view. If he has a clear assignment and target to deliver, he needs a substantive reason before compromising on that target.",
+          "Magnus values cross-functional work because different perspectives and areas of expertise provide a broader understanding, more potential solutions, and better alignment. He also sees it as a valuable way to develop his own knowledge.",
         terms: [
+          "cross functional work",
+          "cross-functional work",
           "cross functional collaboration",
-          "stakeholder disagreement",
-          "different objectives",
-          "conflicting goals",
-          "stakeholder management",
-          "collaboration",
+          "cross-functional collaboration",
+          "working cross functionally",
+          "work cross functionally",
           "cross functional",
-          "disagreement between stakeholders",
-          "how does Magnus handle disagreement between stakeholders",
+          "cross-functional",
           "how does Magnus work cross functionally",
-          "how does Magnus handle conflicting objectives",
+          "how does Magnus collaborate across functions",
+          "collaboration across functions",
+          "alignment across functions",
+          "cross functional alignment",
+          "cross-functional alignment",
         ],
       },
       sv: {
         answer:
-          "När funktioner eller intressenter har olika mål utgår Magnus först från situationen och vilken fråga som är överordnad. Han försöker förstå varför uppfattningarna skiljer sig, iterera mot en fungerande lösning och zooma ut till ett helhetsperspektiv i stället för att låsa sig vid ett funktionellt perspektiv. Om han har ett tydligt uppdrag och mål att leverera på krävs det ett substantiellt skäl för att han ska kompromissa med det målet.",
+          "Magnus uppskattar tvärfunktionellt arbete eftersom olika perspektiv och kompetenser ger en bredare förståelse, fler möjliga lösningar och bättre samsyn. Han ser det också som ett värdefullt sätt att utveckla sin egen kunskap.",
         terms: [
+          "tvärfunktionellt arbete",
           "tvärfunktionellt samarbete",
-          "intressenter oense",
-          "olika mål",
-          "motstridiga mål",
-          "intressenthantering",
-          "samarbete",
+          "arbeta tvärfunktionellt",
+          "jobba tvärfunktionellt",
           "tvärfunktionellt",
-          "oenighet mellan intressenter",
-          "hur hanterar Magnus oenighet mellan intressenter",
           "hur arbetar Magnus tvärfunktionellt",
-          "hur hanterar Magnus motstridiga mål",
+          "hur jobbar Magnus tvärfunktionellt",
+          "samarbete mellan funktioner",
+          "samarbete över funktionsgränser",
+          "tvärfunktionell samordning",
+          "samsyn mellan funktioner",
+          "tvärfunktionell samsyn",
         ],
+      },
+    },
+  },
+  {
+    id: "additional-stakeholder-disagreement",
+    priority: 12,
+    translations: {
+      en: {
+        answer:
+          "When stakeholders have different views on what needs to be done, or have different priorities, Magnus tries to build an overall understanding of the situation. He seeks to understand why their perspectives differ. In most cases, logical compromises can be found, but if this is not possible, the issue needs to be escalated. When Magnus has a clear mandate, he requires good reason to question it.",
+terms: [
+  "stakeholders disagree",
+  "different priorities",
+  "conflicting goals",
+  "conflicting priorities",
+  "disagreement between stakeholders",
+  "stakeholder management",
+  "how does Magnus handle stakeholder disagreement",
+  "how does Magnus handle conflicting goals",
+  "how does Magnus handle different priorities",
+  "stakeholder conflict",
+]
+      },
+      sv: {
+        answer:
+          "När intressenter har olika syn på vad som behöver göras, eller har olika prioriteringar, försöker Magnus skapa en övergripande bild av situationen. Han vill förstå varför uppfattningarna skiljer sig åt. I de flesta fall går det att hitta logiska kompromisser, men om det inte går får frågan eskaleras. När Magnus har ett tydligt uppdrag, krävs goda skäl för att han ska ifrågasätta det.",
+terms: [
+  "intressenter oense",
+  "olika prioriteringar",
+  "motstridiga mål",
+  "motstridiga prioriteringar",
+  "oenighet mellan intressenter",
+  "intressenthantering",
+  "hur hanterar Magnus oenighet mellan intressenter",
+  "hur hanterar Magnus motstridiga mål",
+  "hur hanterar Magnus olika prioriteringar",
+  "konflikt mellan intressenter",
+]
       },
     },
   },
@@ -373,42 +427,40 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus tends to perform best in smaller organizations where individuals carry substantial responsibility and have room to step forward and influence outcomes. He appreciates shorter decision paths and fewer bureaucratic layers. At the same time, he recognizes the advantages of larger organizations, particularly established central functions and greater financial stability.",
+          "Magnus generally performs at his best in smaller organizations, as roles tend to be broader. He also values short decision-making paths and less bureaucracy. At the same time, he recognizes the advantages of larger organizations, particularly well-established central functions as well as greater financial and organizational stability.",
         terms: [
-          "work environment",
           "preferred organization",
           "company size",
           "small company",
           "large company",
-          "organizational culture",
-          "workplace culture",
-          "best environment",
-          "what type of organization does Magnus thrive in",
+          "small organization",
+          "large organization",
           "small or large companies",
+          "small or large organization",
           "does Magnus prefer small or large companies",
-          "company environment",
-          "what company environment suits Magnus",
+          "what type of organization does Magnus thrive in",
+          "decision making paths",
+          "short decision making paths",
+          "bureaucracy",
         ],
       },
       sv: {
         answer:
-          "Magnus kommer generellt bäst till sin rätt i mindre organisationer där den enskilde har stort ansvar och möjlighet att kliva fram och påverka. Han uppskattar kortare beslutsvägar och färre byråkratiska lager. Samtidigt ser han fördelarna med större organisationer, framför allt etablerade centrala funktioner och större ekonomisk stabilitet.",
+          "Magnus kommer generellt mer till sin rätt i mindre organisationer, eftersom det i regel innebär att rollerna är bredare. Han uppskattar dessutom korta beslutsvägar och mindre byråkrati. Samtidigt ser han fördelarna med större organisationer, framför allt etablerade centrala funktioner samt ekonomisk stabilitet och trygghet.",
         terms: [
-          "arbetsmiljö",
           "vilken organisation passar Magnus",
           "företagsstorlek",
           "mindre organisation",
           "större organisation",
-          "organisationskultur",
-          "företagskultur",
-          "bästa arbetsmiljö",
-          "vilken typ av organisation trivs Magnus bäst i",
-          "i vilken typ av organisation trivs Magnus bäst",
           "små eller stora företag",
           "mindre eller större företag",
+          "mindre eller större organisation",
           "föredrar Magnus små eller stora företag",
-          "företagsmiljö",
-          "vilken företagsmiljö passar Magnus",
+          "vilken typ av organisation trivs Magnus bäst i",
+          "i vilken typ av organisation trivs Magnus bäst",
+          "korta beslutsvägar",
+          "beslutsvägar",
+          "byråkrati",
         ],
       },
     },
@@ -435,7 +487,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus föredrar en kombination av självständigt ansvar och teamsamarbete. Han levererar ofta bättre när han kan arbeta självständigt med frågor som gynnas av koncentrerat ansvar, medan andra frågor kräver större sammanhang och flera perspektiv. Han uppskattar också det sociala utbyte som kommer av att arbeta i grupp.",
+          "Magnus föredrar en kombination av självständigt ansvar och teamsamarbete. Han levererar ofta bättre när han kan arbeta självständigt med frågor som gynnas av koncentrerat ansvar, medan andra frågor kräver större sammanhang och flera perspektiv. Han uppskattar också det sociala utbytet som kommer av att arbeta i grupp.",
         terms: [
           "arbetssätt",
           "självständigt eller team",
@@ -458,33 +510,35 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus approaches complex or unclear problems by pressure-testing them from different directions. He rarely locks himself into one line of thought; when he gets stuck, he steps back and looks at the question from additional perspectives before deciding how to proceed.",
+          "Magnus handles complex or ambiguous situations by building an understanding of what is known, what remains unclear, and what options are available. He considers different perspectives and assumptions, and reassesses his approach if the circumstances change.",
         terms: [
           "problem solving",
           "complex problem",
           "unclear problem",
           "ambiguous problem",
-          "pressure test",
+          "complex situation",
+          "ambiguous situation",
           "solve problems",
-          "different perspectives",
           "how does Magnus solve complex problems",
           "how does Magnus approach unclear problems",
+          "how does Magnus handle ambiguous situations",
           "how does Magnus work with problem solving",
         ],
       },
       sv: {
         answer:
-          "Magnus angriper komplexa eller otydliga problem genom att trycktesta dem från olika håll. Han låser sällan fast sig i ett tankesätt; när han kör fast backar han tillbaka och betraktar frågan ur fler perspektiv innan han bestämmer hur han ska gå vidare.",
+          "Magnus hanterar komplexa eller otydliga situationer genom att skapa en bild av vad som är känt, vad som är oklart och vilka alternativ som finns. Han prövar olika perspektiv och antaganden, och omvärderar angreppssättet om förutsättningarna förändras.",
         terms: [
           "problemlösning",
           "komplext problem",
           "otydligt problem",
           "oklar uppgift",
-          "trycktesta",
+          "komplex situation",
+          "otydlig situation",
           "lösa problem",
-          "olika perspektiv",
           "hur löser Magnus komplexa problem",
           "hur angriper Magnus otydliga problem",
+          "hur hanterar Magnus otydliga situationer",
           "hur arbetar Magnus med problemlösning",
         ],
       },
@@ -496,38 +550,34 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus is motivated by feeling that he contributes to the organization, continues to develop, and has clearly defined responsibility. His motivation decreases when those elements are missing, particularly when urgent tasks requiring immediate delivery repeatedly come in from the side.",
+          "Magnus is motivated by the fact that he contributes to the organization, continues to develop, and has clearly defined responsibility. His motivation decreases when those elements are missing, particularly when urgent tasks requiring immediate delivery repeatedly come in from the side.",
         terms: [
           "motivation",
           "what motivates Magnus",
           "motivated at work",
+          "motivation at work",
           "demotivates",
+          "what demotivates Magnus",
           "loses motivation",
-          "job enlargement",
-          "recognition",
+          "what reduces Magnus motivation",
           "what drives Magnus at work",
           "what makes Magnus enjoy work",
-          "what does Magnus appreciate at work",
-          "what does Magnus value at work",
-          "what matters to Magnus at work",
         ],
       },
       sv: {
         answer:
-          "Magnus motiveras av att känna att han bidrar till verksamheten, att han utvecklas och har uttalat ansvar. Motivationen minskar när de delarna saknas och inte minst när uppgifter som snarast ska levereras på kommer in från sidan.",
+          "Magnus motiveras av att känna att han bidrar till verksamheten, att han utvecklas och har ett tydligt ansvar. Motivationen minskar när de delarna saknas och inte minst när uppgifter som snarast ska levereras på kommer in från sidan.",
         terms: [
           "motivation",
           "vad motiverar Magnus",
           "motiverad på jobbet",
+          "motivation på jobbet",
           "demotiverar",
+          "vad demotiverar Magnus",
           "tappar motivation",
-          "arbetsvidgning",
-          "uppskattning",
+          "vad minskar Magnus motivation",
           "vad driver Magnus",
           "vad får Magnus att trivas på jobbet",
-          "vad uppskattar Magnus på arbetet",
-          "vad uppskattar Magnus i arbetet",
-          "vad är viktigt för Magnus i arbetet",
         ],
       },
     },
@@ -538,7 +588,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus would highlight initiative, learning quickly, decisiveness, a high work pace, and social ability as professional strengths.",
+          "Magnus highlights initiative, his ability to learn quickly, decisiveness, a high work pace, and his ability to adapt quickly to new circumstances and situations as his key strengths.",
         terms: [
           "self described strengths",
           "professional strengths",
@@ -547,22 +597,30 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "quick learner",
           "decisive",
           "high work pace",
-          "social ability",
+          "work pace",
+          "adaptable",
+          "adapt quickly",
+          "key strengths",
           "strengths",
           "what are Magnus strengths",
         ],
       },
       sv: {
         answer:
-          "Magnus skulle själv lyfta fram initiativförmåga, att han är lättlärd, beslutsam, har ett högt arbetstempo och är social som professionella styrkor.",
+          "Magnus lyfter fram initiativförmåga, att han är lättlärd, beslutsam, har ett högt arbetstempo och snabbt anpassar sig till nya förutsättningar och situationer som främsta styrkor.",
         terms: [
           "egna styrkor",
           "professionella styrkor",
           "Magnus styrkor",
+          "initiativförmåga",
           "initiativtagande",
           "lättlärd",
           "beslutsam",
           "högt arbetstempo",
+          "arbetstempo",
+          "anpassningsförmåga",
+          "anpassar sig snabbt",
+          "främsta styrkor",
           "styrkor",
           "vad är Magnus styrkor",
         ],
@@ -575,7 +633,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus sees two practical development areas in himself: being better at recognizing when other people will not deliver as expected, and planning his own time with more margin. He respects and always meets deadlines, but acknowledges that his time planning can make the final phase unnecessarily stressful.",
+          "Magnus primarily sees two development areas: being better at recognizing when other people will not deliver as expected, and planning his own time with more margin. He respects and meets deadlines, but acknowledges that his time planning can make the final phase unnecessarily stressful.",
         terms: [
           "development areas",
           "weaknesses",
@@ -593,7 +651,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus ser två praktiska utvecklingsområden hos sig själv: bli bättre på att förstå när andra inte kommer att leverera som förväntat, och att planera sin egen tid med större marginal. Han respekterar och håller alltid deadlines, men konstaterar att tidsplaneringen ibland kan göra slutskedet onödigt stressigt.",
+          "Magnus ser framför allt två utvecklingsområden hos sig själv: bli bättre på att förstå när andra inte kommer att leverera som förväntat, och att planera sin egen tid med större marginal. Han respekterar och håller deadlines, men konstaterar att tidsplaneringen ibland kan göra slutskedet onödigt stressigt.",
         terms: [
           "utvecklingsområden",
           "svagheter",
@@ -621,9 +679,10 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "Magnus is open to new industries beyond telecom and IT. His commercial drive, structural mindset, and ability to quickly grasp new domain knowledge allow him to deliver value efficiently in new environments.",
         terms: [
           "other industries",
-          "telecom industry",
           "industry preference",
           "open to new industries",
+          "work in other industries",
+          "work outside telecom and IT",
           "can Magnus change industry",
           "would Magnus change industry",
           "does Magnus have to work in telecom",
@@ -633,11 +692,13 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus är helt öppen för nya branscher utöver telekom och IT. Hans kommersiella driv, struktur och förmåga att snabbt sätta sig in i nya områden gör att han effektivt skapar värde även i nya miljöer.",
+          "Magnus är helt öppen för arbete inom andra branscher än telekom och IT. Hans kommersiella driv, struktur och förmåga att snabbt sätta sig in i nya områden gör att han effektivt skapar värde även i nya miljöer.",
         terms: [
           "andra branscher",
           "branschpreferens",
           "öppen för nya branscher",
+          "arbeta i andra branscher",
+          "arbeta utanför telekom och IT",
           "kan Magnus byta bransch",
           "vill Magnus byta bransch",
           "måste Magnus arbeta inom telekom",
@@ -658,6 +719,8 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "location flexibility",
           "relocate",
           "relocation",
+          "relocatable",
+          "can Magnus relocate",
           "work in another city",
           "work elsewhere",
           "travel for work",
@@ -673,6 +736,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "geografisk flexibilitet",
           "flytta",
           "flyttbar",
+          "kan Magnus flytta",
           "arbeta på annan ort",
           "jobba på annan ort",
           "resor i jobbet",
@@ -689,11 +753,12 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus prefers a hybrid setup with a mix of office presence and remote work. He feels that fully remote work can reduce context, community, and useful synergies between colleagues, although he remains open to different arrangements rather than setting rigid rules.",
+          "Magnus prefers a hybrid setup of office presence and remote work. He feels that fully remote work reduces context, community, and useful synergies, although he remains open to different arrangements rather than setting rigid rules.",
         terms: [
           "hybrid",
           "remote",
           "remote work",
+          "fully remote",
           "work from home",
           "working arrangement",
           "hybrid work",
@@ -704,11 +769,12 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus föredrar ett hybridupplägg med en blandning av kontorsnärvaro och distansarbete. Han upplever att helt distansbaserat arbete kan minska sammanhang, gemenskap och nyttiga synergier mellan kollegor, men är samtidigt öppen för olika upplägg och har inga helt låsta ramar.",
+          "Magnus föredrar ett hybridupplägg av kontorsnärvaro och distansarbete. Han menar att fullständigt distansarbete sker på bekostnad av sammanhang, gemenskap och synergier, men är samtidigt öppen för olika upplägg och har inga låsta ramar.",
         terms: [
           "hybrid",
           "remote",
           "distansarbete",
+          "helt på distans",
           "jobba hemifrån",
           "arbetsupplägg",
           "hybridarbete",
@@ -755,7 +821,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus speaks Swedish natively and English professionally. His German is limited, although he understands a fair amount. His Spanish and Portuguese are very limited and do not add professional working capability.",
+          "Magnus speaks Swedish natively and English professionally. His German is limited, although he understands a fair amount, while his Spanish and Portuguese are very limited.",
         terms: [
           "languages",
           "English professionally",
@@ -764,6 +830,8 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "German",
           "Spanish",
           "Portuguese",
+          "Swedish",
+          "native language",
           "language skills",
           "what languages does Magnus speak",
           "what languages does Magnus know",
@@ -773,14 +841,17 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus har svenska som modersmål och talar engelska professionellt. Hans tyska är begränsad, även om han förstår en hel del. Spanskan och portugisiskan är mycket begränsade och tillför ingen professionell arbetsförmåga.",
+          "Svenska är Magnus som modersmål, samtidigt som han behärskar engelska på professionell nivå. Hans tyska är begränsad, även om han förstår en del, medan hans spanska och portugisiska är väldigt begränsade.",
         terms: [
+          "språk",
           "engelska professionellt",
           "professionell engelska",
           "kan Magnus arbeta på engelska",
           "tyska",
           "spanska",
           "portugisiska",
+          "svenska",
+          "modersmål",
           "språkkunskaper",
           "vilka språk talar Magnus",
           "vilka språk kan Magnus",
@@ -796,18 +867,18 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Outside work, Magnus spend time with family and friends. He trains at the gym and runs, and in the winter he skis downhill and cross-country. He listens to a lot of popular music, plays some guitar and also practices card tricks, which he finds both fun and challenging.",
+          "Outside work, Magnus spend time with family and friends. He trains at the gym and runs, and during the winter he skis downhill and cross-country. He listens to a lot of popular music, plays some guitar and also practices card tricks.",
         terms: [
           "hobbies",
           "free time",
           "outside work",
+          "family and friends",
           "gym",
           "running",
           "skiing",
+          "downhill skiing",
           "cross country skiing",
           "music",
-          "trance",
-          "hard rock",
           "guitar",
           "card magic",
           "card tricks",
@@ -821,18 +892,18 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "På fritiden spenderar Magnus tid med familj och vänner. Han tränar på gym och löptränar, tycker om utförsåkning och längdskidor. Han lyssnar mycket på populärmusik, spelar lite gitarr och håller också på med korttrick, vilket han tycker är roligt och utmanande.",
+          "På fritiden spenderar Magnus tid med familj och vänner. Han tränar på gym och löptränar, tycker om utförsåkning och längdskidor. Han lyssnar mycket på populärmusik, spelar lite gitarr och håller på med korttrick.",
         terms: [
           "hobbys",
           "fritid",
           "utanför jobbet",
+          "familj och vänner",
           "gym",
           "löpning",
           "skidor",
+          "utförsåkning",
           "längdskidor",
           "musik",
-          "trance",
-          "hårdrock",
           "gitarr",
           "korttrolleri",
           "korttrick",
@@ -853,7 +924,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus thinks people who know him well would describe him as social, pleasant, and someone they can trust. They would probably also call him a time optimist who can arrive a little later than agreed.",
+          "Magnus thinks people who know him well would describe him as social, pleasant, respectful, and someone they can trust. They would probably also call him a time optimist who can arrive a little later than agreed.",
         terms: [
           "personality outside work",
           "what is Magnus like personally",
@@ -871,7 +942,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus tror att människor som känner honom väl skulle beskriva honom som social, trevlig och som en person de kan lita på. De skulle sannolikt också beskriva honom som en tidsoptimist som ibland kommer lite senare än överenskommet.",
+          "Magnus tror att människor som känner honom väl skulle beskriva honom som social, trevlig, respektfull och en person de kan lita på. De skulle sannolikt också beskriva honom som en tidsoptimist som ibland kommer lite senare än överenskommet.",
         terms: [
           "personlighet utanför jobbet",
           "hur är Magnus privat",
@@ -895,14 +966,14 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus believes his parachute-ranger service taught him that people can handle considerably more than they initially think. He sees that experience as one reason it takes a great deal for him to give up when something is difficult.",
+          "Magnus believes his parachute-ranger service taught him that people can handle considerably more than they initially think. He sees that experience as a big reason it takes a great deal for him to give up when something is challenging.",
         terms: [
           "parachute ranger",
           "military service",
           "military background",
           "ranger service",
-          "resilience",
           "giving up",
+          "not give up",
           "how has parachute ranger service affected Magnus",
           "military experience",
           "what has Magnus military background taught him",
@@ -910,14 +981,14 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus upplever att fallskärmsjägartjänsten lärde honom att man klarar betydligt mer än man först föreställer sig. Han ser den erfarenheten som en anledning till att det krävs mycket för att han ska ge upp när något är svårt.",
+          "Magnus upplever att fallskärmsjägartjänsten lärde honom att man klarar betydligt mer än man först föreställer sig. Han ser den erfarenheten som en stor anledning till varför det krävs mycket för att han ska ge upp när någonting är utmanande.",
         terms: [
           "fallskärmsjägare",
           "militärtjänst",
           "militär bakgrund",
           "jägartjänst",
-          "motståndskraft",
           "ge upp",
+          "inte ge upp",
           "hur har fallskärmsjägartjänsten påverkat Magnus",
           "militärbakgrund",
           "vad har Magnus militärbakgrund gett honom",
@@ -931,7 +1002,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus deliberately built breadth across sales, business development, strategy, marketing, legal and regulatory work, and projects because he prefers a broad scope. He has generally enjoyed roles most when he can combine several areas rather than focus on only one narrow function.",
+          "Magnus has worked broadly across sales, business development, strategy, marketing, as well as legal and regulatory matters. He performs best in roles where he can combine multiple areas and work with a variety of issues rather than within a narrowly defined function.",
         terms: [
           "career choices",
           "career breadth",
@@ -939,11 +1010,15 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "sales business development strategy marketing",
           "legal regulatory",
           "broad experience",
+          "broad roles",
+          "multiple areas",
+          "varied issues",
+          "combine multiple areas",
         ],
       },
       sv: {
         answer:
-          "Magnus har medvetet byggt en bred erfarenhet inom försäljning, affärsutveckling, strategi, marknad, juridiska och regulatoriska frågor samt projekt eftersom han uppskattar att arbeta brett med olika frågor. Han har generellt trivts bäst i roller där flera områden kan kombineras istället för att fokusera på en smal funktion.",
+          "Magnus har arbetat brett inom försäljning, affärsutveckling, strategi, marknad samt juridiska och regulatoriska frågor. Han trivs bäst i roller där han får kombinera flera områden och arbeta med varierande frågeställningar snarare än inom en smalt avgränsad funktion.",
         terms: [
           "karriärval",
           "karriärbredd",
@@ -951,6 +1026,10 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "försäljning affärsutveckling strategi marknad",
           "juridik regulatorik",
           "bred erfarenhet",
+          "breda roller",
+          "flera områden",
+          "varierande frågeställningar",
+          "kombinera flera områden",
         ],
       },
     },
@@ -961,7 +1040,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus sees his ability to understand new subjects quickly, take hold of the work, and produce at a high pace as a key differentiator. At the same time, he does not want work to become so all-consuming that relationships disappear from view; even under a high workload he tries to remain social, available, and give colleagues time and attention.",
+          "Magnus’s primary differentiator is his ability to quickly understand a new situation and turn that understanding into action. He has a short ramp-up time, a high work capacity, and a strong execution focus, which enables him to create momentum quickly even in new or ambiguous situations. At the same time, he combines this high pace with accessibility and genuine engagement with the colleagues around him.",
         terms: [
           "what makes Magnus different",
           "different from other candidates",
@@ -976,7 +1055,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus ser sin förmåga att snabbt sätta sig in i nya frågor, ta tag i arbetet och producera i högt tempo som en viktig skillnad mot många andra kandidater. Samtidigt vill han inte att arbetet ska bli så allvarligt att relationerna runt omkring försvinner; även vid hög arbetsbelastning försöker han vara social, tillgänglig och ge kollegor tid och uppmärksamhet.",
+          "Magnus främsta differentiator är hans förmåga att snabbt förstå en ny situation och omsätta den förståelsen i handling. Han har kort startsträcka, hög arbetskapacitet och ett starkt genomförandefokus, vilket gör att han snabbt kan börja skapa framdrift även i nya eller otydliga sammanhang. Samtidigt kombinerar han det höga tempot med tillgänglighet och ett genuint engagemang för kollegorna omkring sig.",
         terms: [
           "vad skiljer Magnus från andra",
           "skillnad mot andra kandidater",
@@ -998,7 +1077,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus's salary expectations are role-specific. Compensation is a factor, but not everything – he values development opportunities, trust, and autonomy with accountability equally highly.",
+          "Magnus's salary expectations are role-specific. Compensation is a factor, but not everything – he also values development opportunities, trust, and autonomy with accountability.",
         terms: [
           "salary",
           "salary expectations",
@@ -1019,7 +1098,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus löneanspråk är rollspecifikt. Lön är en faktor, men inte allt – han värderar utvecklingsmöjligheter, förtroende och frihet under ansvar lika högt.",
+          "Magnus löneanspråk är rollspecifikt. Lön är en faktor, men inte allt – han värderar också utvecklingsmöjligheter, förtroende och frihet under ansvar.",
         terms: [
           "löneanspråk",
           "löneförväntan",
@@ -1094,7 +1173,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus is looking for a financially stable employer that involves its employees and creates conditions for participation. He values open information-sharing and transparency because he believes people perform best when they understand the broader context and feel involved in the organization.",
+          "Magnus is looking for a financially stable employer that is focused on expansion. In addition, he values transparency and open information-sharing so that employees understand the direction of the business and the reasoning behind important decisions. He also values an open, inclusive, and social culture.",
         terms: [
           "employer preferences",
           "ideal employer",
@@ -1102,8 +1181,13 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "what does Magnus want from an employer",
           "what matters to Magnus in an employer",
           "financially stable employer",
-          "employee involvement",
+          "expansion",
           "transparency",
+          "information sharing",
+          "open information sharing",
+          "open culture",
+          "inclusive culture",
+          "social culture",
           "what does Magnus value in an employer",
           "what type of employer is Magnus looking for",
           "what employer suits Magnus",
@@ -1114,15 +1198,18 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus söker en ekonomiskt stabil arbetsgivare som involverar sina medarbetare och skapar förutsättningar för delaktighet. Han värderar öppen informationsspridning och transparens, eftersom han tror att människor presterar bäst när de förstår sammanhanget och känner sig delaktiga i verksamheten.",
+          "Magnus söker en ekonomiskt stabil arbetsgivare som satsar på expandering. Därtill värdesätter han transparens och informationsspridning för att medarbetarna ska ha förståelse för verksamhetens riktning och viktiga beslut. En öppen, inkluderande och social kultur är också någonting han värdesätter.",
         terms: [
           "vad söker Magnus hos en arbetsgivare",
           "vad vill Magnus ha av en arbetsgivare",
           "vad är viktigt hos en arbetsgivare",
           "ekonomiskt stabil arbetsgivare",
-          "delaktighet",
+          "expansion",
           "informationsspridning",
           "transparens",
+          "öppen kultur",
+          "inkluderande kultur",
+          "social kultur",
           "vilken typ av arbetsgivare söker Magnus",
           "vad värderar Magnus hos en arbetsgivare",
           "vilken arbetsgivare passar Magnus",
@@ -1177,7 +1264,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "The board of TH1NG AB (publ), where Magnus worked as Chief Commercial Officer, filed for the company's bankruptcy in June 2025. Magnus enjoyed working at the company and in his role very much. At the same time, he tries to see the learning value in having experienced a corporate bankruptcy and the situations and experiences that followed.",
+          "The board of TH1NG AB (publ), where Magnus worked as Chief Commercial Officer, filed for the company's bankruptcy in June 2025. Magnus really enjoyed working at the company and in his role. At the same time, he tries to see the learning value in having experienced a corporate bankruptcy and the situations and experiences that followed.",
         terms: [
           "why did Magnus leave",
           "why did Magnus leave TH1NG",
@@ -1228,10 +1315,10 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "trust manager",
           "direct communication manager",
           "regular follow up manager",
-          "expect manager",
-          "value manager",
-          "kind of manager",
-          "prefer manager",
+          "what does Magnus expect from his manager",
+          "what does Magnus value in a manager",
+          "what kind of manager does Magnus prefer",
+          "relationship with manager",
         ],
       },
       sv: {
@@ -1248,9 +1335,10 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "förtroende chef",
           "rak kommunikation chef",
           "regelbunden uppföljning chef",
-          "förväntar sig chef",
-          "typ av chef",
-          "värderar hos chef",
+          "vad förväntar sig Magnus av sin chef",
+          "vad värderar Magnus hos sin chef",
+          "vilken typ av chef föredrar Magnus",
+          "relation till chef",
         ],
       },
     },
@@ -1303,7 +1391,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus likes to have clearly defined responsibility and the mandate to drive his own issues and projects. At the same time, it is important to him that responsibilities are clearly divided and that expectations from his immediate manager are clear.",
+          "Magnus values having clearly defined responsibility and the mandate to drive issues forward and make decisions. Clearly stated goals, clear expectations, trust, and autonomy with accountability are important factors for Magnus to thrive.",
         terms: [
           "responsibility and mandate",
           "decision authority",
@@ -1321,13 +1409,13 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "prefers mandate",
           "wants mandate",
           "level of responsibility Magnus prefers",
-          "much responsibility does Magnus want",
-          "much authority does Magnus want",
+          "how much responsibility does Magnus want",
+          "autonomy with accountability",
         ],
       },
       sv: {
         answer:
-          "Magnus tycker om att ha ett tydligt uttalat ansvar och mandat att driva egna frågor och projekt. För honom är det samtidigt viktigt med en tydlig ansvarsfördelning och tydliga förväntningar från närmaste chef.",
+          "Magnus uppskattar ett uttalat ansvar och mandat att driva frågor samt ta beslut. Uttalade mål, tydliga förväntningar, förtroende och frihet under ansvar är viktiga faktorer för att Magnus ska trivas.",
         terms: [
           "ansvar och mandat",
           "ansvarsfördelning",
@@ -1342,8 +1430,9 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "trivs med mandat",
           "föredrar mandat",
           "vill ha mandat",
-          "mycket ansvar vill",
-          "mycket mandat vill",
+          "hur mycket ansvar vill Magnus ha",
+          "hur mycket mandat vill Magnus ha",
+          "frihet under ansvar",
         ],
       },
     },
@@ -1354,7 +1443,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "That people are very different and have different needs. That is precisely why Magnus sees it as important for a manager to get to know their employees and understand what each person needs to function and perform well – both individually and as part of a team.",
+          "In his roles as a manager, Magnus has learned that people function differently and have very different needs. He therefore wants to understand his employees well enough to know what each person needs in order to perform and function effectively within the team. Goals, responsibilities, and expectations should be clear, while the way he leads may need to be adapted to the individual and the situation.",
         terms: [
           "management lessons",
           "leadership lessons",
@@ -1370,7 +1459,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Att människor är väldigt olika och har olika behov. Just därför ser Magnus det som viktigt att som chef lära känna sina medarbetare och förstå vad respektive person behöver för att fungera och prestera väl – såväl enskilt som i grupp.",
+          "I sina roller som chef har Magnus lärt sig att människor fungerar olika och har väldigt olika behov. Därför vill han förstå sina medarbetare tillräckligt väl för att veta vad som krävs för att respektive person ska prestera och fungera i gruppen. Mål, ansvar och förväntningar ska vara tydliga, medan sättet att leda kan behöva anpassas efter individ och situation.",
         terms: [
           "lärdomar som chef",
           "vad har Magnus lärt sig som chef",
@@ -1409,7 +1498,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Att bättre förstå marknadsmekanismerna. Marknaden är väldigt snabbfotad och dynamisk, så det gäller verkligen att hänga med.",
+          "Att bättre förstå marknadsmekanismerna. Marknaden är väldigt snabbfotad och dynamisk, och ingen vill stå kvar på perrongen.",
         terms: [
           "professionell utveckling",
           "vad vill Magnus bli bättre på",
@@ -1431,7 +1520,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Very quickly. Being able to quickly get up to speed on new issues, understand context, and identify what matters is one of Magnus's clearest strengths, which is also supported by completed logical-reasoning tests.",
+          "Quickly. Being able to get up to speed on new issues, understand context, and identify what matters is one of Magnus's clearest strengths. That is also supported by completed logical-reasoning tests.",
         terms: [
           "new industry",
           "new business",
@@ -1448,7 +1537,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Väldigt snabbt. Att snabbt sätta sig in i nya frågor, förstå sammanhang och identifiera vad som är viktigt är en av Magnus tydligaste styrkor, vilket även stöds av genomförda tester av logisk förmåga.",
+          "Snabbt. Att sätta sig in i nya frågor, förstå sammanhang och identifiera vad som är viktigt är en av Magnus tydligaste styrkor. Det stöds också av genomförda tester av logisk förmåga.",
         terms: [
           "ny bransch",
           "ny verksamhet",
@@ -1471,7 +1560,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus values colleagues who work toward the same goals, take responsibility for their tasks, and follow through on what they have committed to. He also values relationships with colleagues that are built on trust and where people can speak openly with each other if, for example, something is causing friction.",
+          "Magnus values colleagues who are ambitious and work towards established goals, while also being friendly, approachable, and sociable. Social interaction is very important to him when it comes to enjoying the workplace, which is why he also places a strong emphasis on honesty and direct communication.",
         terms: [
           "what does Magnus appreciate in colleagues",
           "what does Magnus value in colleagues",
@@ -1481,13 +1570,16 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "what does Magnus value in coworkers",
           "what kind of colleagues does Magnus appreciate",
           "relationship with colleagues",
-          "trust with colleagues",
+          "ambitious colleagues",
+          "social colleagues",
+          "honesty with colleagues",
+          "direct communication with colleagues",
           "good colleagues",
         ],
       },
       sv: {
         answer:
-          "Att alla arbetar mot samma mål, tar ansvar för sina arbetsuppgifter och genomför det de åtagit sig. Magnus värderar också relationer med kollegor som bygger på tillit och förtroende, och där man kan prata öppet med varandra om det exempelvis är någonting som skaver.",
+          "Magnus värderar kollegor som är ambitiösa och arbetar mot uppsatta mål, och som samtidigt är trevliga, bemötande och sociala. Det sociala samspelet är väldigt viktigt för trivsel på arbetsplatsen, och därför understryker också Magnus ärlighet och rak kommunikation.",
         terms: [
           "vad uppskattar Magnus hos kollegor",
           "vad värderar Magnus hos kollegor",
@@ -1495,8 +1587,10 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "vad förväntar sig Magnus av kollegor",
           "vilka kollegor uppskattar Magnus",
           "relation till kollegor",
-          "tillit mellan kollegor",
-          "förtroende mellan kollegor",
+          "ambitiösa kollegor",
+          "sociala kollegor",
+          "ärlighet mellan kollegor",
+          "rak kommunikation mellan kollegor",
           "bra kollegor",
         ],
       },
@@ -1895,9 +1989,8 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "A 2011 competency-development assessment is older and should not be treated as a current standalone description, but several themes are consistent with Magnus's current self-description and newer Alva results. It described a structured and systematic approach, high performance expectations, a tendency to grasp the core of complex problems quickly, effective independent and group work, and a strong drive to get things done. It also noted possible tendencies to underestimate time requirements and to be too forceful at times, which resembles development areas Magnus still recognizes in himself today.",
+          "An earlier competency-development assessment, from 2011, is rather consistent with Magnus's current self-description and newer Alva results. It described a structured and systematic approach, high performance expectations, a tendency to grasp the core of complex problems quickly, effective independent and group work, and a strong drive to get things done. It also noted possible tendencies to underestimate time requirements and to be too forceful at times, which resembles development areas Magnus still recognizes in himself today.",
         terms: [
-          "2011 assessment",
           "old assessment",
           "older assessment",
           "competency development report",
@@ -1905,8 +1998,6 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "historical assessment",
           "assessment over time",
           "tests over time",
-          "2011 assessment results",
-          "what does the 2011 assessment say",
           "what did the competency development report say",
           "older test results",
           "does Magnus have older test results",
@@ -1914,17 +2005,14 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "En kompetensutvecklingsrapport från 2011 är äldre och bör inte användas som en fristående beskrivning av Magnus idag, men flera teman stämmer väl med hans nuvarande egenbeskrivning och senare Alva-resultat. Rapporten beskrev ett strukturerat och systematiskt arbetssätt, höga prestationskrav, en förmåga att snabbt se kärnan i komplexa problem, effektivt arbete både självständigt och i grupp samt en stark vilja att få saker gjorda. Den noterade också möjliga tendenser att underskatta tidsåtgång och ibland vara för pådrivande, vilket liknar utvecklingsområden som Magnus fortfarande själv känner igen.",
+          "En tidigare kompetensutvecklingsrapport, från 2011, stämmer väl med Magnus nuvarande egenbeskrivning och senare Alva-resultat. Rapporten beskrev ett strukturerat och systematiskt arbetssätt, höga prestationskrav, en förmåga att snabbt se kärnan i komplexa problem, effektivt arbete både självständigt och i grupp samt en stark vilja att få saker gjorda. Den noterade också möjliga tendenser att underskatta tidsåtgång och ibland vara för pådrivande, vilket liknar utvecklingsområden som Magnus fortfarande själv känner igen.",
         terms: [
-          "2011 rapport",
           "gammal rapport",
           "äldre bedömning",
           "kompetensutvecklingsrapport",
           "historisk bedömning",
           "bedömning över tid",
           "tester över tid",
-          "bedömningen från 2011",
-          "vad säger bedömningen från 2011",
           "vad stod i kompetensutvecklingsrapporten",
           "äldre testresultat",
           "har Magnus äldre testresultat",
