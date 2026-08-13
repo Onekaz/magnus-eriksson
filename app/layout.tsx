@@ -16,6 +16,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "Magnus Eriksson – Professional Profile",
+    description:
+      "Professional profile for Magnus Eriksson, covering experience, skills, education and contact information.",
+    url: "/",
+    siteName: "Magnus Eriksson",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 627,
+        alt: "Magnus Eriksson – Professional Profile",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

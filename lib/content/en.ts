@@ -153,7 +153,7 @@ export const englishContent = {
             responsibilities: ["Revenue Growth", "Pricing Strategy", "Contract Development"],
             achievementLabel: "Achievements:",
             description:
-              "Increased ARPU by 19% via pricing strategy and product diversification. Developed and negotiated a business agreement proposed by Service Providers as industry standard.",
+              "Increased ARPU by 19% via pricing strategy and product diversification. Developed and negotiated a business agreement later proposed by Service Providers as an industry standard.",
             showTimelineMarker: true,
           },
           {
@@ -212,6 +212,88 @@ export const englishContent = {
           description:
             "Shaped business strategies, developed financial models and investment cases, and drafted and negotiated commercial agreements.",
         },
+      },
+      {
+        type: "timelineGroup",
+        entries: [
+          {
+            role: "Product Manager",
+            company: "iTUX Communication AB",
+            location: "Stockholm",
+            start: "Mar 2014",
+            end: "Nov 2014",
+            startDate: "2014-03",
+            endDate: "2014-11",
+            responsibilities: [
+              "Product Management",
+              "P&L Analysis",
+              "Stakeholder Management",
+            ],
+            achievementLabel: "Achievements:",
+            description:
+              "Developed, negotiated and implemented a new business agreement for Service Providers while driving profitability across B2C and B2B services.",
+            showTimelineMarker: true,
+          },
+          {
+            role: "Business Developer",
+            company: "iTUX Communication AB",
+            location: "Stockholm",
+            start: "May 2012",
+            end: "Mar 2014",
+            startDate: "2012-05",
+            endDate: "2014-03",
+            responsibilities: [
+              "Business Development",
+              "Product Development",
+              "Stakeholder Management",
+            ],
+            achievementLabel: "Achievements:",
+            description:
+              "Developed the B2B portfolio to better meet Service Provider needs and market demand, as well as increase revenue and improve contribution margin.",
+            showTimelineMarker: true,
+          },
+        ],
+      },
+      {
+        type: "timelineGroup",
+        entries: [
+          {
+            role: "Acting CEO",
+            company: "Bahnhof, Unipessoal Lda.",
+            location: "Funchal, Portugal",
+            start: "Jan 2012",
+            end: "Mar 2012",
+            startDate: "2012-01",
+            endDate: "2012-03",
+            responsibilities: [
+              "General Management",
+              "Operations Management",
+              "Organizational Development",
+            ],
+            achievementLabel: "Achievements:",
+            description:
+              "Streamlined delivery operations, clarified roles and responsibilities, and established a clearer structure for internal communication.",
+            showTimelineMarker: true,
+          },
+          {
+            role: "Marketing Manager",
+            company: "Bahnhof, Unipessoal Lda.",
+            location: "Funchal, Portugal",
+            start: "Feb 2011",
+            end: "Apr 2012",
+            startDate: "2011-02",
+            endDate: "2012-04",
+            responsibilities: [
+              "Marketing Strategy",
+              "Profitability Improvement",
+              "People Management",
+            ],
+            achievementLabel: "Achievements:",
+            description:
+              "Designed and implemented a strategic framework focused on brand awareness, organic growth, and profitability, driving a ~58% increase in monthly net customer growth.",
+            showTimelineMarker: true,
+          },
+        ],
       },
     ],
   },

@@ -152,7 +152,7 @@ export const swedishContent = {
             responsibilities: ["Lönsamhetsutveckling", "Prisstrategi", "Avtalsutveckling"],
             achievementLabel: "Prestationer:",
             description:
-              "Ökade ARPU med 19 % genom prisstrategi och produktdiversifiering. Skapade och förhandlade det affärsavtal som tjänsteleverantörerna föreslogs som branschstandard.",
+              "Ökade ARPU med 19 % genom prisstrategi och produktdiversifiering. Skapade och förhandlade det affärsavtal som tjänsteleverantörerna föreslog som branschstandard.",
             showTimelineMarker: true,
           },
           {
@@ -212,6 +212,88 @@ export const swedishContent = {
             "Utformade affärsstrategier, utvecklade finansiella modeller och investeringsunderlag samt tog fram och förhandlade kommersiella avtal.",
         },
       },
+      {
+        type: "timelineGroup",
+        entries: [
+          {
+            role: "Product Manager",
+            company: "iTUX Communication AB",
+            location: "Stockholm",
+            start: "Mar 2014",
+            end: "Nov 2014",
+            startDate: "2014-03",
+            endDate: "2014-11",
+            responsibilities: [
+              "Produktledning",
+              "P&L-analys",
+              "Intressenthantering",
+            ],
+            achievementLabel: "Prestationer:",
+            description:
+              "Utvecklade, förhandlade och implementerade ett nytt tjänsteleverantörsavtal samtidigt som jag drev lönsamhetsutveckling för B2C- och B2B-tjänster.",
+            showTimelineMarker: true,
+          },
+          {
+            role: "Business Developer",
+            company: "iTUX Communication AB",
+            location: "Stockholm",
+            start: "Maj 2012",
+            end: "Mar 2014",
+            startDate: "2012-05",
+            endDate: "2014-03",
+            responsibilities: [
+              "Affärsutveckling",
+              "Produktutveckling",
+              "Intressenthantering",
+            ],
+            achievementLabel: "Prestationer:",
+            description:
+              "Vidareutvecklade B2B-portföljen för att bättre möta tjänsteleverantörernas behov och marknadens efterfrågan samt öka intäkterna och förbättra täckningsbidraget.",
+            showTimelineMarker: true,
+          },
+        ],
+      },
+      {
+        type: "timelineGroup",
+        entries: [
+          {
+            role: "Acting CEO",
+            company: "Bahnhof, Unipessoal Lda.",
+            location: "Funchal, Portugal",
+            start: "Jan 2012",
+            end: "Mar 2012",
+            startDate: "2012-01",
+            endDate: "2012-03",
+            responsibilities: [
+              "Företagsledning",
+              "Operativ ledning",
+              "Organisationsutveckling",
+            ],
+            achievementLabel: "Prestationer:",
+            description:
+              "Effektiviserade leveransfunktionen, tydliggjorde roller och ansvar samt etablerade en tydligare struktur för internkommunikation.",
+            showTimelineMarker: true,
+          },
+          {
+            role: "Marketing Manager",
+            company: "Bahnhof, Unipessoal Lda.",
+            location: "Funchal, Portugal",
+            start: "Feb 2011",
+            end: "Apr 2012",
+            startDate: "2011-02",
+            endDate: "2012-04",
+            responsibilities: [
+              "Marknadsstrategi",
+              "Lönsamhetsutveckling",
+              "Personalansvar",
+            ],
+            achievementLabel: "Prestationer:",
+            description:
+              "Utformade och implementerade ett strategiskt ramverk med fokus på varumärkeskännedom, organisk tillväxt och lönsamhet, vilket ökade den månatliga nettokundtillväxten med cirka 58 %.",
+            showTimelineMarker: true,
+          },
+        ],
+      },
     ],
   },
   skills: {
@@ -224,7 +306,7 @@ groups: [
       "Förändringsledning",
       "Verksamhetsutveckling",
       "Intressenthantering",
-      "Tvärfunktionellt ägarskap",
+      "Tvärfunktionellt ansvar",
     ],
   },
   {

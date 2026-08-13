@@ -207,7 +207,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "När Magnus får ansvar för ett nytt projekt börjar han med att skapa en bild av omfattning, ramverk och tidsplan. Magnus arbetar fram en projektplan och kombinerar en tydlig grundstruktur med löpande revideringar för att undvika överraskningar. Under projektets gång trycktestar han olika delar och leveranser för att söka bibehålla kontroll.",
+          "När Magnus får ansvar för ett nytt projekt börjar han med att skapa en bild av omfattning, ramverk och tidsplan. Han arbetar fram en projektplan och kombinerar en tydlig grundstruktur med löpande revideringar för att söka undvika överraskningar. Under projektets gång trycktestar han olika delar och leveranser för att bibehålla kontroll.",
         terms: [
           "projektledning",
           "hur arbetar Magnus med projektledning",
@@ -347,19 +347,15 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
         answer:
           "Magnus values cross-functional work because different perspectives and areas of expertise provide a broader understanding, more potential solutions, and better alignment. He also sees it as a valuable way to develop his own knowledge.",
         terms: [
-          "cross functional work",
           "cross-functional work",
-          "cross functional collaboration",
           "cross-functional collaboration",
           "working cross functionally",
           "work cross functionally",
-          "cross functional",
           "cross-functional",
           "how does Magnus work cross functionally",
           "how does Magnus collaborate across functions",
           "collaboration across functions",
           "alignment across functions",
-          "cross functional alignment",
           "cross-functional alignment",
         ],
       },
@@ -841,7 +837,7 @@ terms: [
       },
       sv: {
         answer:
-          "Svenska är Magnus som modersmål, samtidigt som han behärskar engelska på professionell nivå. Hans tyska är begränsad, även om han förstår en del, medan hans spanska och portugisiska är väldigt begränsade.",
+          "Magnus har svenska som modersmål samtidigt som han behärskar engelska på professionell nivå. Hans tyska är begränsad, även om han förstår en del, medan hans spanska och portugisiska är väldigt begränsade.",
         terms: [
           "språk",
           "engelska professionellt",
@@ -867,7 +863,7 @@ terms: [
     translations: {
       en: {
         answer:
-          "Outside work, Magnus spend time with family and friends. He trains at the gym and runs, and during the winter he skis downhill and cross-country. He listens to a lot of popular music, plays some guitar and also practices card tricks.",
+          "Outside work, Magnus spends time with family and friends. He trains at the gym and runs, and during the winter he skis downhill and cross-country. He listens to a lot of popular music, plays some guitar and also practices card tricks.",
         terms: [
           "hobbies",
           "free time",
@@ -1560,7 +1556,7 @@ terms: [
     translations: {
       en: {
         answer:
-          "Magnus values colleagues who are ambitious and work towards established goals, while also being friendly, approachable, and sociable. Social interaction is very important to him when it comes to enjoying the workplace, which is why he also places a strong emphasis on honesty and direct communication.",
+          "Magnus values colleagues who are ambitious and work towards established goals, while also being approachable, and sociable. Social interaction is very important to him when it comes to enjoying the workplace, which is why he also places a strong emphasis on honesty and direct communication.",
         terms: [
           "what does Magnus appreciate in colleagues",
           "what does Magnus value in colleagues",
@@ -1579,7 +1575,7 @@ terms: [
       },
       sv: {
         answer:
-          "Magnus värderar kollegor som är ambitiösa och arbetar mot uppsatta mål, och som samtidigt är trevliga, bemötande och sociala. Det sociala samspelet är väldigt viktigt för trivsel på arbetsplatsen, och därför understryker också Magnus ärlighet och rak kommunikation.",
+          "Magnus värderar kollegor som är ambitiösa och arbetar mot uppsatta mål, och som samtidigt har ett trevligt bemötande och är sociala. Det sociala samspelet är väldigt viktigt för trivsel på arbetsplatsen, och därför understryker också Magnus ärlighet och rak kommunikation.",
         terms: [
           "vad uppskattar Magnus hos kollegor",
           "vad värderar Magnus hos kollegor",
@@ -1674,12 +1670,10 @@ terms: [
         terms: [
           "conscientiousness",
           "persistent",
-          "goal oriented",
           "organized",
           "structured personality",
           "work discipline",
           "structured",
-          "hard working",
           "hard-working",
           "goal-oriented",
           "disciplined",
@@ -1761,8 +1755,6 @@ terms: [
           "resilience",
           "optimism",
           "calm under pressure",
-          "stress resistant",
-          "stress tolerant",
           "stress-tolerant",
           "stress-resistant",
           "calm",
@@ -1805,7 +1797,6 @@ terms: [
           "open to change",
           "change oriented",
           "new things",
-          "open minded",
           "open-minded",
           "curious",
           "intellectually curious",
@@ -1964,7 +1955,7 @@ terms: [
       },
       sv: {
         answer:
-          "Enligt Alva Labs är Magnus viktigaste drivande faktorer stimulans, kreativitet och autonomi. Kulturpreferenserna som lyfts i rapporten är innovativ, energisk och beslutsam.",
+          "Enligt Alva Labs är Magnus viktigaste drivande faktorer stimulans, kreativitet och autonomi. Rapporten beskriver hans kulturpreferenser som en arbetskultur präglad av innovation, energi och handlingskraft.",
         terms: [
           "drivande faktorer",
           "motivationsfaktorer",
@@ -2016,6 +2007,252 @@ terms: [
           "vad stod i kompetensutvecklingsrapporten",
           "äldre testresultat",
           "har Magnus äldre testresultat",
+        ],
+      },
+    },
+  },
+  {
+    id: "additional-contribution-overview",
+    priority: 17,
+    translations: {
+      en: {
+        answer:
+"Magnus can primarily contribute within the following areas:\n" +
+"• Leadership and governance, strategic priorities, and change initiatives.\n" +
+"• Business development, growth strategy, pricing strategy, profitability, and sales strategy.\n" +
+"• Marketing strategy, positioning, target markets, digital strategy, pipeline generation, data analysis, and structured follow-up.\n" +
+"• Web structure, applications, and LLM iteration to support the work.",
+        terms: [
+          "what can Magnus contribute",
+          "how can Magnus contribute",
+          "what can Magnus help with",
+          "how can Magnus help",
+          "what can Magnus assist with",
+          "how can Magnus assist",
+          "what can Magnus support with",
+          "how can Magnus support a company",
+          "how can Magnus support a business",
+          "where can Magnus add value",
+          "what can Magnus bring to a company",
+"what can Magnus do for us",
+        ],
+      },
+      sv: {
+        answer:
+"Magnus kan primärt bidra inom nedan områden:\n" +
+"• Ledning och styrning, strategiska prioriteringar och förändringsarbete.\n" +
+"• Affärsutveckling, tillväxtstrategi, prisstrategi, lönsamhet och försäljningsstrategi.\n" +
+"• Marknadsstrategi, positionering, målmarknader, digital strategi, pipelinegenerering, dataanalys och strukturerad uppföljning.\n" +
+"• Webbstruktur, applikationer och LLM-iteration som stöd i arbetet.",
+        terms: [
+          "vad kan Magnus bidra med",
+          "hur kan Magnus bidra",
+          "hur bidrar Magnus",
+          "vad kan Magnus hjälpa till med",
+          "vad kan Magnus hjälpa med",
+          "hur kan Magnus hjälpa",
+          "vad kan Magnus bistå med",
+          "hur kan Magnus bistå",
+          "på vilka områden kan Magnus bidra",
+          "hur kan Magnus stötta ett företag",
+          "hur kan Magnus stötta en verksamhet",
+          "vad kan Magnus tillföra",
+          "var kan Magnus skapa värde",
+"vad kan Magnus göra för oss",
+        ],
+      },
+    },
+  },
+  {
+    id: "additional-contribution-management-governance",
+    priority: 18,
+    translations: {
+      en: {
+        answer:
+          "Driving change in an organization requires clear direction, effective governance, and responsibility that holds the whole together. Magnus can contribute with strategic priorities, organizational development, change initiatives, and coordination and allocation of responsibilities. The goal is better structure, stronger coordination, and a greater ability to turn decisions into practice.",
+        terms: [
+          "what can Magnus contribute within management and governance",
+          "what can Magnus help with management and governance",
+          "what can Magnus assist with management and governance",
+          "how can Magnus help with management and governance",
+          "can Magnus help with governance",
+          "can Magnus assist with governance",
+          "can Magnus help with strategic priorities",
+          "can Magnus help with organizational development",
+          "can Magnus help with organisation development",
+          "can Magnus help with change initiatives",
+          "can Magnus help with organizational change",
+          "can Magnus help with coordination and responsibilities",
+          "can Magnus help with allocation of responsibilities",
+          "contribute with management and governance",
+        ],
+      },
+      sv: {
+        answer:
+          "För att driva förändring i en verksamhet krävs tydlig riktning, fungerande styrning och ett ansvar som håller ihop helheten. Magnus kan bidra inom strategiska prioriteringar, organisationsutveckling, förändringsarbete samt samordning och ansvarsfördelning. Målet är bättre struktur, starkare samordning och större förmåga att omsätta beslut i praktiken.",
+        terms: [
+          "vad kan Magnus bidra med inom ledning och styrning",
+          "vad kan Magnus hjälpa till med inom ledning och styrning",
+          "vad kan Magnus hjälpa till med ledning och styrning",
+          "vad kan Magnus bistå med inom ledning och styrning",
+          "hur kan Magnus hjälpa med ledning och styrning",
+          "kan Magnus hjälpa med styrning",
+          "kan Magnus bistå med styrning",
+          "kan Magnus hjälpa med strategiska prioriteringar",
+          "kan Magnus hjälpa med organisationsutveckling",
+          "kan Magnus hjälpa med förändringsarbete",
+          "kan Magnus hjälpa med organisationsförändring",
+          "kan Magnus hjälpa med samordning och ansvarsfördelning",
+          "kan Magnus hjälpa med ansvarsfördelning",
+          "bidra med ledning och styrning",
+          "bistå med ledning och styrning",
+        ],
+      },
+    },
+  },
+  {
+    id: "additional-contribution-sales-business-development",
+    priority: 18,
+    translations: {
+      en: {
+        answer:
+          "Magnus can contribute when sales and business development need clearer commercial direction and sharper priorities. This includes growth strategy and commercial development, sales strategy and commercial priorities, pricing strategy and profitability.",
+        terms: [
+          "what can Magnus contribute within sales and business development",
+          "what can Magnus help with sales and business development",
+          "what can Magnus assist with sales and business development",
+          "how can Magnus help with sales and business development",
+          "can Magnus help with sales",
+          "can Magnus help with business development",
+          "can Magnus assist with business development",
+          "can Magnus help with growth strategy",
+          "can Magnus help with commercial development",
+          "can Magnus help with sales strategy",
+          "can Magnus help with commercial priorities",
+          "can Magnus help with pricing strategy",
+          "can Magnus help with profitability",
+          "can Magnus help with business models",
+          "contribute with sales and business development",
+          "assist with sales and business development",
+        ],
+      },
+      sv: {
+        answer:
+          "Magnus kan bidra när försäljning och affärsutveckling behöver en tydligare kommersiell riktning och skarpare prioriteringar. Det omfattar tillväxtstrategi och kommersiell utveckling, försäljningsstrategi och kommersiella prioriteringar, prisstrategi och lönsamhet.",
+        terms: [
+          "vad kan Magnus bidra med inom försäljning och affärsutveckling",
+          "vad kan Magnus hjälpa till med inom försäljning och affärsutveckling",
+          "vad kan Magnus hjälpa till med försäljning och affärsutveckling",
+          "vad kan Magnus bistå med inom försäljning och affärsutveckling",
+          "hur kan Magnus hjälpa med försäljning och affärsutveckling",
+          "kan Magnus hjälpa med försäljning",
+          "kan Magnus hjälpa med affärsutveckling",
+          "kan Magnus bistå med affärsutveckling",
+          "kan Magnus hjälpa med tillväxtstrategi",
+          "kan Magnus hjälpa med kommersiell utveckling",
+          "kan Magnus hjälpa med försäljningsstrategi",
+          "kan Magnus hjälpa med kommersiella prioriteringar",
+          "kan Magnus hjälpa med prisstrategi",
+          "kan Magnus hjälpa med lönsamhet",
+          "kan Magnus hjälpa med affärsmodeller",
+          "bidra med försäljning och affärsutveckling",
+          "bistå med försäljning och affärsutveckling",
+        ],
+      },
+    },
+  },
+  {
+    id: "additional-contribution-marketing-communication-digital",
+    priority: 18,
+    translations: {
+      en: {
+        answer:
+          "Magnus can contribute when marketing and communication need clearer focus, stronger positioning, and a more relevant digital presence. This includes marketing strategy, target market and positioning, content and communication, and digital strategy.",
+        terms: [
+          "what can Magnus contribute within marketing communication and digital presence",
+          "what can Magnus help with marketing communication and digital presence",
+          "what can Magnus assist with marketing communication and digital presence",
+          "how can Magnus help with marketing and communication",
+          "can Magnus help with marketing strategy",
+          "can Magnus help with communication",
+          "can Magnus help with content and communication",
+          "can Magnus help with target market",
+          "can Magnus help with positioning",
+          "can Magnus help with digital strategy",
+          "can Magnus help with digital presence",
+          "contribute with marketing communication and digital presence",
+        ],
+      },
+      sv: {
+        answer:
+          "Magnus kan bidra när marknad och kommunikation behöver tydligare fokus, starkare positionering och en mer relevant digital närvaro. Det omfattar marknadsstrategi, målmarknad och positionering, innehåll och kommunikation samt digital strategi.",
+        terms: [
+          "vad kan Magnus bidra med inom marknad kommunikation och digital närvaro",
+          "vad kan Magnus hjälpa till med inom marknad kommunikation och digital närvaro",
+          "vad kan Magnus hjälpa till med marknad kommunikation och digital närvaro",
+          "vad kan Magnus bistå med inom marknad kommunikation och digital närvaro",
+          "hur kan Magnus hjälpa med marknad och kommunikation",
+          "kan Magnus hjälpa med marknadsstrategi",
+          "kan Magnus hjälpa med kommunikation",
+          "kan Magnus hjälpa med innehåll och kommunikation",
+          "kan Magnus hjälpa med målmarknad",
+          "kan Magnus hjälpa med positionering",
+          "kan Magnus hjälpa med digital strategi",
+          "kan Magnus hjälpa med digital närvaro",
+          "bidra med marknad kommunikation och digital närvaro",
+        ],
+      },
+    },
+  },
+  {
+    id: "additional-contribution-web-content-ai",
+    priority: 18,
+    translations: {
+      en: {
+        answer:
+          "Magnus can contribute to the structure and refinement of websites and applications, with a focus on clear information architecture, coherent content, and visual presentation. He also uses LLM iteration as a practical support in the work.",
+        terms: [
+  "what can Magnus contribute within web structure content and AI support",
+  "what can Magnus help with web structure content and AI support",
+  "what can Magnus assist with web structure content and AI support",
+  "how can Magnus help with web structure",
+  "can Magnus help with web structure",
+  "can Magnus help with website structure",
+  "can Magnus help with websites",
+  "can Magnus help with applications",
+  "can Magnus help with information architecture",
+  "can Magnus help with content structure",
+  "can Magnus help with web content",
+  "can Magnus help with visual presentation",
+  "can Magnus help with LLM iteration",
+  "can Magnus help with AI support",
+  "can Magnus help with SEO",
+  "can Magnus help with GEO",
+  "contribute to web structure content and AI support",
+        ],
+      },
+      sv: {
+        answer:
+          "Magnus kan bidra med struktur och utveckling av webbsidor och applikationer, med fokus på tydlig informationsstruktur, sammanhållet innehåll och visuell presentation. Han använder även LLM-iteration som ett praktiskt stöd i arbetet.",
+        terms: [
+  "vad kan Magnus bidra med inom webbstruktur innehåll och AI-stöd",
+  "vad kan Magnus hjälpa till med inom webbstruktur innehåll och AI-stöd",
+  "vad kan Magnus hjälpa till med webbstruktur innehåll och AI-stöd",
+  "vad kan Magnus bistå med inom webbstruktur innehåll och AI-stöd",
+  "hur kan Magnus hjälpa med webbstruktur",
+  "kan Magnus hjälpa med webbstruktur",
+  "kan Magnus hjälpa med webbplatsstruktur",
+  "kan Magnus hjälpa med webbsidor",
+  "kan Magnus hjälpa med applikationer",
+  "kan Magnus hjälpa med informationsstruktur",
+  "kan Magnus hjälpa med innehållsstruktur",
+  "kan Magnus hjälpa med webbinnehåll",
+  "kan Magnus hjälpa med visuell presentation",
+  "kan Magnus hjälpa med LLM-iteration",
+  "kan Magnus hjälpa med AI-stöd",
+  "kan Magnus hjälpa med SEO",
+  "kan Magnus hjälpa med GEO",
+  "bidra med webbstruktur innehåll och AI-stöd",
         ],
       },
     },
