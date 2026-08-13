@@ -8,6 +8,7 @@ import {
   DESKTOP_HEADER_HEIGHT_PX,
   DESKTOP_HEADER_LANGUAGE_FLAG_BORDER_WIDTH_PX,
   DESKTOP_HEADER_LANGUAGE_FLAG_HEIGHT_PX,
+  DESKTOP_HEADER_LANGUAGE_FLAG_INACTIVE_OPACITY,
   DESKTOP_HEADER_LANGUAGE_FLAGS_GAP_PX,
   DESKTOP_HEADER_LANGUAGE_FLAG_OFFSET_X_PX,
   DESKTOP_HEADER_LANGUAGE_FLAG_OFFSET_Y_PX,
@@ -246,6 +247,10 @@ export default function DesktopHeader({
                           border: "none",
                           background: "transparent",
                           padding: 0,
+                          opacity:
+                            language === "sv"
+                              ? 1
+                              : DESKTOP_HEADER_LANGUAGE_FLAG_INACTIVE_OPACITY,
                         }}
                       >
                         <img
@@ -282,6 +287,10 @@ export default function DesktopHeader({
                           border: "none",
                           background: "transparent",
                           padding: 0,
+                          opacity:
+                            language === "en"
+                              ? 1
+                              : DESKTOP_HEADER_LANGUAGE_FLAG_INACTIVE_OPACITY,
                         }}
                       >
                         <img

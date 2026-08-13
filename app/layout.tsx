@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Magnus Eriksson – Professional Profile",
+    title: "Magnus Eriksson",
     description:
       "Professional profile for Magnus Eriksson, covering experience, skills, education and contact information.",
     url: "/",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.jpg",
         width: 1200,
         height: 627,
-        alt: "Magnus Eriksson – Professional Profile",
+        alt: "Magnus Eriksson",
       },
     ],
   },
