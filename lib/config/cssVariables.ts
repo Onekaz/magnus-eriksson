@@ -30,6 +30,7 @@ export const pageVariables: PageVariables = {
   "--desktop-profile-image-height": `${desktop.DESKTOP_PROFILE_IMAGE_HEIGHT_PX}px`,
   "--desktop-profile-image-radius": `${desktop.DESKTOP_PROFILE_IMAGE_RADIUS_PX}px`,
   "--desktop-profile-image-offset-x": `${desktop.DESKTOP_PROFILE_IMAGE_OFFSET_X_PX}px`,
+  "--desktop-profile-image-offset-y": `${desktop.DESKTOP_PROFILE_IMAGE_OFFSET_Y_PX}px`,
   "--desktop-about-text-offset-x": `${desktop.DESKTOP_ABOUT_TEXT_OFFSET_X_PX}px`,
   "--desktop-hero-content-width": `${desktop.DESKTOP_HERO_CONTENT_WIDTH_PX}px`,
   "--desktop-hero-heading-text-size": `${desktop.DESKTOP_HERO_HEADING_TEXT_SIZE_PX}px`,

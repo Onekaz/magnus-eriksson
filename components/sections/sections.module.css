@@ -491,6 +491,7 @@
   .aboutLayout {
     display: grid;
     grid-template-columns: var(--desktop-hero-grid-columns);
+    align-items: start;
     gap: var(--desktop-hero-column-gap);
   }
 
@@ -499,7 +500,10 @@
     height: var(--desktop-profile-image-height);
     justify-self: center;
     border-radius: var(--desktop-profile-image-radius);
-    transform: translateX(var(--desktop-profile-image-offset-x));
+    transform: translate(
+      var(--desktop-profile-image-offset-x),
+      var(--desktop-profile-image-offset-y)
+    );
   }
 
   .aboutTextColumn {

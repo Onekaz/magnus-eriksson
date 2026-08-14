@@ -36,8 +36,9 @@ export const swedishContent = {
     heading: "Om mig",
     imageAlt: "Magnus Eriksson",
     paragraphs: [
-      "Med bakgrund i seniora kommersiella roller inom telekom och IT/IoT har jag drivit tillväxt genom att utveckla skalbara strukturer, bygga starka kund- och partnerrelationer och leda tvärfunktionella initiativ. Mitt fokus har alltid legat på att omsätta strategiska prioriteringar i konkreta och mätbara affärsresultat samt säkerställa samsyn mellan olika funktioner och nyckelintressenter.",
-      "Jag anpassar mig snabbt till nya sammanhang, omsätter analys i handling och behåller lugnet i krävande situationer. Jag skapar engagemang genom tydlighet och delaktighet, kommunicerar effektivt på alla nivåer och trivs bäst i dynamiska miljöer där framsteg bygger på tydliga prioriteringar, disciplinerat genomförande, förtroende och nära samarbete.",
+      "Jag uppskattar struktur, men behöver inte förutsägbarhet. Jag tycker om ansvar, men ogillar onödig hierarki. Jag är helt bekväm med att fatta beslut, ändra riktning när förutsättningarna förändras och möta krävande situationer utan att göra dem mer dramatiska än nödvändigt.",
+      "Med en bakgrund i seniora roller inom telekom och IT/IoT har jag drivit tillväxt genom att utveckla skalbara strukturer, bygga starka kund- och partnerrelationer och leda tvärfunktionella initiativ. En röd tråd genom min karriär har varit att arbeta i roller som sträcker sig över olika delar av verksamheten, omsätta strategiska prioriteringar i mätbara resultat och utveckla affären.",
+      "Jag är van att arbeta i roller där ramarna inte har varit helt definierade från början. En styrka hos mig är att jag snabbt identifierar det väsentliga, sätter en riktning och börjar leverera, samtidigt som jag successivt trycktestar mina antaganden. Med den erfarenheten och det arbetssättet trivs jag särskilt i dynamiska och utmanande miljöer där jag har mandat att driva arbetet framåt och där framsteg bygger på disciplinerat genomförande, förtroende och nära samarbete.",
     ],
     downloads: [
       {
