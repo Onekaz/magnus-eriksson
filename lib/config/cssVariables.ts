@@ -32,7 +32,6 @@ export const pageVariables: PageVariables = {
   "--desktop-profile-image-offset-x": `${desktop.DESKTOP_PROFILE_IMAGE_OFFSET_X_PX}px`,
   "--desktop-about-text-offset-x": `${desktop.DESKTOP_ABOUT_TEXT_OFFSET_X_PX}px`,
   "--desktop-hero-content-width": `${desktop.DESKTOP_HERO_CONTENT_WIDTH_PX}px`,
-  "--desktop-hero-text-column-gap": `${desktop.DESKTOP_HERO_TEXT_COLUMN_GAP_PX}px`,
   "--desktop-hero-heading-text-size": `${desktop.DESKTOP_HERO_HEADING_TEXT_SIZE_PX}px`,
   "--desktop-hero-heading-text-weight": `${desktop.DESKTOP_HERO_HEADING_TEXT_WEIGHT}`,
   "--desktop-hero-heading-line-height": `${desktop.DESKTOP_HERO_HEADING_LINE_HEIGHT}`,

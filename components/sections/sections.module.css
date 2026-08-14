@@ -504,8 +504,12 @@
 
   .aboutTextColumn {
     max-width: var(--desktop-hero-content-width);
-    gap: var(--desktop-hero-text-column-gap);
+    gap: var(--desktop-gap-24);
     transform: translateX(var(--desktop-about-text-offset-x));
+  }
+
+  .aboutTextColumn > .heroHeading {
+    margin-bottom: var(--desktop-gap-4);
   }
 
   .heroHeading {
