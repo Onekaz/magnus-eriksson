@@ -37,7 +37,7 @@ export const englishContent = {
     imageAlt: "Magnus Eriksson",
     paragraphs: [
     "I like structure, but I do not need predictability. I like responsibility, but not unnecessary hierarchy. I am comfortable making decisions, changing course when circumstances change and dealing with demanding situations without making them more dramatic than necessary.",
-    "With a background in senior roles within telecom and IT/IoT, I have driven growth by developing scalable structures, building strong customer and partner relationships, and leading cross-functional initiatives. A consistent theme throughout my career has been working across different parts of the business, turning strategic priorities into measurable outcomes and finding practical ways to improve the business.",
+    "With a background in senior roles within telecom and IT/IoT, I have driven growth by developing scalable structures, building strong customer and partner relationships, and leading cross-functional initiatives. A consistent theme throughout my career has been working across different parts of the organization, turning strategic priorities into measurable outcomes and finding practical ways to improve the business.",
     "I have often worked in roles where not everything is fully defined from the outset. I establish the essentials quickly, set a direction and start delivering, while continuing to test assumptions and adjust along the way. With that experience and way of working, I thrive in dynamic and challenging environments where I have the mandate to drive the work forward and where progress depends on disciplined follow-through, trust and close collaboration.",
     ],
     downloads: [
