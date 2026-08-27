@@ -1,5 +1,6 @@
 // components/sections/ResumeSection.tsx
 
+import { Download } from "@/components/icons";
 import type { ResumeBlock, ResumeEntry, SiteContent } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
@@ -104,9 +105,21 @@ export default function ResumeSection({ content }: ResumeSectionProps) {
       className={`${styles.pageSection} ${styles.standardSection} ${styles.resumeSection}`}
     >
       <div className={styles.resumeContent}>
-        <h2 id="resume-heading" className={styles.sectionHeading}>
-          {content.resume.heading}
-        </h2>
+        <div className={styles.resumeHeadingRow}>
+          <h2 id="resume-heading" className={styles.sectionHeading}>
+            {content.resume.heading}
+          </h2>
+          <a
+            href={content.resume.download.href}
+            download
+            className={styles.downloadIconLink}
+            aria-label={content.resume.download.ariaLabel}
+          >
+            <span className={styles.downloadIconTab} aria-hidden="true">
+              <Download />
+            </span>
+          </a>
+        </div>
 
         <div className={`${styles.mobileResumeList} ${styles.desktopResumeList}`}>
           {content.resume.blocks.map((block, index) => (

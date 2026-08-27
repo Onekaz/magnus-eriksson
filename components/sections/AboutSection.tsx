@@ -1,7 +1,6 @@
 // components/sections/AboutSection.tsx
 
 import Image from "next/image";
-import { Download } from "@/components/icons";
 import type { SiteContent } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
@@ -40,25 +39,6 @@ export default function AboutSection({ content }: AboutSectionProps) {
             </p>
           ))}
 
-          <div className={styles.downloadBlock}>
-            <div className={styles.downloadList}>
-              {content.about.downloads.map((download) => (
-                <div key={download.href} className={styles.downloadItem}>
-                  <span className={styles.downloadLabel}>{download.label}</span>
-                  <a
-                    href={download.href}
-                    download
-                    className={styles.downloadIconLink}
-                    aria-label={download.ariaLabel}
-                  >
-                    <span className={styles.downloadIconTab} aria-hidden="true">
-                      <Download />
-                    </span>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

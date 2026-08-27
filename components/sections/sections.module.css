@@ -116,31 +116,6 @@
   letter-spacing: var(--mobile-text-letter-spacing);
 }
 
-.downloadBlock {
-  display: flex;
-  flex-direction: column;
-  margin-top: var(--mobile-download-block-margin-top);
-}
-
-.downloadList {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mobile-gap-8);
-}
-
-.downloadItem {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  gap: var(--mobile-gap-8);
-}
-
-.downloadLabel {
-  color: var(--color-primary);
-  font-size: var(--mobile-link-text-size);
-  font-weight: var(--mobile-link-text-weight);
-}
-
 .downloadIconLink {
   display: inline-flex;
   width: fit-content;
@@ -232,6 +207,13 @@
   width: 100%;
   flex-direction: column;
   gap: var(--mobile-gap-24);
+}
+
+.resumeHeadingRow {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: var(--mobile-resume-heading-download-gap);
 }
 
 .resumeRoleTitle {
@@ -546,24 +528,6 @@
     letter-spacing: var(--desktop-text-letter-spacing);
   }
 
-  .downloadBlock {
-    margin-top: var(--desktop-download-block-margin-top);
-  }
-
-  .downloadList {
-    flex-direction: row;
-    gap: var(--desktop-gap-40);
-  }
-
-  .downloadItem {
-    gap: var(--desktop-gap-8);
-  }
-
-  .downloadLabel {
-    font-size: var(--desktop-link-text-size);
-    font-weight: var(--desktop-link-text-weight);
-  }
-
   .downloadIconTab {
     width: var(--desktop-download-icon-tab-size);
     height: var(--desktop-download-icon-tab-size);
@@ -574,6 +538,11 @@
   .downloadIconTab svg {
     width: var(--desktop-download-icon-tab-icon-size);
     height: var(--desktop-download-icon-tab-icon-size);
+  }
+
+  .downloadIconLink {
+    position: relative;
+    top: var(--desktop-resume-heading-download-offset-y);
   }
 
   .downloadIconLink:hover .downloadIconTab {
@@ -630,6 +599,10 @@
     gap: var(--desktop-gap-28);
     margin-right: 0;
     margin-left: 0;
+  }
+
+  .resumeHeadingRow {
+    gap: var(--desktop-resume-heading-download-gap);
   }
 
   .resumeRoleTitle {

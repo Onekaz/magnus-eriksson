@@ -40,26 +40,13 @@ export const englishContent = {
     "With a background in senior roles within telecom and IT/IoT, I have driven growth by developing scalable structures, building strong customer and partner relationships, and leading cross-functional initiatives. A consistent theme throughout my career has been working across different parts of the organization, turning strategic priorities into measurable outcomes and finding practical ways to improve the business.",
     "I have often worked in roles where not everything is fully defined from the outset. I establish the essentials quickly, set a direction and start delivering, while continuing to test assumptions and adjust along the way. With that experience and way of working, I thrive in dynamic and challenging environments where I have the mandate to drive the work forward and where progress depends on disciplined follow-through, trust and close collaboration.",
     ],
-    downloads: [
-      {
-        label: "Resume",
-        href: "/downloads/magnus-eriksson-resume.pdf",
-        ariaLabel: "Download resume",
-      },
-      {
-        label: "Personality report",
-        href: "/downloads/magnus-eriksson-personality-report.pdf",
-        ariaLabel: "Download personality report",
-      },
-      {
-        label: "Logical reasoning report",
-        href: "/downloads/magnus-eriksson-logical-reasoning-report.pdf",
-        ariaLabel: "Download logical reasoning report",
-      },
-    ],
   },
   resume: {
     heading: "Resume",
+    download: {
+      href: "/downloads/magnus-eriksson-resume.pdf",
+      ariaLabel: "Download resume",
+    },
     blocks: [
       {
         type: "entry",

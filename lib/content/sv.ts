@@ -40,26 +40,13 @@ export const swedishContent = {
       "Med en bakgrund i seniora roller inom telekom och IT/IoT har jag drivit tillväxt genom att utveckla skalbara strukturer, bygga starka kund- och partnerrelationer och leda tvärfunktionella initiativ. En röd tråd genom min karriär har varit att verka över olika delar av verksamheten, omsätta strategiska prioriteringar i mätbara resultat och identifiera möjligheter att utveckla affären.",
       "Jag har vid flera tillfällen haft roller där rollbeskrivning och ansvarsområden inte varit helt definierade initialt. En styrka hos mig är att jag snabbt identifierar det väsentliga, sätter en riktning och börjar leverera, samtidigt som jag successivt trycktestar min ansats. Med den erfarenheten och det arbetssättet trivs jag särskilt i dynamiska och utmanande miljöer där jag har mandat att driva arbetet framåt och där framsteg bygger på disciplinerat genomförande, förtroende och nära samarbete.",
     ],
-    downloads: [
-      {
-        label: "CV",
-        href: "/downloads/magnus-eriksson-CV.pdf",
-        ariaLabel: "Ladda ner CV",
-      },
-      {
-        label: "Personlighetsrapport",
-        href: "/downloads/magnus-eriksson-personality-report.pdf",
-        ariaLabel: "Ladda ner personlighetsrapport",
-      },
-      {
-        label: "Logiktestrapport",
-        href: "/downloads/magnus-eriksson-logical-reasoning-report.pdf",
-        ariaLabel: "Ladda ner logiktestrapport",
-      },
-    ],
   },
   resume: {
     heading: "CV",
+    download: {
+      href: "/downloads/magnus-eriksson-CV.pdf",
+      ariaLabel: "Ladda ner CV",
+    },
     blocks: [
       {
         type: "entry",

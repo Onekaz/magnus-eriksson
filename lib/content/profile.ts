@@ -82,14 +82,13 @@ export type SiteContent = {
     heading: string;
     imageAlt: string;
     paragraphs: readonly string[];
-    downloads: readonly {
-      label: string;
-      href: string;
-      ariaLabel: string;
-    }[];
   };
   resume: {
     heading: string;
+    download: {
+      href: string;
+      ariaLabel: string;
+    };
     blocks: readonly ResumeBlock[];
   };
   skills: {
