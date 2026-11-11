@@ -38,7 +38,7 @@ export const swedishContent = {
     paragraphs: [
       "Jag uppskattar struktur, men behöver inte förutsägbarhet. Jag tycker om ansvar, men ogillar onödig hierarki. Jag är helt bekväm med att fatta beslut, ändra riktning när förutsättningarna förändras och möta krävande situationer utan att göra dem mer dramatiska än nödvändigt.",
       "Med bakgrund i kommersiell ledning, affärsutveckling, marknadsföring och strategi har jag utvecklat affärer och partnerskap, stärkt marknadspositionen och drivit tvärfunktionella initiativ med fokus på lönsamhet och tillväxt. Jag är van vid uppdrag där ramarna inte är helt givna från början och identifierar snabbt det väsentliga, prioriterar och levererar.",
-      "Mitt ledarskap präglas av tydlighet, lyhördhet, rättvisa och delaktighet. Jag tror på rak kommunikation, ärlighet och frihet under ansvar, där tydliga mål och förväntningar kombineras med förtroende för medarbetarnas förmåga att själva ta ansvar och fatta beslut.",
+      "Min syn på ledarskap präglas av tydlighet, lyhördhet, rättvisa och delaktighet. Jag tror på rak kommunikation, ärlighet och frihet under ansvar, där tydliga mål och förväntningar kombineras med förtroende för medarbetares förmåga att själva ta ansvar och fatta beslut.",
     ],
   },
   resume: {
