@@ -37,8 +37,8 @@ export const englishContent = {
     imageAlt: "Magnus Eriksson",
     paragraphs: [
     "I like structure, but I do not need predictability. I like responsibility, but not unnecessary hierarchy. I am comfortable making decisions, changing course when circumstances change and dealing with demanding situations without making them more dramatic than necessary.",
-    "With a background in senior roles within telecom and IT/IoT, I have driven growth by developing scalable structures, building strong customer and partner relationships, and leading cross-functional initiatives. A consistent theme throughout my career has been working across different parts of the organization, turning strategic priorities into measurable outcomes and finding practical ways to improve the business.",
-    "I have often worked in roles where not everything is fully defined from the outset. I establish the essentials quickly, set a direction and start delivering, while continuing to test assumptions and adjust along the way. With that experience and way of working, I thrive in dynamic and challenging environments where I have the mandate to drive the work forward and where progress depends on disciplined follow-through, trust and close collaboration.",
+    "With a background in commercial leadership, business development, marketing and strategy, I have developed business opportunities and partnerships, strengthened market positioning and led cross-functional initiatives focused on profitability and growth. I am used to assignments where the scope is not fully defined from the outset. I quickly identify what matters, set priorities and deliver.",
+    "My approach to leadership emphasizes clarity, listening, fairness and involvement. I believe in direct communication, honesty and autonomy with accountability, combining clear goals and expectations with trust in people's ability to take ownership and make decisions.",
     ],
   },
   resume: {
@@ -65,7 +65,7 @@ export const englishContent = {
           ],
           achievementLabel: "Achievements:",
           description:
-            "Developed a SaaS platform contract framework, creating the structure and legal proposal format for the company’s SaaS offering.",
+            "Drafted and finalized a comprehensive SaaS framework agreement with annexes, including all commercial terms and legal provisions.",
         },
       },
       {
@@ -81,12 +81,12 @@ export const englishContent = {
             endDate: "2025-07",
             responsibilities: [
               "Revenue Budgeting",
-              "Commercial Operating Plan",
-              "Investor Relations",
+              "Commercial Planning",
+              "People Management",
             ],
             achievementLabel: "Achievements:",
             description:
-              "Created a commercial action plan covering target markets, sales priorities, KPI follow-up and CRM structure, supporting a more results-driven sales organization.",
+              "Transformed the sales organization and developed an action plan covering target markets, sales priorities, KPI follow-up and CRM structure.",
             showTimelineMarker: true,
           },
           {
@@ -104,7 +104,7 @@ export const englishContent = {
             ],
             achievementLabel: "Achievements:",
             description:
-              "Structured regulatory communication and governance matters, ensuring alignment of legal documentation in capitalization initiatives.",
+              "Managed and structured regulatory communications, contributed to corporate strategy, and drafted and administered engagement agreements for capital-raising assignments.",
           },
           {
             role: "Chief Marketing Officer (CMO)",
@@ -115,9 +115,9 @@ export const englishContent = {
             startDate: "2023-10",
             endDate: "2024-05",
             responsibilities: [
+              "Marketing Strategy",
               "Brand and Market Positioning",
               "Marketing Performance",
-              "Corporate Legal Matters",
             ],
             achievementLabel: "Achievements:",
             description:
@@ -140,7 +140,7 @@ export const englishContent = {
             responsibilities: ["Revenue Growth", "Pricing Strategy", "Contract Development"],
             achievementLabel: "Achievements:",
             description:
-              "Increased ARPU by 19% via pricing strategy and product diversification. Developed and negotiated a business agreement later proposed by Service Providers as an industry standard.",
+              "Raised ARPU by ~19% over time via pricing strategy and product diversification. Developed and negotiated an agreement proposed by service providers as an industry standard.",
             showTimelineMarker: true,
           },
           {
@@ -158,10 +158,10 @@ export const englishContent = {
             ],
             achievementLabel: "Achievements:",
             description:
-              "Established GDPR governance across the business area and served as primary internal contact for data protection matters.",
+              "Developed and implemented GDPR-compliant personal data processing practices and served as the primary internal contact for data protection matters.",
           },
           {
-            role: "KAM, Business Developer",
+            role: "Key Account Manager/Business Developer",
             company: "IP-Only Networks AB",
             location: "Stockholm",
             start: "Jun 2016",
@@ -175,7 +175,7 @@ export const englishContent = {
             ],
             achievementLabel: "Achievements:",
             description:
-              "Strengthened Service Provider partnerships, increased platform activity, and drove cross-functional alignment through a team I initiated and led.",
+              "Strengthened service provider partnerships, increased their platform activity, and drove internal alignment through a team I initiated and led.",
             showTimelineMarker: true,
           },
         ],

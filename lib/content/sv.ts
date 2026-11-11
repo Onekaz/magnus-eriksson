@@ -37,8 +37,8 @@ export const swedishContent = {
     imageAlt: "Magnus Eriksson",
     paragraphs: [
       "Jag uppskattar struktur, men behöver inte förutsägbarhet. Jag tycker om ansvar, men ogillar onödig hierarki. Jag är helt bekväm med att fatta beslut, ändra riktning när förutsättningarna förändras och möta krävande situationer utan att göra dem mer dramatiska än nödvändigt.",
-      "Med en bakgrund i seniora roller inom telekom och IT/IoT har jag drivit tillväxt genom att utveckla skalbara strukturer, bygga starka kund- och partnerrelationer och leda tvärfunktionella initiativ. En röd tråd genom min karriär har varit att verka över olika delar av verksamheten, omsätta strategiska prioriteringar i mätbara resultat och identifiera möjligheter att utveckla affären.",
-      "Jag har vid flera tillfällen haft roller där rollbeskrivning och ansvarsområden inte varit helt definierade initialt. En styrka hos mig är att jag snabbt identifierar det väsentliga, sätter en riktning och börjar leverera, samtidigt som jag successivt trycktestar min ansats. Med den erfarenheten och det arbetssättet trivs jag särskilt i dynamiska och utmanande miljöer där jag har mandat att driva arbetet framåt och där framsteg bygger på disciplinerat genomförande, förtroende och nära samarbete.",
+      "Med bakgrund i kommersiell ledning, affärsutveckling, marknadsföring och strategi har jag utvecklat affärer och partnerskap, stärkt marknadspositionen och drivit tvärfunktionella initiativ med fokus på lönsamhet och tillväxt. Jag är van vid uppdrag där ramarna inte är helt givna från början och identifierar snabbt det väsentliga, prioriterar och levererar.",
+      "Mitt ledarskap präglas av tydlighet, lyhördhet, rättvisa och delaktighet. Jag tror på rak kommunikation, ärlighet och frihet under ansvar, där tydliga mål och förväntningar kombineras med förtroende för medarbetarnas förmåga att själva ta ansvar och fatta beslut.",
     ],
   },
   resume: {
@@ -65,7 +65,7 @@ export const swedishContent = {
           ],
           achievementLabel: "Prestationer:",
           description:
-            "Strukturerade och skapade ett SaaS-avtal, med fokus på affärsmässig relevans och juridisk förankring.",
+            "Utformade och färdigställde ett komplett SaaS-ramavtal med bilagor, inklusive samtliga kommersiella och juridiska avtalsvillkor.",
         },
       },
       {
@@ -81,12 +81,12 @@ export const swedishContent = {
             endDate: "2025-07",
             responsibilities: [
               "Intäktsbudget",
-              "Kommersiell verksamhetsplanering",
-              "Investor Relations",
+              "Kommersiell planering",
+              "Personalansvar",
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Skapade en kommersiell handlingsplan utifrån målmarknader, försäljningsprioritering och uppföljning av nyckeltal – för en mer resultatorienterad säljorganisation.",
+              "Ledde förändringen av säljorganisationen och tog fram en handlingsplan med målmarknader, försäljningsprioriteringar och uppföljning av nyckeltal.",
             showTimelineMarker: true,
           },
           {
@@ -104,7 +104,7 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Strukturerade regulatorisk kommunikation och bolagsstyrningsfrågor samt säkerställde samordning av juridisk dokumentation i kapitaliseringsinitiativ.",
+              "Ansvarade för och strukturerade regulatorisk kommunikation, var delaktig i arbetet med bolagsstrategi samt tog fram och administrerade avtal för kapitaliseringsuppdrag.",
           },
           {
             role: "Chief Marketing Officer (CMO)",
@@ -115,13 +115,13 @@ export const swedishContent = {
             startDate: "2023-10",
             endDate: "2024-05",
             responsibilities: [
+              "Marknadsstrategi",
               "Varumärkespositionering",
-              "Marknadsprestation",
-              "Bolagsjuridiska frågor",
+              "Resultatuppföljning",
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Etablerade enhetlig marknadskommunikation, stärkte varumärkesstyrningen, följde upp prestationsmått och utvecklade ny visuell identitet och logotyp.",
+              "Etablerade en enhetlig marknadskommunikation, stärkte varumärkesstyrningen, följde upp resultat och utvecklade en ny visuell identitet och logotyp.",
             showTimelineMarker: true,
           },
         ],
@@ -140,7 +140,7 @@ export const swedishContent = {
             responsibilities: ["Lönsamhetsutveckling", "Prisstrategi", "Avtalsutveckling"],
             achievementLabel: "Prestationer:",
             description:
-              "Ökade ARPU med 19 % genom prisstrategi och produktdiversifiering. Skapade och förhandlade det affärsavtal som tjänsteleverantörerna föreslog som branschstandard.",
+              "Ökade ARPU med ~19 % över tid genom prisstrategi och produktdiversifiering. Utvecklade och förhandlade ett affärsavtal som tjänsteleverantörerna föreslog som branschstandard.",
             showTimelineMarker: true,
           },
           {
@@ -158,10 +158,10 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Säkerställde GDPR-efterlevnad i hanteringen av personuppgifter inom affärsområdet och utgjorde primär kontaktyta för dataskyddsfrågor och ärenden internt.",
+              "Utformade och införde rutiner för behandling av personuppgifter enligt GDPR och var huvudsaklig intern kontaktperson för dataskyddsfrågor.",
           },
           {
-            role: "KAM, Business Developer",
+            role: "Key Account Manager/Business Developer",
             company: "IP-Only Networks AB",
             location: "Stockholm",
             start: "Jun 2016",
@@ -175,7 +175,7 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Stärkte relationen med tjänsteleverantörerna, vilket ökade deras aktivitet. Initierade och ledde ett tvärfunktionellt team för säkerställande av samsyn och samordning.",
+              "Stärkte relationen med tjänsteleverantörerna, vilket ökade deras aktivitet på plattformen. Initierade och ledde ett tvärfunktionellt team för intern samsyn och samordning.",
             showTimelineMarker: true,
           },
         ],
@@ -277,7 +277,7 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Utformade och implementerade ett strategiskt ramverk med fokus på varumärkeskännedom, organisk tillväxt och lönsamhet, vilket ökade den månatliga nettokundtillväxten med cirka 58 %.",
+              "Utformade och implementerade ett strategiskt ramverk med fokus på varumärkeskännedom, organisk tillväxt och lönsamhet, vilket ökade den månatliga nettokundtillväxten med ~58 %.",
             showTimelineMarker: true,
           },
         ],
@@ -335,7 +335,7 @@ groups: [
     entries: [
       {
         title: "Företagsekonomi, magisternivå",
-        institution: "Stockholms Universitet, Stockholm",
+        institution: "Stockholms universitet, Stockholm",
         period: "2000–2007",
         startDate: "2000",
         endDate: "2007",

@@ -16,7 +16,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus is primarily searching for roles in business development, commercial leadership, and project management. And he prefers situations where the business or operations have development potential.",
+          "Magnus is primarily interested in senior roles within business development, commercial leadership, strategy, project management and marketing, particularly where there are opportunities to develop the business or improve operations.",
         terms: [
           "next role",
           "next job",
@@ -38,7 +38,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus söker framför allt roller inom affärsutveckling, kommersiell ledning och projektledning. Och det han finner mest lockande är roller där affär och verksamhet har utvecklingspotential.",
+          "Magnus söker främst kvalificerade roller inom affärsutveckling, kommersiell ledning, strategi, projektledning och marknadsföring. Han är särskilt intresserad av uppdrag där det finns möjlighet att utveckla affären eller verksamheten.",
         terms: [
           "nästa roll",
           "nästa jobb",
@@ -65,7 +65,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "As a leader, Magnus is clear, attentive, fair, and inclusive. He practices and expects direct communication and honesty, and advocates autonomy with accountability.",
+          "Magnus leads with clarity, attentiveness, fairness and involvement. He values direct communication, honesty and autonomy with accountability, combining clear goals and expectations with trust in employees' ability to take ownership and make decisions.",
         terms: [
           "leadership style",
           "how does Magnus lead",
@@ -85,7 +85,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Som ledare är Magnus tydlig, lyhörd, rättvis och involverande. Han tillämpar samt förväntar sig rak kommunikation och ärlighet, och förespråkar frihet under ansvar.",
+          "Magnus ledarskap präglas av tydlighet, lyhördhet, rättvisa och delaktighet. Han värdesätter rak kommunikation, ärlighet och frihet under ansvar, där tydliga mål och förväntningar kombineras med förtroende för medarbetarnas förmåga att själva ta ansvar och fatta beslut.",
         terms: [
           "ledarskapsstil",
           "hur leder Magnus",
@@ -710,7 +710,7 @@ terms: [
     translations: {
       en: {
         answer:
-          "Stockholm is Magnus's base and he is not relocatable. He can, however, work on site in other locations and travel.",
+          "Magnus is based in Stockholm and is looking for positions based there. He is, however, open to business travel and temporary on-site work in other locations.",
         terms: [
           "location flexibility",
           "relocate",
@@ -727,7 +727,7 @@ terms: [
       },
       sv: {
         answer:
-          "Stockholm är Magnus bas och han är inte flyttbar. Däremot är han öppen för arbete på annan ort och resor.",
+          "Stockholm är Magnus fasta bas och han söker tjänster med placering där. Han är däremot öppen för tjänsteresor och tillfälligt arbete på andra orter.",
         terms: [
           "geografisk flexibilitet",
           "flytta",
