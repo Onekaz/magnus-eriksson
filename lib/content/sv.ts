@@ -55,14 +55,14 @@ export const swedishContent = {
       {
         headline: "~58 %",
         title: "Ökad nettokundtillväxt",
-        description: "Utformade och implementerade en marknadsföringsstrategi som bidrog till att öka den månatliga nettokundtillväxten med ~58 %.",
-        company: "Bahnhof",
+        description: "Tog fram och implementerade en marknadsföringsstrategi som bidrog till att öka den månatliga nettokundtillväxten med ~58 %.",
+        company: "Bahnhof Unipessoal",
         metric: true,
       },
       {
         headline: "Föreslagen branschstandard",
         title: "Tjänsteleverantörsavtal",
-        description: "Skapade ett affärsavtal som tjänsteleverantörerna föreslog som branschstandard för branschorganisationen.",
+        description: "Utformade ett affärsavtal som tjänsteleverantörerna föreslog som branschstandard för branschorganisationen.",
         company: "GlobalConnect",
       },
       {
@@ -97,7 +97,7 @@ export const swedishContent = {
           ],
           achievementLabel: "Prestationer:",
           description:
-            "Utformade och färdigställde ett komplett SaaS-ramavtal med bilagor, inklusive samtliga kommersiella och juridiska avtalsvillkor.",
+            "Skapade ett komplett SaaS-ramavtal med bilagor och utformade kommersiella och juridiska avtalsvillkor.",
         },
       },
       {
@@ -172,7 +172,7 @@ export const swedishContent = {
             responsibilities: ["Lönsamhetsutveckling", "Prisstrategi", "Avtalsutveckling"],
             achievementLabel: "Prestationer:",
             description:
-              "Ökade ARPU med ~19 % genom prisstrategi och produktdiversifiering. Utvecklade och förhandlade ett affärsavtal som tjänsteleverantörerna föreslog som branschstandard.",
+              "Ökade ARPU med ~19 % genom prisstrategi och produktdiversifiering. Utformade och förhandlade ett affärsavtal som tjänsteleverantörerna föreslog som branschstandard.",
             showTimelineMarker: true,
           },
           {
@@ -190,7 +190,7 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Utformade och införde rutiner för behandling av personuppgifter enligt GDPR och var huvudsaklig intern kontaktperson för dataskyddsfrågor.",
+              "Tog fram och införde rutiner för behandling av personuppgifter enligt GDPR och var huvudsaklig intern kontaktperson för dataskyddsfrågor.",
           },
           {
             role: "Key Account Manager/Business Developer",
@@ -309,7 +309,7 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Utformade och implementerade ett strategiskt ramverk med fokus på varumärkeskännedom, organisk tillväxt och lönsamhet, vilket ökade den månatliga nettokundtillväxten med cirka 58 %.",
+              "Utvecklade och implementerade ett strategiskt ramverk med fokus på varumärkeskännedom, organisk tillväxt och lönsamhet, vilket ökade den månatliga nettokundtillväxten med cirka 58 %.",
             showTimelineMarker: true,
           },
         ],

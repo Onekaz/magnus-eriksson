@@ -1141,7 +1141,7 @@ terms: [
     translations: {
       en: {
         answer:
-          "The individual achievement Magnus is most proud of is developing and authoring a new service provider agreement at GlobalConnect that was later proposed as an industry standard by the Swedish Service Provider Association.",
+          "The individual achievement Magnus is most proud of is redesigning and negotiating a commercial agreement at GlobalConnect that service providers later proposed to their industry association as an industry standard.",
         terms: [
           "proudest achievement",
           "most proud of",
@@ -1161,7 +1161,7 @@ terms: [
       },
       sv: {
         answer:
-          "Den enskilda prestation Magnus är mest stolt över är när han på GlobalConnect utvecklade och författade ett nytt tjänsteleverantörsavtal som senare föreslogs som branschstandard av Tjänsteleverantörsföreningen.",
+          "Den enskilda prestation Magnus är mest stolt över är att han på GlobalConnect utformade och förhandlade ett affärsavtal som tjänsteleverantörerna senare föreslog som branschstandard för branschorganisationen.",
         terms: [
           "stolt över",
           "mest stolt över",

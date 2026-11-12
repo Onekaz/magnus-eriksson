@@ -56,13 +56,13 @@ export const englishContent = {
         headline: "~58%",
         title: "Net Customer Growth",
         description: "Designed and implemented a marketing strategy that contributed to an ~58% increase in monthly net customer growth.",
-        company: "Bahnhof",
+        company: "Bahnhof Unipessoal",
         metric: true,
       },
       {
         headline: "Proposed Industry Standard",
         title: "Service Provider Agreement",
-        description: "Created a commercial agreement that service providers proposed to the industry association as an industry standard.",
+        description: "Redesigned a commercial agreement that service providers proposed to the industry association as an industry standard.",
         company: "GlobalConnect",
       },
       {
@@ -97,7 +97,7 @@ export const englishContent = {
           ],
           achievementLabel: "Achievements:",
           description:
-            "Drafted and finalized a comprehensive SaaS framework agreement with annexes, including all commercial terms and legal provisions.",
+            "Created a comprehensive SaaS framework agreement with annexes and drafted commercial terms and legal provisions.",
         },
       },
       {
@@ -172,7 +172,7 @@ export const englishContent = {
             responsibilities: ["Revenue Growth", "Pricing Strategy", "Contract Development"],
             achievementLabel: "Achievements:",
             description:
-              "Raised ARPU by ~19% via pricing strategy and product diversification. Developed and negotiated an agreement proposed by service providers as an industry standard.",
+              "Raised ARPU by ~19% via pricing strategy and product diversification. Redesigned and negotiated an agreement proposed by service providers as an industry standard.",
             showTimelineMarker: true,
           },
           {
@@ -250,7 +250,7 @@ export const englishContent = {
             ],
             achievementLabel: "Achievements:",
             description:
-              "Developed, negotiated and implemented a new business agreement for Service Providers while driving profitability across B2C and B2B services.",
+              "Developed, negotiated and implemented a new business agreement for service providers while driving profitability across B2C and B2B services.",
             showTimelineMarker: true,
           },
           {
@@ -268,7 +268,7 @@ export const englishContent = {
             ],
             achievementLabel: "Achievements:",
             description:
-              "Developed the B2B portfolio to better meet Service Provider needs and market demand, as well as increase revenue and improve contribution margin.",
+              "Developed the B2B portfolio to better meet service provider needs and market demand, as well as increase revenue and improve contribution margin.",
             showTimelineMarker: true,
           },
         ],
