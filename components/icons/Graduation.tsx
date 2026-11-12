@@ -13,21 +13,22 @@ export default function Graduation({ size = 18 }: { size?: number }) {
       aria-hidden="true"
     >
       <path
-        d="M3 8.5L12 4l9 4.5-9 4.5L3 8.5z"
+        d="M2 9L12 4L22 9L12 14L2 9z"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M7 11v4.2c0 1.2 2.2 2.8 5 2.8s5-1.6 5-2.8V11"
+        d="M6 11.8V16.5C6 18.2 8.7 20 12 20S18 18.2 18 16.5V11.8"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M21 8.5v5"
+        d="M22 9V15"
         strokeWidth="1.5"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

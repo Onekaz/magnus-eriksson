@@ -32,28 +32,33 @@ import {
 import type { ChatExchange } from "@/lib/chatbot/types";
 import type { SiteContent } from "@/lib/content/profile";
 import ChatComposer from "./ChatComposer";
+import ChatSuggestedQuestions from "./ChatSuggestedQuestions";
 import styles from "./chat.module.css";
 
 type DesktopChatProps = {
   isOpen: boolean;
   content: SiteContent;
+  suggestedQuestions: readonly string[];
   messages: readonly ChatExchange[];
   draft: string;
   onDraftChange: (value: string) => void;
   onToggle: () => void;
   onClose: () => void;
   onSubmit: () => void;
+  onSuggestedQuestion: (question: string) => void;
 };
 
 export default function DesktopChat({
   isOpen,
   content,
+  suggestedQuestions,
   messages,
   draft,
   onDraftChange,
   onToggle,
   onClose,
   onSubmit,
+  onSuggestedQuestion,
 }: DesktopChatProps) {
   const conversationRef = useRef<HTMLDivElement | null>(null);
 
@@ -62,7 +67,8 @@ export default function DesktopChat({
       return;
     }
 
-    conversationRef.current.scrollTop = conversationRef.current.scrollHeight;
+    conversationRef.current.scrollTop =
+      messages.length === 0 ? 0 : conversationRef.current.scrollHeight;
   }, [isOpen, messages]);
 
   return (
@@ -138,6 +144,14 @@ export default function DesktopChat({
             aria-live="polite"
             style={{ padding: `0 ${DESKTOP_GAP_16_PX}px` }}
           >
+            {messages.length === 0 ? (
+              <ChatSuggestedQuestions
+                questions={suggestedQuestions}
+                onSelect={onSuggestedQuestion}
+                fontSize={DESKTOP_SMALL_TEXT_SIZE_PX}
+                fontWeight={DESKTOP_SMALL_TEXT_WEIGHT}
+              />
+            ) : null}
             <div className={styles.exchangeList} style={{ gap: DESKTOP_GAP_16_PX }}>
               {messages.map((message) => (
                 <div

@@ -5,7 +5,7 @@ type EnvelopeProps = {
   strokeWidth?: number;
 };
 
-export default function Envelope({ size = 18, strokeWidth = 1.5 }: EnvelopeProps) {
+export default function Envelope({ size = 18, strokeWidth = 1.1 }: EnvelopeProps) {
   return (
     <svg
       width={size}
@@ -18,8 +18,8 @@ export default function Envelope({ size = 18, strokeWidth = 1.5 }: EnvelopeProps
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-      <polyline points="22,6 12,13 2,6" />
+      <path d="M4 6h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2z" />
+      <polyline points="22,8 12,14 2,8" />
     </svg>
   );
 }

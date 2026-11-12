@@ -2,11 +2,16 @@
 
 "use client";
 
-import { useEffect, useRef, useState, type ComponentType, type CSSProperties } from "react";
-import { Envelope, Graduation, Lightbulb, List, Profile } from "@/components/icons";
+import { useEffect, useState, type ComponentType, type CSSProperties } from "react";
+import { Achievements, Envelope, Graduation, Lightbulb, List, Profile } from "@/components/icons";
+import chatStyles from "@/components/chat/chat.module.css";
 import MobileContactBottomSheet from "@/components/mobile/bottom-sheet/MobileContactBottomSheet";
 import {
   MOBILE_BOTTOM_NAV_HEIGHT_PX,
+  MOBILE_CHAT_TRIGGER_BOTTOM_GAP_PX,
+  MOBILE_CHAT_TRIGGER_ICON_SIZE_PX,
+  MOBILE_CHAT_TRIGGER_SIZE_PX,
+  MOBILE_PAGE_HORIZONTAL_PADDING_PX,
   MOBILE_BOTTOM_NAV_ICON_SIZE_PX,
   MOBILE_BOTTOM_NAV_ITEM_GAP_PX,
   MOBILE_BOTTOM_NAV_LABEL_LINE_HEIGHT_PX,
@@ -17,10 +22,13 @@ import {
   MOBILE_BOTTOM_NAV_PADDING_BOTTOM_PX,
   MOBILE_BOTTOM_NAV_PADDING_TOP_PX,
   MOBILE_BOTTOM_NAV_SIDE_PADDING_PX,
-  MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX,
-  MOBILE_SECTION_SCROLL_MARGIN_TOP_PX,
+  MOBILE_TOP_OVERLAY_HEIGHT_PX,
+  MOBILE_SECTION_NAVIGATION_HEADING_GAP_PX,
+  MOBILE_SECTION_NAVIGATION_EVENT,
+  MOBILE_OVERLAY_VISIBILITY_TRANSITION_MS,
 } from "@/lib/config/mobile";
 import { MOBILE_NAVIGATION_TARGET_IDS } from "@/lib/content/navigation";
+import useMobileOverlayVisibility from "@/components/mobile/useMobileOverlayVisibility";
 import type { MobileNavigationIcon, SiteContent } from "@/lib/content/profile";
 
 type MobileFooterOverlayProps = {
@@ -31,18 +39,11 @@ const SCROLL_ACTIVATION_TOLERANCE_PX = 1;
 
 const iconComponents: Record<MobileNavigationIcon, ComponentType<{ size?: number }>> = {
   profile: Profile,
+  achievements: Achievements,
   list: List,
   lightbulb: Lightbulb,
   graduation: Graduation,
-  envelope: Envelope,
 };
-
-function scrollToSection(targetId: string) {
-  document.getElementById(targetId)?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-}
 
 function getScrollingElement() {
   return document.scrollingElement ?? document.documentElement;
@@ -59,10 +60,36 @@ function getCurrentScrollTop() {
 }
 
 function getClampedSectionTop(sectionElement: HTMLElement) {
-  const maxScrollTop = getMaxScrollTop();
-  const sectionTop = sectionElement.offsetTop - MOBILE_SECTION_SCROLL_MARGIN_TOP_PX;
+  const heading = document.getElementById(`${sectionElement.id}-heading`);
+  const target = heading ?? sectionElement;
+  const headingTop = target.getBoundingClientRect().top + getCurrentScrollTop();
+  const scrollTop = headingTop - MOBILE_TOP_OVERLAY_HEIGHT_PX - MOBILE_SECTION_NAVIGATION_HEADING_GAP_PX;
 
-  return Math.min(Math.max(0, sectionTop), maxScrollTop);
+  return Math.min(Math.max(0, scrollTop), getMaxScrollTop());
+}
+
+function scrollToSection(targetId: string) {
+  const sectionElement = document.getElementById(targetId);
+
+  if (!sectionElement) {
+    return;
+  }
+
+  // The About section starts with the portrait, so navigate to the page top.
+  if (targetId === "about") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  const heading = document.getElementById(`${targetId}-heading`) ?? sectionElement;
+  const headingTop = heading.getBoundingClientRect().top + getCurrentScrollTop();
+  // Both overlays are always shown when navigating from the mobile footer.
+  const scrollTop = Math.min(
+    Math.max(0, headingTop - MOBILE_TOP_OVERLAY_HEIGHT_PX - MOBILE_SECTION_NAVIGATION_HEADING_GAP_PX),
+    getMaxScrollTop(),
+  );
+
+  window.scrollTo({ top: scrollTop, behavior: "smooth" });
 }
 
 function getActiveTargetId() {
@@ -87,44 +114,28 @@ function getActiveTargetId() {
 }
 
 export default function MobileFooterOverlay({ content }: MobileFooterOverlayProps) {
-  const [isTransparent, setIsTransparent] = useState(false);
+  const isHidden = useMobileOverlayVisibility();
   const [activeTargetId, setActiveTargetId] = useState("about");
   const [isContactSheetOpen, setIsContactSheetOpen] = useState(false);
-  const lastScrollYRef = useRef(0);
 
   useEffect(() => {
-    lastScrollYRef.current = window.scrollY;
-    setActiveTargetId(getActiveTargetId());
-
-    function handleScroll() {
-      const currentScrollY = window.scrollY;
-      const scrollDelta = currentScrollY - lastScrollYRef.current;
-
+    function updateActiveSection() {
       setActiveTargetId(getActiveTargetId());
-
-      if (currentScrollY <= 0) {
-        setIsTransparent(false);
-        lastScrollYRef.current = currentScrollY;
-        return;
-      }
-
-      if (scrollDelta > MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
-        setIsTransparent(true);
-      }
-
-      if (scrollDelta < -MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
-        setIsTransparent(false);
-      }
-
-      lastScrollYRef.current = currentScrollY;
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", updateActiveSection);
     };
   }, []);
+
+  function handleSectionLinkClick(targetId: string) {
+    setActiveTargetId(targetId);
+    window.dispatchEvent(new Event(MOBILE_SECTION_NAVIGATION_EVENT));
+    scrollToSection(targetId);
+  }
 
   return (
     <>
@@ -136,9 +147,12 @@ export default function MobileFooterOverlay({ content }: MobileFooterOverlayProp
           left: 0,
           zIndex: 50,
           width: "100%",
-          backgroundColor: isTransparent ? "transparent" : "var(--color-canvas)",
-          backdropFilter: isTransparent ? "none" : "blur(8px)",
-          transition: "background-color 220ms ease, backdrop-filter 220ms ease",
+          backgroundColor: "var(--color-canvas)",
+          backdropFilter: "blur(8px)",
+          opacity: isHidden ? 0 : 1,
+          pointerEvents: isHidden ? "none" : "auto",
+          transform: isHidden ? "translateY(100%)" : "translateY(0)",
+          transition: `transform ${MOBILE_OVERLAY_VISIBILITY_TRANSITION_MS}ms ease, opacity ${MOBILE_OVERLAY_VISIBILITY_TRANSITION_MS}ms ease`,
         }}
       >
         <nav
@@ -155,10 +169,8 @@ export default function MobileFooterOverlay({ content }: MobileFooterOverlayProp
           }}
         >
           {content.navigation.mobileItems.map((item) => {
-            const isSectionLink = "targetId" in item;
-            const isActive = isSectionLink ? activeTargetId === item.targetId : false;
+            const isActive = activeTargetId === item.targetId;
             const Icon = iconComponents[item.icon];
-            const itemKey = isSectionLink ? item.targetId : item.action;
             const itemStyle: CSSProperties = {
               display: "flex",
               flex: 1,
@@ -195,26 +207,11 @@ export default function MobileFooterOverlay({ content }: MobileFooterOverlayProp
               </>
             );
 
-            if (!isSectionLink) {
-              return (
-                <button
-                  key={itemKey}
-                  type="button"
-                  onClick={() => setIsContactSheetOpen(true)}
-                  aria-label={item.label}
-                  aria-expanded={isContactSheetOpen}
-                  style={itemStyle}
-                >
-                  {itemContent}
-                </button>
-              );
-            }
-
             return (
               <button
-                key={itemKey}
+                key={item.targetId}
                 type="button"
-                onClick={() => scrollToSection(item.targetId)}
+                onClick={() => handleSectionLinkClick(item.targetId)}
                 aria-label={item.label}
                 aria-current={isActive ? "page" : undefined}
                 style={itemStyle}
@@ -225,6 +222,33 @@ export default function MobileFooterOverlay({ content }: MobileFooterOverlayProp
           })}
         </nav>
       </footer>
+
+      <div
+        className={`${chatStyles.mobileChatRoot} mobile-only`}
+        style={{
+          right: MOBILE_PAGE_HORIZONTAL_PADDING_PX,
+          bottom: MOBILE_BOTTOM_NAV_HEIGHT_PX + MOBILE_CHAT_TRIGGER_BOTTOM_GAP_PX,
+          opacity: isHidden ? 0 : 1,
+          pointerEvents: isHidden ? "none" : "auto",
+          transform: isHidden ? "translateY(100%)" : "translateY(0)",
+          transition: `transform ${MOBILE_OVERLAY_VISIBILITY_TRANSITION_MS}ms ease, opacity ${MOBILE_OVERLAY_VISIBILITY_TRANSITION_MS}ms ease`,
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => setIsContactSheetOpen(true)}
+          aria-label={content.contact.heading}
+          aria-expanded={isContactSheetOpen}
+          className={chatStyles.chatTrigger}
+          style={{
+            width: MOBILE_CHAT_TRIGGER_SIZE_PX,
+            height: MOBILE_CHAT_TRIGGER_SIZE_PX,
+            borderRadius: 9999,
+          }}
+        >
+          <Envelope size={MOBILE_CHAT_TRIGGER_ICON_SIZE_PX} />
+        </button>
+      </div>
 
       <MobileContactBottomSheet
         isOpen={isContactSheetOpen}

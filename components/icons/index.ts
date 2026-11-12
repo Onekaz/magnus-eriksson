@@ -1,5 +1,6 @@
 // components/icons/index.ts
 
+export { default as Achievements } from "./Achievements";
 export { default as Chat } from "./Chat";
 export { default as Chevron } from "./Chevron";
 export { default as Close } from "./Close";

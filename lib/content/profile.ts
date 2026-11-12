@@ -6,8 +6,8 @@ export const CONTACT_MAILTO_HREF = "mailto:eriksson.magnus@outlook.com";
 export const CONTACT_PHONE_HREF = "tel:+46708733320";
 export const CONTACT_LINKEDIN_HREF = "https://www.linkedin.com/in/magnus-eriksson-se/";
 
-export type NavigationTargetId = "about" | "resume" | "skills" | "education" | "contact";
-export type MobileNavigationIcon = "profile" | "list" | "lightbulb" | "graduation" | "envelope";
+export type NavigationTargetId = "about" | "achievements" | "resume" | "skills" | "education" | "contact";
+export type MobileNavigationIcon = "profile" | "achievements" | "list" | "lightbulb" | "graduation";
 
 export type ResumeEntry = {
   role: string;
@@ -65,23 +65,26 @@ export type SiteContent = {
       targetId: NavigationTargetId;
       label: string;
     }[];
-    mobileItems: readonly (
-      | {
-          targetId: Exclude<NavigationTargetId, "contact">;
-          label: string;
-          icon: Exclude<MobileNavigationIcon, "envelope">;
-        }
-      | {
-          action: "contactSheet";
-          label: string;
-          icon: "envelope";
-        }
-    )[];
+    mobileItems: readonly {
+      targetId: Exclude<NavigationTargetId, "contact">;
+      label: string;
+      icon: MobileNavigationIcon;
+    }[];
   };
   about: {
     heading: string;
     imageAlt: string;
     paragraphs: readonly string[];
+  };
+  achievements: {
+    heading: string;
+    items: readonly {
+      headline: string;
+      title: string;
+      description: string;
+      company: string;
+      metric?: boolean;
+    }[];
   };
   resume: {
     heading: string;
@@ -114,6 +117,8 @@ export type SiteContent = {
     dialogAriaLabel: string;
   };
   chat: {
+    suggestedQuestions: readonly string[];
+    rotatingSuggestedQuestions: readonly string[];
     triggerLabel: string;
     heading: string;
     intro: string;

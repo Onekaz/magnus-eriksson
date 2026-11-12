@@ -37,6 +37,8 @@ export default function MobileContactBottomSheet({
   const dragStartYRef = useRef(0);
   const dragOffsetYRef = useRef(0);
   const isDraggingRef = useRef(false);
+  const hasMovedRef = useRef(false);
+  const suppressClickRef = useRef(false);
 
   function resetDragState() {
     isDraggingRef.current = false;
@@ -46,7 +48,13 @@ export default function MobileContactBottomSheet({
     setDragOffsetY(0);
   }
 
-  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerDown(event: PointerEvent<HTMLButtonElement>) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    hasMovedRef.current = false;
+    suppressClickRef.current = false;
     isDraggingRef.current = true;
     dragStartYRef.current = event.clientY;
     dragOffsetYRef.current = 0;
@@ -54,12 +62,19 @@ export default function MobileContactBottomSheet({
     event.currentTarget.setPointerCapture(event.pointerId);
   }
 
-  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerMove(event: PointerEvent<HTMLButtonElement>) {
     if (!isDraggingRef.current) {
       return;
     }
 
     event.preventDefault();
+
+    if (
+      Math.abs(event.clientY - dragStartYRef.current) >
+      mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_TAP_TOLERANCE_PX
+    ) {
+      hasMovedRef.current = true;
+    }
 
     const nextDragOffsetY = Math.max(0, event.clientY - dragStartYRef.current);
 
@@ -67,7 +82,7 @@ export default function MobileContactBottomSheet({
     setDragOffsetY(nextDragOffsetY);
   }
 
-  function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerUp(event: PointerEvent<HTMLButtonElement>) {
     if (!isDraggingRef.current) {
       return;
     }
@@ -76,9 +91,14 @@ export default function MobileContactBottomSheet({
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
+    const pointerDeltaY = event.clientY - dragStartYRef.current;
     const shouldClose =
-      dragOffsetYRef.current >= mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_CLOSE_THRESHOLD_PX;
+      Math.max(dragOffsetYRef.current, pointerDeltaY) >=
+      mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_CLOSE_THRESHOLD_PX;
 
+    suppressClickRef.current =
+      hasMovedRef.current ||
+      Math.abs(pointerDeltaY) > mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_TAP_TOLERANCE_PX;
     resetDragState();
 
     if (shouldClose) {
@@ -86,12 +106,22 @@ export default function MobileContactBottomSheet({
     }
   }
 
-  function handlePointerCancel(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerCancel(event: PointerEvent<HTMLButtonElement>) {
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
+    suppressClickRef.current = true;
     resetDragState();
+  }
+
+  function handleHandleClick() {
+    if (suppressClickRef.current) {
+      suppressClickRef.current = false;
+      return;
+    }
+
+    onClose();
   }
 
   if (!isOpen) {
@@ -125,7 +155,10 @@ export default function MobileContactBottomSheet({
             : `transform ${mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_TRANSITION_MS}ms ease`,
         }}
       >
-        <div
+        <button
+          type="button"
+          aria-label={content.contactSheet.closeButtonAriaLabel}
+          onClick={handleHandleClick}
           className={bottomSheetHandleWrapClass}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
@@ -134,7 +167,11 @@ export default function MobileContactBottomSheet({
           style={{
             marginTop: `${mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_TOP_PX}px`,
             marginBottom: `${mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_BOTTOM_PX}px`,
-            cursor: isDragging ? "grabbing" : "grab",
+            width: "100%",
+            border: "none",
+            padding: 0,
+            backgroundColor: "transparent",
+            cursor: isDragging ? "grabbing" : "pointer",
             touchAction: "none",
             userSelect: "none",
           }}
@@ -148,7 +185,7 @@ export default function MobileContactBottomSheet({
               backgroundColor: "var(--color-secondary-3)",
             }}
           />
-        </div>
+        </button>
 
         <div
           className={bottomSheetMenuClass}

@@ -9,6 +9,7 @@ import {
   type PointerEvent,
 } from "react";
 import ChatComposer from "@/components/chat/ChatComposer";
+import ChatSuggestedQuestions from "@/components/chat/ChatSuggestedQuestions";
 import { Close } from "@/components/icons";
 import styles from "@/components/chat/chat.module.css";
 import type { ChatExchange } from "@/lib/chatbot/types";
@@ -18,27 +19,33 @@ import type { SiteContent } from "@/lib/content/profile";
 type MobileChatBottomSheetProps = {
   isOpen: boolean;
   content: SiteContent;
+  suggestedQuestions: readonly string[];
   messages: readonly ChatExchange[];
   draft: string;
   onDraftChange: (value: string) => void;
   onClose: () => void;
   onSubmit: () => void;
+  onSuggestedQuestion: (question: string) => void;
 };
 
 export default function MobileChatBottomSheet({
   isOpen,
   content,
+  suggestedQuestions,
   messages,
   draft,
   onDraftChange,
   onClose,
   onSubmit,
+  onSuggestedQuestion,
 }: MobileChatBottomSheetProps) {
   const [dragOffsetY, setDragOffsetY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const dragStartYRef = useRef(0);
   const dragOffsetYRef = useRef(0);
   const isDraggingRef = useRef(false);
+  const hasMovedRef = useRef(false);
+  const suppressClickRef = useRef(false);
   const conversationRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -46,7 +53,8 @@ export default function MobileChatBottomSheet({
       return;
     }
 
-    conversationRef.current.scrollTop = conversationRef.current.scrollHeight;
+    conversationRef.current.scrollTop =
+      messages.length === 0 ? 0 : conversationRef.current.scrollHeight;
   }, [isOpen, messages]);
 
   function resetDragState() {
@@ -57,7 +65,13 @@ export default function MobileChatBottomSheet({
     setDragOffsetY(0);
   }
 
-  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerDown(event: PointerEvent<HTMLButtonElement>) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    hasMovedRef.current = false;
+    suppressClickRef.current = false;
     isDraggingRef.current = true;
     dragStartYRef.current = event.clientY;
     dragOffsetYRef.current = 0;
@@ -65,12 +79,19 @@ export default function MobileChatBottomSheet({
     event.currentTarget.setPointerCapture(event.pointerId);
   }
 
-  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerMove(event: PointerEvent<HTMLButtonElement>) {
     if (!isDraggingRef.current) {
       return;
     }
 
     event.preventDefault();
+
+    if (
+      Math.abs(event.clientY - dragStartYRef.current) >
+      mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_TAP_TOLERANCE_PX
+    ) {
+      hasMovedRef.current = true;
+    }
 
     const nextDragOffsetY = Math.max(0, event.clientY - dragStartYRef.current);
 
@@ -78,7 +99,7 @@ export default function MobileChatBottomSheet({
     setDragOffsetY(nextDragOffsetY);
   }
 
-  function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerUp(event: PointerEvent<HTMLButtonElement>) {
     if (!isDraggingRef.current) {
       return;
     }
@@ -87,10 +108,14 @@ export default function MobileChatBottomSheet({
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
+    const pointerDeltaY = event.clientY - dragStartYRef.current;
     const shouldClose =
-      dragOffsetYRef.current >=
+      Math.max(dragOffsetYRef.current, pointerDeltaY) >=
       mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_CLOSE_THRESHOLD_PX;
 
+    suppressClickRef.current =
+      hasMovedRef.current ||
+      Math.abs(pointerDeltaY) > mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_TAP_TOLERANCE_PX;
     resetDragState();
 
     if (shouldClose) {
@@ -98,12 +123,22 @@ export default function MobileChatBottomSheet({
     }
   }
 
-  function handlePointerCancel(event: PointerEvent<HTMLDivElement>) {
+  function handlePointerCancel(event: PointerEvent<HTMLButtonElement>) {
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
+    suppressClickRef.current = true;
     resetDragState();
+  }
+
+  function handleHandleClick() {
+    if (suppressClickRef.current) {
+      suppressClickRef.current = false;
+      return;
+    }
+
+    onClose();
   }
 
   if (!isOpen) {
@@ -134,7 +169,10 @@ export default function MobileChatBottomSheet({
             : `transform ${mobileConfig.MOBILE_BOTTOM_SHEET_DRAG_TRANSITION_MS}ms ease`,
         }}
       >
-        <div
+        <button
+          type="button"
+          aria-label={content.chat.closeButtonAriaLabel}
+          onClick={handleHandleClick}
           className={styles.mobileHandleWrap}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
@@ -143,7 +181,11 @@ export default function MobileChatBottomSheet({
           style={{
             marginTop: mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_TOP_PX,
             marginBottom: mobileConfig.MOBILE_BOTTOM_SHEET_HANDLE_MARGIN_BOTTOM_PX,
-            cursor: isDragging ? "grabbing" : "grab",
+            width: "100%",
+            border: "none",
+            padding: 0,
+            backgroundColor: "transparent",
+            cursor: isDragging ? "grabbing" : "pointer",
             touchAction: "none",
             userSelect: "none",
           }}
@@ -157,7 +199,7 @@ export default function MobileChatBottomSheet({
               borderRadius: 9999,
             }}
           />
-        </div>
+        </button>
 
         <div className={styles.mobileContent}>
           <div
@@ -220,6 +262,14 @@ export default function MobileChatBottomSheet({
               paddingLeft: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
             }}
           >
+            {messages.length === 0 ? (
+              <ChatSuggestedQuestions
+                questions={suggestedQuestions}
+                onSelect={onSuggestedQuestion}
+                fontSize={mobileConfig.MOBILE_SMALL_TEXT_SIZE_PX}
+                fontWeight={mobileConfig.MOBILE_SMALL_TEXT_WEIGHT}
+              />
+            ) : null}
             <div
               className={styles.exchangeList}
               style={{ gap: mobileConfig.MOBILE_GAP_16_PX }}

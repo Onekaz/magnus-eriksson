@@ -2,9 +2,7 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import {
-  MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX,
   MOBILE_TOP_OVERLAY_BRAND_STACK_GAP_PX,
   MOBILE_TOP_OVERLAY_HEIGHT_PX,
   MOBILE_TOP_OVERLAY_HORIZONTAL_PADDING_PX,
@@ -20,6 +18,7 @@ import {
   MOBILE_TOP_OVERLAY_WORDMARK_TEXT_WEIGHT,
 } from "@/lib/config/mobile";
 import type { SiteContent, SiteLanguage } from "@/lib/content/profile";
+import useMobileOverlayVisibility from "@/components/mobile/useMobileOverlayVisibility";
 import { LANGUAGE_OPTIONS } from "@/lib/data/languages";
 
 type MobileTopOverlayProps = {
@@ -33,43 +32,11 @@ export default function MobileTopOverlay({
   content,
   onToggleLanguage,
 }: MobileTopOverlayProps) {
-  const [isHidden, setIsHidden] = useState(false);
-  const lastScrollYRef = useRef(0);
+  const isHidden = useMobileOverlayVisibility();
   const activeLanguageOption =
     LANGUAGE_OPTIONS.find(
       (option) => option.value === (language === "en" ? "English" : "Swedish"),
     ) ?? null;
-
-  useEffect(() => {
-    lastScrollYRef.current = window.scrollY;
-
-    function handleScroll() {
-      const currentScrollY = window.scrollY;
-      const scrollDelta = currentScrollY - lastScrollYRef.current;
-
-      if (currentScrollY <= 0) {
-        setIsHidden(false);
-        lastScrollYRef.current = currentScrollY;
-        return;
-      }
-
-      if (scrollDelta > MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
-        setIsHidden(true);
-      }
-
-      if (scrollDelta < -MOBILE_OVERLAY_SCROLL_DIRECTION_THRESHOLD_PX) {
-        setIsHidden(false);
-      }
-
-      lastScrollYRef.current = currentScrollY;
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header

@@ -34,6 +34,8 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "business development role",
           "commercial leadership role",
           "commercial roles",
+          "what roles is Magnus interested in",
+          "what positions is Magnus interested in",
         ],
       },
       sv: {
@@ -55,6 +57,8 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
           "affärsutvecklingsroll",
           "kommersiell ledning",
           "kommersiella roller",
+          "vilka roller är Magnus intresserad av",
+          "vilka tjänster är Magnus intresserad av",
         ],
       },
     },
@@ -65,7 +69,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus leads with clarity, attentiveness, fairness and involvement. He values direct communication, honesty and autonomy with accountability, combining clear goals and expectations with trust in employees' ability to take ownership and make decisions.",
+          "Magnus's view of leadership emphasizes clarity, fairness, responsiveness and involvement. He believes in direct communication, honesty and autonomy with accountability, combining clear goals and expectations with trust in people's ability to take ownership and make decisions.",
         terms: [
           "leadership style",
           "how does Magnus lead",
@@ -85,7 +89,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus ledarskap präglas av tydlighet, lyhördhet, rättvisa och delaktighet. Han värdesätter rak kommunikation, ärlighet och frihet under ansvar, där tydliga mål och förväntningar kombineras med förtroende för medarbetarnas förmåga att själva ta ansvar och fatta beslut.",
+          "I sin syn på ledarskap betonar Magnus tydlighet, rättvisa, lyhördhet och delaktighet. Han värdesätter rak kommunikation, ärlighet och frihet under ansvar, där tydliga mål och förväntningar kombineras med förtroende för medarbetares förmåga att själva ta ansvar och fatta beslut.",
         terms: [
           "ledarskapsstil",
           "hur leder Magnus",
@@ -307,7 +311,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
     translations: {
       en: {
         answer:
-          "Magnus sees business development, pricing strategy, and commercial agreements as particularly strong competence areas.",
+          "Magnus has particularly strong expertise in business development, commercial strategy, pricing and contract development. One of his strengths is his ability to quickly understand commercial issues, identify opportunities for development, establish structure and turn analysis into clear priorities and concrete actions.",
         terms: [
           "commercial strengths",
           "business development",
@@ -323,7 +327,7 @@ const rawKnowledgeEntries: readonly KnowledgeEntry[] = [
       },
       sv: {
         answer:
-          "Magnus bedömer affärsutveckling, prisstrategi och kommersiella avtal som väldigt starka kompetensområden.",
+          "Magnus har särskilt stark kompetens inom affärsutveckling, kommersiell strategi, prissättning och avtalsutveckling. En av hans styrkor är att snabbt sätta sig in i affärsmässiga frågeställningar, identifiera utvecklingsmöjligheter, skapa struktur och omsätta analys i tydliga prioriteringar och konkreta åtgärder.",
         terms: [
           "kommersiella styrkor",
           "affärsutveckling",
@@ -397,6 +401,10 @@ terms: [
   "how does Magnus handle conflicting goals",
   "how does Magnus handle different priorities",
   "stakeholder conflict",
+          "way forward",
+          "different views on the way forward",
+          "disagreement about the way forward",
+          "how does Magnus handle different views on the way forward",
 ]
       },
       sv: {
@@ -413,6 +421,10 @@ terms: [
   "hur hanterar Magnus motstridiga mål",
   "hur hanterar Magnus olika prioriteringar",
   "konflikt mellan intressenter",
+          "vägen framåt",
+          "olika syn på vägen framåt",
+          "olika uppfattningar om vägen framåt",
+          "hur hanterar Magnus olika uppfattningar om vägen framåt",
 ]
       },
     },
@@ -518,6 +530,7 @@ terms: [
           "how does Magnus solve complex problems",
           "how does Magnus approach unclear problems",
           "how does Magnus handle ambiguous situations",
+          "how does Magnus approach new and ambiguous tasks",
           "how does Magnus work with problem solving",
         ],
       },
@@ -535,6 +548,7 @@ terms: [
           "hur löser Magnus komplexa problem",
           "hur angriper Magnus otydliga problem",
           "hur hanterar Magnus otydliga situationer",
+          "hur tar Magnus sig an nya och otydliga uppgifter",
           "hur arbetar Magnus med problemlösning",
         ],
       },
@@ -550,6 +564,7 @@ terms: [
         terms: [
           "motivation",
           "what motivates Magnus",
+          "what motivates Magnus at work",
           "motivated at work",
           "motivation at work",
           "demotivates",
@@ -566,6 +581,7 @@ terms: [
         terms: [
           "motivation",
           "vad motiverar Magnus",
+          "vad motiverar Magnus i arbetet",
           "motiverad på jobbet",
           "motivation på jobbet",
           "demotiverar",
@@ -584,7 +600,7 @@ terms: [
     translations: {
       en: {
         answer:
-          "Magnus highlights initiative, his ability to learn quickly, decisiveness, a high work pace, and his ability to adapt quickly to new circumstances and situations as his key strengths.",
+          "Magnus's key strengths are his ability to quickly grasp new and complex issues, identify what matters most and establish structure even when circumstances are unclear. He combines analytical ability with initiative, decisiveness and a high work pace. He is also adaptable and readily translates new insights into concrete actions that move work forward.",
         terms: [
           "self described strengths",
           "professional strengths",
@@ -599,11 +615,13 @@ terms: [
           "key strengths",
           "strengths",
           "what are Magnus strengths",
+          "what are Magnus's key strengths",
+          "what are Magnus's main strengths",
         ],
       },
       sv: {
         answer:
-          "Magnus lyfter fram initiativförmåga, att han är lättlärd, beslutsam, har ett högt arbetstempo och snabbt anpassar sig till nya förutsättningar och situationer som främsta styrkor.",
+          "Magnus främsta styrkor är hans förmåga att snabbt sätta sig in i nya och komplexa frågor, identifiera det väsentliga och skapa struktur även när förutsättningarna är otydliga. Han kombinerar analytisk förmåga med handlingskraft, beslutsamhet och ett högt arbetstempo. Han är också anpassningsbar och har lätt för att omsätta nya insikter i konkreta åtgärder och driva arbetet framåt.",
         terms: [
           "egna styrkor",
           "professionella styrkor",
@@ -619,6 +637,8 @@ terms: [
           "främsta styrkor",
           "styrkor",
           "vad är Magnus styrkor",
+          "vilka är Magnus främsta styrkor",
+          "vad är Magnus främsta styrkor",
         ],
       },
     },
@@ -998,7 +1018,7 @@ terms: [
     translations: {
       en: {
         answer:
-          "Magnus has worked broadly across sales, business development, strategy, marketing, as well as legal and regulatory matters. He performs best in roles where he can combine multiple areas and work with a variety of issues rather than within a narrowly defined function.",
+          "Magnus has worked broadly across business development, sales, strategy, marketing, as well as legal and regulatory matters. He performs best in roles where he can combine multiple areas and work with a variety of issues rather than within a narrowly defined function.",
         terms: [
           "career choices",
           "career breadth",
@@ -1014,7 +1034,7 @@ terms: [
       },
       sv: {
         answer:
-          "Magnus har arbetat brett inom försäljning, affärsutveckling, strategi, marknad samt juridiska och regulatoriska frågor. Han trivs bäst i roller där han får kombinera flera områden och arbeta med varierande frågeställningar snarare än inom en smalt avgränsad funktion.",
+          "Magnus har arbetat brett inom affärsutveckling, försäljning, strategi, marknad samt juridiska och regulatoriska frågor. Han trivs bäst i roller där han får kombinera flera områden och arbeta med varierande frågeställningar snarare än inom en smalt avgränsad funktion.",
         terms: [
           "karriärval",
           "karriärbredd",
@@ -1340,6 +1360,40 @@ terms: [
     },
   },
   {
+    id: "additional-setbacks",
+    priority: 15,
+    translations: {
+      en: {
+        answer:
+          "Magnus describes himself as comfortable dealing with demanding situations without making them more dramatic than necessary. He focuses on identifying what needs to be done and reassesses his approach when circumstances change. His Alva Labs personality assessment also describes him as resilient in the face of setbacks and generally calm under pressure.",
+        terms: [
+          "setbacks",
+          "handling setbacks",
+          "handle setbacks",
+          "how does Magnus handle setbacks",
+          "how does Magnus deal with setbacks",
+          "how does Magnus respond to setbacks",
+          "adversity",
+          "overcoming setbacks",
+        ],
+      },
+      sv: {
+        answer:
+          "Magnus beskriver sig som bekväm med att möta krävande situationer utan att göra dem mer dramatiska än nödvändigt. Han fokuserar på att identifiera vad som behöver göras och omvärderar angreppssättet när förutsättningarna förändras. I Alva Labs personlighetstest beskrivs han dessutom som motståndskraftig vid motgångar och generellt lugn under press.",
+        terms: [
+          "motgångar",
+          "hantera motgångar",
+          "hur hanterar Magnus motgångar",
+          "hur möter Magnus motgångar",
+          "hur hanterar Magnus bakslag",
+          "bakslag",
+          "motgångar på jobbet",
+          "motgångar i arbetet",
+        ],
+      },
+    },
+  },
+  {
     id: "additional-mistakes-and-setbacks",
     priority: 14,
     translations: {
@@ -1356,7 +1410,6 @@ terms: [
           "bad decision",
           "how does Magnus react to mistakes",
           "what does Magnus do when something goes wrong",
-          "how does Magnus handle setbacks",
           "when things do not go as planned",
           "carelessness",
         ],
@@ -1374,7 +1427,6 @@ terms: [
           "hur reagerar Magnus på misstag",
           "vad gör Magnus när något blir fel",
           "vad gör Magnus när något går fel",
-          "hur hanterar Magnus motgångar",
           "när det inte går som planerat",
           "slarv",
         ],

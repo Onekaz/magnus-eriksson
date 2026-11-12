@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import DesktopChat from "@/components/chat/DesktopChat";
 import MobileChatTrigger from "@/components/chat/MobileChatTrigger";
 import MobileChatBottomSheet from "@/components/mobile/bottom-sheet/MobileChatBottomSheet";
@@ -19,12 +19,26 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<ChatExchange[]>([]);
+  const [rotatingQuestionIndex, setRotatingQuestionIndex] = useState(0);
   const nextMessageIdRef = useRef(1);
+  const previousRotatingQuestionIndexRef = useRef<number | null>(null);
+
+  const suggestedQuestions = [
+    ...content.chat.suggestedQuestions,
+    content.chat.rotatingSuggestedQuestions[rotatingQuestionIndex],
+  ];
+
+  const closeChat = useCallback(() => {
+    setIsOpen(false);
+    setDraft("");
+    setMessages([]);
+    nextMessageIdRef.current = 1;
+  }, []);
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeChat();
       }
     }
 
@@ -33,7 +47,7 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [closeChat]);
 
   function submitQuestion(question: string) {
     const trimmedQuestion = question.trim();
@@ -61,11 +75,27 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
   }
 
   function toggleChat() {
-    setIsOpen((currentValue) => !currentValue);
-  }
+    if (isOpen) {
+      closeChat();
+      return;
+    }
 
-  function closeChat() {
-    setIsOpen(false);
+    const questionCount = content.chat.rotatingSuggestedQuestions.length;
+
+    if (questionCount > 0) {
+      const previousIndex = previousRotatingQuestionIndexRef.current;
+      // Choose anew on each opening, without immediately repeating the last question.
+      const nextIndex =
+        previousIndex === null || questionCount === 1
+          ? Math.floor(Math.random() * questionCount)
+          : (previousIndex + 1 + Math.floor(Math.random() * (questionCount - 1))) %
+            questionCount;
+
+      previousRotatingQuestionIndexRef.current = nextIndex;
+      setRotatingQuestionIndex(nextIndex);
+    }
+
+    setIsOpen(true);
   }
 
   return (
@@ -73,12 +103,14 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
       <DesktopChat
         isOpen={isOpen}
         content={content}
+        suggestedQuestions={suggestedQuestions}
         messages={messages}
         draft={draft}
         onDraftChange={setDraft}
         onToggle={toggleChat}
         onClose={closeChat}
         onSubmit={handleSubmit}
+        onSuggestedQuestion={submitQuestion}
       />
 
       <MobileChatTrigger
@@ -90,11 +122,13 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
       <MobileChatBottomSheet
         isOpen={isOpen}
         content={content}
+        suggestedQuestions={suggestedQuestions}
         messages={messages}
         draft={draft}
         onDraftChange={setDraft}
         onClose={closeChat}
         onSubmit={handleSubmit}
+        onSuggestedQuestion={submitQuestion}
       />
     </>
   );

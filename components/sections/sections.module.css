@@ -150,6 +150,67 @@
   padding-bottom: var(--mobile-standard-section-padding-bottom);
 }
 
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--mobile-gap-16);
+}
+
+.achievementCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: var(--mobile-skills-card-padding-y) var(--mobile-skills-card-padding-x);
+  border-radius: var(--mobile-skills-card-radius);
+  background: var(--color-skill-card);
+}
+
+.achievementHeadline,
+.achievementTitle,
+.achievementDescription,
+.achievementCompany {
+  margin: 0;
+}
+
+.achievementHeadline {
+  margin-bottom: var(--mobile-gap-16);
+  color: var(--color-primary);
+  font-size: var(--mobile-title-text-size);
+  font-weight: var(--mobile-title-text-weight);
+  line-height: var(--mobile-text-line-height-tight);
+}
+
+.achievementMetric {
+  font-size: var(--mobile-achievements-metric-text-size);
+  font-weight: var(--mobile-achievements-metric-text-weight);
+  line-height: var(--mobile-section-heading-line-height);
+}
+
+.achievementTitle {
+  margin-bottom: var(--mobile-gap-8);
+  color: var(--color-primary);
+  font-size: var(--mobile-achievements-title-text-size);
+  font-weight: var(--mobile-achievements-title-text-weight);
+  line-height: var(--mobile-text-line-height-tight);
+}
+
+.achievementDescription {
+  color: var(--color-muted);
+  font-size: var(--mobile-small-text-size);
+  font-weight: var(--mobile-small-text-weight);
+  line-height: var(--mobile-text-line-height-small);
+  letter-spacing: var(--mobile-text-letter-spacing);
+}
+
+.achievementCompany {
+  margin-top: auto;
+  padding-top: var(--mobile-gap-8);
+  color: var(--color-dark-muted);
+  font-size: var(--mobile-label-text-size);
+  font-weight: var(--mobile-label-text-weight);
+  line-height: var(--mobile-text-line-height-standard);
+}
+
 .skillsGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -556,6 +617,51 @@
     gap: var(--desktop-gap-28);
     padding-top: var(--desktop-standard-section-padding-top);
     padding-bottom: var(--desktop-standard-section-padding-bottom);
+  }
+
+  .achievementsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--desktop-gap-24);
+    row-gap: var(--desktop-gap-24);
+  }
+
+  .achievementCard {
+    padding: var(--desktop-skills-card-padding-y) var(--desktop-skills-card-padding-x);
+    border-radius: var(--desktop-skills-card-radius);
+  }
+
+  .achievementHeadline {
+    margin-bottom: var(--desktop-gap-16);
+    font-size: var(--desktop-title-text-size);
+    font-weight: var(--desktop-title-text-weight);
+    line-height: var(--desktop-text-line-height-tight);
+  }
+
+  .achievementMetric {
+    font-size: var(--desktop-achievements-metric-text-size);
+    font-weight: var(--desktop-achievements-metric-text-weight);
+    line-height: var(--desktop-section-heading-line-height);
+  }
+
+  .achievementTitle {
+    margin-bottom: var(--desktop-gap-8);
+    font-size: var(--desktop-achievements-title-text-size);
+    font-weight: var(--desktop-achievements-title-text-weight);
+    line-height: var(--desktop-text-line-height-tight);
+  }
+
+  .achievementDescription {
+    font-size: var(--desktop-small-text-size);
+    font-weight: var(--desktop-small-text-weight);
+    line-height: var(--desktop-text-line-height-small);
+    letter-spacing: var(--desktop-text-letter-spacing);
+  }
+
+  .achievementCompany {
+    padding-top: var(--desktop-gap-8);
+    font-size: var(--desktop-label-text-size);
+    font-weight: var(--desktop-label-text-weight);
+    line-height: var(--desktop-text-line-height-standard);
   }
 
   .skillsGrid {

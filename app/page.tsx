@@ -8,6 +8,7 @@ import MobileFooterOverlay from "@/components/mobile/MobileFooterOverlay";
 import MobileTopOverlay from "@/components/mobile/MobileTopOverlay";
 import ProfileChat from "@/components/chat/ProfileChat";
 import AboutSection from "@/components/sections/AboutSection";
+import AchievementsSection from "@/components/sections/AchievementsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import EducationSection from "@/components/sections/EducationSection";
 import ResumeSection from "@/components/sections/ResumeSection";
@@ -49,6 +50,7 @@ export default function Home() {
         <div className={styles.pageInner}>
           <div className={styles.sectionStack}>
             <AboutSection content={content} />
+            <AchievementsSection content={content} />
             <ResumeSection content={content} />
             <SkillsSection content={content} />
             <EducationSection content={content} />
