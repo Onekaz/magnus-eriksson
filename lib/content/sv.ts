@@ -309,7 +309,7 @@ export const swedishContent = {
             ],
             achievementLabel: "Prestationer:",
             description:
-              "Utvecklade och implementerade ett strategiskt ramverk med fokus på varumärkeskännedom, organisk tillväxt och lönsamhet, vilket ökade den månatliga nettokundtillväxten med cirka 58 %.",
+              "Ökade ARPU genom att revidera prisstrategin samt utvecklade marknadsföringen för ökad varumärkeskännedom, vilket bidrog till ~58 % högre månatlig organisk nettokundtillväxt.",
             showTimelineMarker: true,
           },
         ],

@@ -1,11 +1,12 @@
-// components/icons/Chat.tsx
+
+ // components/icons/Chat.tsx
 
 type ChatProps = {
   size?: number;
   strokeWidth?: number;
 };
 
-export default function Chat({ size = 18, strokeWidth = 1.1 }: ChatProps) {
+export default function Chat({ size = 18, strokeWidth = 1.2 }: ChatProps) {
   return (
     <svg
       width={size}
@@ -36,9 +37,19 @@ export default function Chat({ size = 18, strokeWidth = 1.1 }: ChatProps) {
           "
         />
 
-        <circle cx="8.4" cy="9.4" r="1.1" fill="currentColor" stroke="none" />
-        <circle cx="12.05" cy="9.4" r="1.1" fill="currentColor" stroke="none" />
-        <circle cx="15.7" cy="9.4" r="1.1" fill="currentColor" stroke="none" />
+        {/* Förstärkningar vid öronen */}
+        <path
+          d="M2.13 8.25 C1.99 9.1 2.1 10.12 2.28 10.7"
+          strokeWidth={strokeWidth * 2}
+        />
+        <path
+          d="M21.99 8.25 C22.11 9.15 22.05 10.15 21.82 10.75"
+          strokeWidth={strokeWidth * 2}
+        />
+
+        {/* Ögon */}
+        <circle cx="8.5" cy="9.4" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="15.6" cy="9.4" r="1.6" fill="currentColor" stroke="none" />
       </g>
     </svg>
   );

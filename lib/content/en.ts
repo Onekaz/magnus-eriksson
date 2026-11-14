@@ -309,7 +309,7 @@ export const englishContent = {
             ],
             achievementLabel: "Achievements:",
             description:
-              "Designed and implemented a strategic framework focused on brand awareness, organic growth, and profitability, driving a ~58% increase in monthly net customer growth.",
+              "Increased ARPU by revising the pricing strategy and developed marketing to strengthen brand awareness, contributing to ~58% higher monthly organic net customer growth.",
             showTimelineMarker: true,
           },
         ],
