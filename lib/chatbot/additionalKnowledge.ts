@@ -530,6 +530,8 @@ terms: [
           "solve problems",
           "how does Magnus solve complex problems",
           "how does Magnus approach unclear problems",
+          "how does Magnus handle complex situations",
+          "how does Magnus approach complex situations",
           "how does Magnus handle ambiguous situations",
           "how does Magnus approach new and ambiguous tasks",
           "how does Magnus work with problem solving",
@@ -549,6 +551,7 @@ terms: [
           "hur löser Magnus komplexa problem",
           "hur hanterar Magnus komplexa problem",
           "hur angriper Magnus otydliga problem",
+          "hur hanterar Magnus komplexa situationer",
           "hur hanterar Magnus otydliga situationer",
           "hur tar Magnus sig an nya och otydliga uppgifter",
           "hur arbetar Magnus med problemlösning",
@@ -651,11 +654,12 @@ terms: [
     translations: {
       en: {
         answer:
-          "Magnus primarily sees two development areas: being better at recognizing when other people will not deliver as expected, and planning his own time with more margin. He respects and meets deadlines, but acknowledges that his time planning can make the final phase unnecessarily stressful.",
+          "Magnus sees two main areas for improvement. First, to better understand when others are not delivering as expected, and second, to allow more margin in his own time planning. He respects and meets deadlines, but acknowledges that his planning can sometimes create unnecessary time pressure.",
         terms: [
           "development areas",
           "weaknesses",
           "areas to improve",
+          "what does Magnus consider his main areas for improvement",
           "what can Magnus improve",
           "time planning",
           "time management",
@@ -669,11 +673,12 @@ terms: [
       },
       sv: {
         answer:
-          "Magnus ser framför allt två utvecklingsområden hos sig själv: bli bättre på att förstå när andra inte kommer att leverera som förväntat, och att planera sin egen tid med större marginal. Han respekterar och håller deadlines, men konstaterar att tidsplaneringen ibland kan göra slutskedet onödigt stressigt.",
+          "Magnus ser framför allt två utvecklingsområden hos sig själv. Dels att bli bättre på att förstå när andra inte levererar som förväntat, och dels att planera sin egen tid med större marginal. Han respekterar och håller deadlines, men konstaterar att tidsplaneringen ibland kan göra saker och ting onödigt tidspressade.",
         terms: [
           "utvecklingsområden",
           "svagheter",
           "förbättringsområden",
+          "vilka ser Magnus som sina främsta utvecklingsområden",
           "vad kan Magnus förbättra",
           "tidsplanering",
           "tidshantering",
@@ -1244,11 +1249,12 @@ terms: [
     translations: {
       en: {
         answer:
-          "Long term, what matters most to Magnus is enjoying his work, continuing to develop, and feeling that he contributes to the organization and its development.",
+          "What matters most to Magnus is enjoying his workplace and the work he does, while contributing to the organization and its development. He also values being able to maintain a good work-life balance.",
         terms: [
           "long term career goals",
           "career goals",
           "future career",
+          "how does Magnus view his career going forward",
           "where does Magnus see himself",
           "what are Magnus's long term goals",
           "what does Magnus want long term",
@@ -1260,11 +1266,12 @@ terms: [
       },
       sv: {
         answer:
-          "Det viktigaste för Magnus långsiktigt är att han trivs med sina arbetsuppgifter, fortsätter att utvecklas och känner att han bidrar till verksamheten och dess utveckling.",
+          "Det viktigaste för Magnus är att han trivs på arbetsplatsen och med sina arbetsuppgifter samt att han bidrar till verksamheten och dess utveckling. Han värdesätter också att kunna hålla en bra balans mellan arbetsliv och privatliv.",
         terms: [
           "långsiktiga karriärmål",
           "karriärmål",
           "framtida karriär",
+          "hur ser Magnus på sin karriär framåt",
           "var ser Magnus sig själv",
           "vilka är Magnus långsiktiga mål",
           "vad vill Magnus långsiktigt",
@@ -1493,12 +1500,13 @@ terms: [
     translations: {
       en: {
         answer:
-          "In his roles as a manager, Magnus has learned that people function differently and have very different needs. He therefore wants to understand his employees well enough to know what each person needs in order to perform and function effectively within the team. Goals, responsibilities, and expectations should be clear, while the way he leads may need to be adapted to the individual and the situation.",
+          "In his roles as a manager, Magnus has learned that people function differently and have very different needs. He therefore wants to understand his team members well enough to know what each person needs in order to perform and function effectively within the team. Goals, responsibilities, and expectations should be clear, while the way he leads may need to be adapted to the individual and the situation.",
         terms: [
           "management lessons",
           "leadership lessons",
           "what has Magnus learned as a manager",
           "what has Magnus learned from management roles",
+          "what has Magnus learned from his management roles",
           "previous management roles",
           "learned from leadership",
           "employee needs",
@@ -1778,7 +1786,7 @@ terms: [
       },
       sv: {
         answer:
-          "Alva Labs placerar Magnus extraversion på 7/10, i 69:e-84:e percentilen. Rapporten beskriver honom som utåtriktad och social, med särskilt hög energinivå i 84:e-93:e percentilen. Social dominans ligger mer i mitten: han söker inte alltid ledarrollen men tar den ibland och uttrycker sin åsikt när det behövs.",
+          "Alva Labs placerar Magnus extraversion på 7/10, i 69:e-84:e percentilen. Rapporten beskriver honom som utåtriktad och social, med särskilt hög energinivå i 84:e-93:e percentilen. Social dominans ligger mer i mitten. Han söker inte alltid ledarrollen men tar den ibland och uttrycker sin åsikt när det behövs.",
         terms: [
           "extraversion",
           "utåtriktad",
@@ -1906,7 +1914,7 @@ terms: [
       },
       sv: {
         answer:
-          "Alva Labs placerar Magnus vänlighet på 6/10, i 50:e-69:e percentilen. Rapporten beskriver en genomsnittlig totalnivå: han kan vara rak när det behövs utan att söka onödig konfrontation. Artighet ligger högre, i 69:e-84:e percentilen, medan tillit ligger i 50:e-69:e percentilen.",
+          "Alva Labs placerar Magnus vänlighet på 6/10, i 50:e-69:e percentilen. Rapporten beskriver en genomsnittlig totalnivå. Han kan vara rak när det behövs utan att söka onödig konfrontation. Artighet ligger högre, i 69:e-84:e percentilen, medan tillit ligger i 50:e-69:e percentilen.",
         terms: [
           "vänlighet",
           "artighet",
@@ -1959,7 +1967,7 @@ terms: [
       },
       sv: {
         answer:
-          "Alva Labs lyfter tre styrkor: att vara beslutsam och målinriktad när svårigheter uppstår, att sprida entusiasm och vara motståndskraftig mot motgångar samt att vara mycket produktiv i högt tempo. Potentiella utmaningar är att ibland glömma att vila på grund av höga ambitioner, underskatta problem genom optimism och ibland framstå som pådrivande när saker ska bli gjorda.",
+          "Alva Labs lyfter fram tre styrkor, nämligen att vara beslutsam och målinriktad när svårigheter uppstår, att sprida entusiasm och vara motståndskraftig mot motgångar samt att vara mycket produktiv i högt tempo. Potentiella utmaningar är att ibland glömma att vila på grund av höga ambitioner, underskatta problem genom optimism och ibland framstå som pådrivande när saker ska bli gjorda.",
         terms: [
           "personlighetsstyrkor",
           "personlighetsutmaningar",
