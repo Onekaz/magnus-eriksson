@@ -18,8 +18,8 @@ export default function Envelope({ size = 18, strokeWidth = 1.1 }: EnvelopeProps
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M4 6h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2z" />
-      <polyline points="22,8 12,14 2,8" />
+      <path d="M4 6h16c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2z" />
+      <polyline points="22,8 12,15 2,8" />
     </svg>
   );
 }

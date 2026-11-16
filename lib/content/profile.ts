@@ -119,6 +119,8 @@ export type SiteContent = {
   chat: {
     suggestedQuestions: readonly string[];
     rotatingSuggestedQuestions: readonly string[];
+    exampleQuestionsLabel: string;
+    refreshQuestionsAriaLabel: string;
     triggerLabel: string;
     heading: string;
     intro: string;

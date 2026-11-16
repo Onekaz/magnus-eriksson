@@ -7,6 +7,8 @@ import { Chat, Close } from "@/components/icons";
 import {
   DESKTOP_CHAT_CLOSE_BUTTON_SIZE_PX,
   DESKTOP_CHAT_CLOSE_ICON_SIZE_PX,
+  DESKTOP_CHAT_REFRESH_BUTTON_SIZE_PX,
+  DESKTOP_CHAT_REFRESH_ICON_SIZE_PX,
   DESKTOP_CHAT_PANEL_BOTTOM_PX,
   DESKTOP_CHAT_PANEL_MAX_HEIGHT_PX,
   DESKTOP_CHAT_PANEL_WIDTH_PX,
@@ -17,9 +19,11 @@ import {
   DESKTOP_CHAT_TRIGGER_PADDING_Y_PX,
   DESKTOP_CHAT_TRIGGER_RIGHT_PX,
   DESKTOP_CHAT_TRIGGER_TEXT_SIZE_PX,
+  DESKTOP_GAP_4_PX,
   DESKTOP_GAP_8_PX,
   DESKTOP_GAP_16_PX,
   DESKTOP_LINK_TEXT_WEIGHT,
+  DESKTOP_LABEL_TEXT_SIZE_PX,
   DESKTOP_SKILLS_CARD_RADIUS_PX,
   DESKTOP_SKILLS_PILL_RADIUS_PX,
   DESKTOP_SMALL_TEXT_SIZE_PX,
@@ -39,6 +43,8 @@ type DesktopChatProps = {
   isOpen: boolean;
   content: SiteContent;
   suggestedQuestions: readonly string[];
+  refreshAnimationKey: number;
+  onRefreshQuestions: () => void;
   messages: readonly ChatExchange[];
   draft: string;
   onDraftChange: (value: string) => void;
@@ -52,6 +58,8 @@ export default function DesktopChat({
   isOpen,
   content,
   suggestedQuestions,
+  refreshAnimationKey,
+  onRefreshQuestions,
   messages,
   draft,
   onDraftChange,
@@ -61,18 +69,53 @@ export default function DesktopChat({
   onSuggestedQuestion,
 }: DesktopChatProps) {
   const conversationRef = useRef<HTMLDivElement | null>(null);
+  const latestExchangeRef = useRef<HTMLDivElement | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function handlePointerDown(event: PointerEvent) {
+      if (
+        !window.matchMedia("(min-width: 768px)").matches ||
+        rootRef.current?.contains(event.target as Node)
+      ) {
+        return;
+      }
+
+      onClose();
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     if (!isOpen || !conversationRef.current) {
       return;
     }
 
-    conversationRef.current.scrollTop =
-      messages.length === 0 ? 0 : conversationRef.current.scrollHeight;
+    if (messages.length === 0) {
+      conversationRef.current.scrollTop = 0;
+      return;
+    }
+
+    const latestExchange = latestExchangeRef.current;
+    if (latestExchange) {
+      conversationRef.current.scrollTop +=
+        latestExchange.getBoundingClientRect().top -
+        conversationRef.current.getBoundingClientRect().top;
+    }
   }, [isOpen, messages]);
 
   return (
     <div
+      ref={rootRef}
       className={`${styles.desktopChatRoot} desktop-only`}
       style={{
         right: DESKTOP_CHAT_TRIGGER_RIGHT_PX,
@@ -98,6 +141,7 @@ export default function DesktopChat({
               flexDirection: "column",
               gap: DESKTOP_GAP_8_PX,
               padding: DESKTOP_GAP_16_PX,
+              paddingBottom: DESKTOP_GAP_8_PX + DESKTOP_GAP_4_PX,
             }}
           >
             <div className={styles.panelHeader} style={{ gap: DESKTOP_GAP_8_PX }}>
@@ -142,20 +186,42 @@ export default function DesktopChat({
             ref={conversationRef}
             className={styles.conversation}
             aria-live="polite"
-            style={{ padding: `0 ${DESKTOP_GAP_16_PX}px` }}
+            style={{
+              paddingTop: DESKTOP_GAP_4_PX,
+              paddingRight: DESKTOP_GAP_16_PX,
+              paddingLeft: DESKTOP_GAP_16_PX,
+            }}
           >
-            {messages.length === 0 ? (
-              <ChatSuggestedQuestions
-                questions={suggestedQuestions}
-                onSelect={onSuggestedQuestion}
-                fontSize={DESKTOP_SMALL_TEXT_SIZE_PX}
-                fontWeight={DESKTOP_SMALL_TEXT_WEIGHT}
+            <ChatSuggestedQuestions
+              questions={suggestedQuestions}
+              refreshAriaLabel={content.chat.refreshQuestionsAriaLabel}
+              exampleQuestionsLabel={content.chat.exampleQuestionsLabel}
+              labelFontSize={DESKTOP_LABEL_TEXT_SIZE_PX}
+              labelFontWeight={DESKTOP_SMALL_TEXT_WEIGHT}
+              labelLineHeight={DESKTOP_TEXT_LINE_HEIGHT_STANDARD}
+              refreshIconSize={DESKTOP_CHAT_REFRESH_ICON_SIZE_PX}
+              refreshButtonSize={DESKTOP_CHAT_REFRESH_BUTTON_SIZE_PX}
+              refreshToQuestionsGap={DESKTOP_GAP_8_PX + DESKTOP_GAP_4_PX}
+              questionGap={DESKTOP_GAP_8_PX}
+              questionsToConversationGap={messages.length === 0 ? DESKTOP_GAP_16_PX : 0}
+              refreshAnimationKey={refreshAnimationKey}
+              onRefresh={onRefreshQuestions}
+              onSelect={onSuggestedQuestion}
+              fontSize={DESKTOP_SMALL_TEXT_SIZE_PX}
+              fontWeight={DESKTOP_SMALL_TEXT_WEIGHT}
+            />
+            {messages.length > 0 ? (
+              <div
+                aria-hidden="true"
+                className={styles.conversationDivider}
+                style={{ marginTop: DESKTOP_GAP_16_PX, marginBottom: DESKTOP_GAP_8_PX }}
               />
             ) : null}
-            <div className={styles.exchangeList} style={{ gap: DESKTOP_GAP_16_PX }}>
-              {messages.map((message) => (
+            <div className={styles.exchangeList} style={{ gap: DESKTOP_GAP_8_PX }}>
+              {[...messages].reverse().map((message, index) => (
                 <div
                   key={message.id}
+                  ref={index === 0 ? latestExchangeRef : undefined}
                   className={styles.exchange}
                   style={{
                     gap: DESKTOP_GAP_8_PX,
@@ -187,7 +253,13 @@ export default function DesktopChat({
             </div>
           </div>
 
-          <div className={styles.composerWrap} style={{ padding: DESKTOP_GAP_16_PX }}>
+          <div
+            className={styles.composerWrap}
+            style={{
+              padding: DESKTOP_GAP_16_PX,
+              paddingTop: DESKTOP_GAP_8_PX + DESKTOP_GAP_4_PX,
+            }}
+          >
             <ChatComposer
               platform="desktop"
               content={content}

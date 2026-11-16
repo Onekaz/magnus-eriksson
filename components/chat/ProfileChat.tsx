@@ -10,6 +10,31 @@ import { answerProfileQuestion } from "@/lib/chatbot/engine";
 import type { ChatExchange } from "@/lib/chatbot/types";
 import type { SiteContent, SiteLanguage } from "@/lib/content/profile";
 
+function chooseSuggestedQuestionIndices(
+  totalQuestions: number,
+  usedIndices: readonly number[],
+  previousIndices: readonly number[],
+): number[] {
+  const eligibleIndices = Array.from({ length: totalQuestions }, (_, index) => index).filter(
+    (index) => !usedIndices.includes(index),
+  );
+  const unshownIndices = eligibleIndices.filter(
+    (index) => !previousIndices.includes(index),
+  );
+  const shownIndices = eligibleIndices.filter((index) => previousIndices.includes(index));
+  const nextIndices: number[] = [];
+
+  for (const pool of [unshownIndices, shownIndices]) {
+    while (nextIndices.length < 3 && pool.length > 0) {
+      const randomPosition = Math.floor(Math.random() * pool.length);
+      const [selectedIndex] = pool.splice(randomPosition, 1);
+      nextIndices.push(selectedIndex);
+    }
+  }
+
+  return nextIndices;
+}
+
 type ProfileChatProps = {
   language: SiteLanguage;
   content: SiteContent;
@@ -19,19 +44,31 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<ChatExchange[]>([]);
-  const [rotatingQuestionIndex, setRotatingQuestionIndex] = useState(0);
+  const [suggestedQuestionIndices, setSuggestedQuestionIndices] = useState<number[]>([]);
+  const [usedQuestionIndices, setUsedQuestionIndices] = useState<number[]>([]);
+  const [refreshAnimationKey, setRefreshAnimationKey] = useState(0);
   const nextMessageIdRef = useRef(1);
-  const previousRotatingQuestionIndexRef = useRef<number | null>(null);
 
-  const suggestedQuestions = [
+  const questionBank = [
     ...content.chat.suggestedQuestions,
-    content.chat.rotatingSuggestedQuestions[rotatingQuestionIndex],
+    ...content.chat.rotatingSuggestedQuestions,
   ];
+  const suggestedQuestions = suggestedQuestionIndices.map((index) => questionBank[index]);
+
+  function refreshSuggestedQuestions() {
+    setSuggestedQuestionIndices((currentIndices) =>
+      chooseSuggestedQuestionIndices(questionBank.length, usedQuestionIndices, currentIndices),
+    );
+    setRefreshAnimationKey((currentKey) => currentKey + 1);
+  }
 
   const closeChat = useCallback(() => {
     setIsOpen(false);
     setDraft("");
     setMessages([]);
+    setSuggestedQuestionIndices([]);
+    setUsedQuestionIndices([]);
+    setRefreshAnimationKey(0);
     nextMessageIdRef.current = 1;
   }, []);
 
@@ -67,6 +104,28 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
       },
     ]);
     nextMessageIdRef.current += 1;
+
+    const usedQuestionIndex = questionBank.findIndex(
+      (suggestion) => suggestion.toLocaleLowerCase() === trimmedQuestion.toLocaleLowerCase(),
+    );
+    if (usedQuestionIndex !== -1 && !usedQuestionIndices.includes(usedQuestionIndex)) {
+      const nextUsedIndices = [...usedQuestionIndices, usedQuestionIndex];
+      setUsedQuestionIndices(nextUsedIndices);
+      setSuggestedQuestionIndices((currentIndices) => {
+        if (!currentIndices.includes(usedQuestionIndex)) {
+          return currentIndices;
+        }
+
+        const remainingIndices = currentIndices.filter((index) => index !== usedQuestionIndex);
+        const replacements = chooseSuggestedQuestionIndices(
+          questionBank.length,
+          [...nextUsedIndices, ...remainingIndices],
+          [],
+        );
+        return [...remainingIndices, ...replacements.slice(0, 3 - remainingIndices.length)];
+      });
+    }
+
     setDraft("");
   }
 
@@ -80,21 +139,8 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
       return;
     }
 
-    const questionCount = content.chat.rotatingSuggestedQuestions.length;
-
-    if (questionCount > 0) {
-      const previousIndex = previousRotatingQuestionIndexRef.current;
-      // Choose anew on each opening, without immediately repeating the last question.
-      const nextIndex =
-        previousIndex === null || questionCount === 1
-          ? Math.floor(Math.random() * questionCount)
-          : (previousIndex + 1 + Math.floor(Math.random() * (questionCount - 1))) %
-            questionCount;
-
-      previousRotatingQuestionIndexRef.current = nextIndex;
-      setRotatingQuestionIndex(nextIndex);
-    }
-
+    setSuggestedQuestionIndices(chooseSuggestedQuestionIndices(questionBank.length, [], []));
+    setRefreshAnimationKey(0);
     setIsOpen(true);
   }
 
@@ -104,6 +150,8 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
         isOpen={isOpen}
         content={content}
         suggestedQuestions={suggestedQuestions}
+        refreshAnimationKey={refreshAnimationKey}
+        onRefreshQuestions={refreshSuggestedQuestions}
         messages={messages}
         draft={draft}
         onDraftChange={setDraft}
@@ -123,6 +171,8 @@ export default function ProfileChat({ language, content }: ProfileChatProps) {
         isOpen={isOpen}
         content={content}
         suggestedQuestions={suggestedQuestions}
+        refreshAnimationKey={refreshAnimationKey}
+        onRefreshQuestions={refreshSuggestedQuestions}
         messages={messages}
         draft={draft}
         onDraftChange={setDraft}

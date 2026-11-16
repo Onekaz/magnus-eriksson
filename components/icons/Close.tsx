@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Close({
   size = 18,
-  strokeWidth = 2.0,
+  strokeWidth = 2.4,
 }: {
   size?: number;
   strokeWidth?: number;

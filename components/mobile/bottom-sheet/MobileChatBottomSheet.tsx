@@ -20,6 +20,8 @@ type MobileChatBottomSheetProps = {
   isOpen: boolean;
   content: SiteContent;
   suggestedQuestions: readonly string[];
+  refreshAnimationKey: number;
+  onRefreshQuestions: () => void;
   messages: readonly ChatExchange[];
   draft: string;
   onDraftChange: (value: string) => void;
@@ -32,6 +34,8 @@ export default function MobileChatBottomSheet({
   isOpen,
   content,
   suggestedQuestions,
+  refreshAnimationKey,
+  onRefreshQuestions,
   messages,
   draft,
   onDraftChange,
@@ -47,14 +51,24 @@ export default function MobileChatBottomSheet({
   const hasMovedRef = useRef(false);
   const suppressClickRef = useRef(false);
   const conversationRef = useRef<HTMLDivElement | null>(null);
+  const latestExchangeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!isOpen || !conversationRef.current) {
       return;
     }
 
-    conversationRef.current.scrollTop =
-      messages.length === 0 ? 0 : conversationRef.current.scrollHeight;
+    if (messages.length === 0) {
+      conversationRef.current.scrollTop = 0;
+      return;
+    }
+
+    const latestExchange = latestExchangeRef.current;
+    if (latestExchange) {
+      conversationRef.current.scrollTop +=
+        latestExchange.getBoundingClientRect().top -
+        conversationRef.current.getBoundingClientRect().top;
+    }
   }, [isOpen, messages]);
 
   function resetDragState() {
@@ -208,7 +222,7 @@ export default function MobileChatBottomSheet({
               flexDirection: "column",
               gap: mobileConfig.MOBILE_GAP_8_PX,
               paddingRight: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
-              paddingBottom: mobileConfig.MOBILE_GAP_16_PX,
+              paddingBottom: mobileConfig.MOBILE_GAP_8_PX + mobileConfig.MOBILE_GAP_4_PX,
               paddingLeft: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
             }}
           >
@@ -258,25 +272,47 @@ export default function MobileChatBottomSheet({
             className={`${styles.conversation} ${styles.mobileConversation}`}
             aria-live="polite"
             style={{
+              paddingTop: mobileConfig.MOBILE_GAP_4_PX,
               paddingRight: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
               paddingLeft: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
             }}
           >
-            {messages.length === 0 ? (
-              <ChatSuggestedQuestions
-                questions={suggestedQuestions}
-                onSelect={onSuggestedQuestion}
-                fontSize={mobileConfig.MOBILE_SMALL_TEXT_SIZE_PX}
-                fontWeight={mobileConfig.MOBILE_SMALL_TEXT_WEIGHT}
+            <ChatSuggestedQuestions
+              questions={suggestedQuestions}
+              refreshAriaLabel={content.chat.refreshQuestionsAriaLabel}
+              exampleQuestionsLabel={content.chat.exampleQuestionsLabel}
+              labelFontSize={mobileConfig.MOBILE_LABEL_TEXT_SIZE_PX}
+              labelFontWeight={mobileConfig.MOBILE_BODY_TEXT_WEIGHT}
+              labelLineHeight={mobileConfig.MOBILE_TEXT_LINE_HEIGHT_STANDARD}
+              refreshIconSize={mobileConfig.MOBILE_CHAT_REFRESH_ICON_SIZE_PX}
+              refreshButtonSize={mobileConfig.MOBILE_CHAT_REFRESH_BUTTON_SIZE_PX}
+              refreshToQuestionsGap={mobileConfig.MOBILE_GAP_8_PX + mobileConfig.MOBILE_GAP_4_PX}
+              questionGap={mobileConfig.MOBILE_GAP_8_PX}
+              questionsToConversationGap={messages.length === 0 ? mobileConfig.MOBILE_GAP_16_PX : 0}
+              refreshAnimationKey={refreshAnimationKey}
+              onRefresh={onRefreshQuestions}
+              onSelect={onSuggestedQuestion}
+              fontSize={mobileConfig.MOBILE_SMALL_TEXT_SIZE_PX}
+              fontWeight={mobileConfig.MOBILE_SMALL_TEXT_WEIGHT}
+            />
+            {messages.length > 0 ? (
+              <div
+                aria-hidden="true"
+                className={styles.conversationDivider}
+                style={{
+                  marginTop: mobileConfig.MOBILE_GAP_16_PX,
+                  marginBottom: mobileConfig.MOBILE_GAP_8_PX,
+                }}
               />
             ) : null}
             <div
               className={styles.exchangeList}
-              style={{ gap: mobileConfig.MOBILE_GAP_16_PX }}
+              style={{ gap: mobileConfig.MOBILE_GAP_8_PX }}
             >
-              {messages.map((message) => (
+              {[...messages].reverse().map((message, index) => (
                 <div
                   key={message.id}
+                  ref={index === 0 ? latestExchangeRef : undefined}
                   className={styles.exchange}
                   style={{
                     gap: mobileConfig.MOBILE_GAP_8_PX,
@@ -310,7 +346,12 @@ export default function MobileChatBottomSheet({
 
           <div
             className={styles.composerWrap}
-            style={{ padding: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX }}
+            style={{
+              paddingTop: mobileConfig.MOBILE_GAP_16_PX,
+              paddingRight: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
+              paddingBottom: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
+              paddingLeft: mobileConfig.MOBILE_BOTTOM_SHEET_SIDE_PADDING_PX,
+            }}
           >
             <ChatComposer
               platform="mobile"
