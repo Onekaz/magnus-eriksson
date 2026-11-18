@@ -37,6 +37,7 @@ export type ResumeBlock =
 export type EducationThesis = {
   label: string;
   title: string;
+  href?: string;
 };
 
 export type EducationEntry = {

@@ -379,6 +379,7 @@ groups: [
           {
             label: "Master’s Thesis:",
             title: "Balanced Scorecard in Municipal Operations in Theory and Practice",
+            href: "https://su.diva-portal.org/smash/get/diva2:196168/FULLTEXT01.pdf",
           },
         ],
       },

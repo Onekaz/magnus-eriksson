@@ -9,6 +9,7 @@ export { default as Chat } from "./Chat";
 export { default as Chevron } from "./Chevron";
 export { default as Close } from "./Close";
 export { default as Download } from "./Download";
+export { default as ExternalLink } from "./ExternalLink";
 export { default as Refresh } from "./Refresh";
 
 // ==============================

@@ -379,6 +379,7 @@ groups: [
           {
             label: "Magisteruppsats:",
             title: "Balanced Scorecard i kommunal verksamhet i teori och praktik",
+            href: "https://su.diva-portal.org/smash/get/diva2:196168/FULLTEXT01.pdf",
           },
         ],
       },

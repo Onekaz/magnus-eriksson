@@ -1,5 +1,6 @@
 // components/sections/EducationSection.tsx
 
+import { ExternalLink } from "@/components/icons";
 import type { EducationEntry, SiteContent } from "@/lib/content/profile";
 import styles from "./sections.module.css";
 
@@ -62,7 +63,20 @@ export default function EducationSection({ content }: EducationSectionProps) {
                 {entry.theses.map((thesis) => (
                   <div key={`${entry.title}-${thesis.label}`} className={styles.educationThesisItem}>
                     <p className={styles.educationThesisLabel}>{thesis.label}</p>
-                    <p className={styles.educationThesisTitle}>{thesis.title}</p>
+                    <p className={styles.educationThesisTitle}>
+                      {thesis.title}
+                      {thesis.href ? (
+                        <a
+                          href={thesis.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.educationThesisLink}
+                          aria-label={`${thesis.title} (PDF)`}
+                        >
+                          <ExternalLink className={styles.educationThesisLinkIcon} />
+                        </a>
+                      ) : null}
+                    </p>
                   </div>
                 ))}
               </div>

@@ -489,6 +489,31 @@
   letter-spacing: var(--mobile-text-letter-spacing);
 }
 
+.educationThesisLink {
+  position: relative;
+  display: inline-block;
+  width: var(--mobile-education-thesis-link-icon-size);
+  height: 0;
+  margin-left: var(--mobile-gap-8);
+  color: var(--color-primary);
+  vertical-align: baseline;
+  line-height: 0;
+}
+
+.educationThesisLinkIcon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: var(--mobile-education-thesis-link-icon-size);
+  height: var(--mobile-education-thesis-link-icon-size);
+  transform: translateY(var(--mobile-education-thesis-link-icon-offset-y));
+}
+
+.educationThesisLink:focus-visible .educationThesisLinkIcon {
+  outline: auto;
+}
+
 .contactSection {
   display: none;
 }
@@ -880,6 +905,17 @@
     font-weight: var(--desktop-small-text-weight);
     line-height: var(--desktop-text-line-height-relaxed);
     letter-spacing: var(--desktop-text-letter-spacing);
+  }
+
+  .educationThesisLink {
+    width: var(--desktop-education-thesis-link-icon-size);
+    margin-left: var(--desktop-gap-8);
+  }
+
+  .educationThesisLinkIcon {
+    width: var(--desktop-education-thesis-link-icon-size);
+    height: var(--desktop-education-thesis-link-icon-size);
+    transform: translateY(var(--desktop-education-thesis-link-icon-offset-y));
   }
 
   .contactSection {
