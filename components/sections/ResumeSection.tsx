@@ -28,12 +28,19 @@ function ResumeEntryHeader({ entry }: { entry: ResumeEntry }) {
   return (
     <div className={styles.resumeEntryHeader}>
       <h3 className={styles.resumeRoleTitle}>{entry.role}</h3>
-      <p className={styles.resumeMetaText}>{`${entry.company}, ${entry.location}`}</p>
+      <p className={styles.resumeMetaText}>
+        {entry.company}
+        {entry.companyNote ? <span aria-hidden="true">*</span> : null}
+        {`, ${entry.location}`}
+      </p>
       <p className={styles.resumeMetaText}>
         <time dateTime={entry.startDate}>{entry.start}</time>
         <span aria-hidden="true">-</span>
         <time dateTime={entry.endDate}>{entry.end}</time>
       </p>
+      {entry.companyNote ? (
+        <p className={styles.resumeCompanyNote}>{`*${entry.companyNote}`}</p>
+      ) : null}
     </div>
   );
 }

@@ -164,6 +164,7 @@ export const englishContent = {
           {
             role: "Business Development Manager",
             company: "GlobalConnect AB",
+            companyNote: "Formerly IP-Only Networks AB",
             location: "Stockholm",
             start: "201903",
             end: "202305",

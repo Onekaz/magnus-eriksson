@@ -59,6 +59,7 @@ export const pageVariables: PageVariables = {
   "--desktop-small-text-strong-weight": `${desktop.DESKTOP_SMALL_TEXT_STRONG_WEIGHT}`,
   "--desktop-label-text-size": `${desktop.DESKTOP_LABEL_TEXT_SIZE_PX}px`,
   "--desktop-label-text-weight": `${desktop.DESKTOP_LABEL_TEXT_WEIGHT}`,
+  "--desktop-footnote-text-size": `${desktop.DESKTOP_FOOTNOTE_TEXT_SIZE_PX}px`,
   "--desktop-text-line-height-tight": `${desktop.DESKTOP_TEXT_LINE_HEIGHT_TIGHT}`,
   "--desktop-text-line-height-standard": `${desktop.DESKTOP_TEXT_LINE_HEIGHT_STANDARD}`,
   "--desktop-text-line-height-relaxed": `${desktop.DESKTOP_TEXT_LINE_HEIGHT_RELAXED}`,

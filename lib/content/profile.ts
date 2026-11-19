@@ -12,6 +12,7 @@ export type MobileNavigationIcon = "profile" | "achievements" | "list" | "lightb
 export type ResumeEntry = {
   role: string;
   company: string;
+  companyNote?: string;
   location: string;
   start: string;
   end: string;

@@ -376,6 +376,15 @@
   letter-spacing: var(--mobile-text-letter-spacing);
 }
 
+.resumeCompanyNote {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--mobile-label-text-size);
+  font-weight: var(--mobile-small-text-weight);
+  line-height: var(--mobile-text-line-height-small);
+  letter-spacing: var(--mobile-text-letter-spacing);
+}
+
 .mobileResumeResponsibilitiesInline {
   color: var(--color-muted);
   font-size: var(--mobile-small-text-size);
@@ -823,6 +832,13 @@
     font-size: var(--desktop-body-text-size);
     font-weight: var(--desktop-body-text-weight);
     line-height: var(--desktop-text-line-height-relaxed);
+    letter-spacing: var(--desktop-text-letter-spacing);
+  }
+
+  .resumeCompanyNote {
+    font-size: var(--desktop-footnote-text-size);
+    font-weight: var(--desktop-small-text-weight);
+    line-height: var(--desktop-text-line-height-small);
     letter-spacing: var(--desktop-text-letter-spacing);
   }
 
